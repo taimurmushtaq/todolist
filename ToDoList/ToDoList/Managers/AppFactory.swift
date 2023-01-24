@@ -9,7 +9,8 @@ import UIKit
 
 protocol AppFactoryProtocol {
     static func navigationController() -> UINavigationController
-    static func registerViewController() -> RegistrationViewController
+    static func loginViewController() -> LoginViewController
+    static func registerViewController(router: RouterProtocol) -> RegistrationViewController
 }
 
 class AppFactory: AppFactoryProtocol {
@@ -19,9 +20,20 @@ class AppFactory: AppFactoryProtocol {
         return navController
     }
     
-    static func registerViewController() -> RegistrationViewController {
+    static func loginViewController() -> LoginViewController {
+        let viewModel = LoginViewModel()
+        let controller = LoginViewController(viewModel: viewModel)
+        controller.router = AppRouter(controller)
+        
+        return controller
+    }
+    
+    static func registerViewController(router: RouterProtocol) -> RegistrationViewController {
         let viewModel = RegisterationViewModel()
-        return RegistrationViewController(viewModel: viewModel)
+        let controller = RegistrationViewController(viewModel: viewModel)
+        controller.router = router
+        
+        return controller
     }
 }
 

@@ -26,7 +26,6 @@ private extension ThemeManager {
             
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
-    
         } else {
             UINavigationBar.appearance().barTintColor = .accentColor
             UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

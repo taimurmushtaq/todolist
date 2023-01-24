@@ -1,5 +1,5 @@
 //
-//  RegistrationViewController.swift
+//  LoginViewController.swift
 //  ToDoList
 //
 //  Created by Taimur Mushtaq on 24/01/2023.
@@ -7,23 +7,23 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     //MARK: - IBOutlet
-    @IBOutlet weak var nameTextField: BindingTextField!
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var emailTextField: BindingTextField!
     @IBOutlet weak var passwordTextField: BindingTextField!
-    @IBOutlet weak var confirmPasswordTextField: BindingTextField!
+    @IBOutlet weak var loginButton: BindingButton!
     @IBOutlet weak var registerButton: BindingButton!
     
     //MARK: - Properties
-    var viewModel:RegisterationViewModel
-    var router: RouterProtocol!
+    var viewModel:LoginViewModel
+    var router:RouterProtocol!
     
     //MARK: - Init
-    init(viewModel: RegisterationViewModel) {
+    init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: "RegistrationViewController", bundle: .main)
+        super.init(nibName: "LoginViewController", bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -40,29 +40,29 @@ class RegistrationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
     }
 }
 
-extension RegistrationViewController {
+extension LoginViewController {
     func updateUI() {
-        title = "SIGN UP"
+        title = "Welcome"
         
-        nameTextField.isEnabled = true
+        logoImageView.roundCorners(radius: 8, borderWidth: 0, borderColor: .accentColor)
+        
         emailTextField.isEnabled = true
         passwordTextField.isEnabled = true
-        confirmPasswordTextField.isEnabled = true
+        
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.theme = .filled
+        loginButton.isEnabled = false
         
         registerButton.setTitle("Register", for: .normal)
-        registerButton.isEnabled = false
-        registerButton.theme = .filled
+        registerButton.theme = .empty
+        registerButton.isEnabled = true
     }
     
     func bindViews() {
-        nameTextField.bind { [weak self] value in
-            self?.viewModel.name.value = value
-            self?.viewModel.performValidation()
-        }
         emailTextField.bind { [weak self] value in
             self?.viewModel.email.value = value
             self?.viewModel.performValidation()
@@ -71,29 +71,24 @@ extension RegistrationViewController {
             self?.viewModel.password.value = value
             self?.viewModel.performValidation()
         }
-        confirmPasswordTextField.bind { [weak self] value in
-            self?.viewModel.confirmPassword.value = value
-            self?.viewModel.performValidation()
-        }
         
-        registerButton.bind { [weak self] in
+        loginButton.bind { [weak self] in
             
         }
         
-        viewModel.name.bind { [weak self] value in
-            self?.nameTextField.text = value
+        registerButton.bind { [weak self] in
+            self?.router.routeToRegistration()
         }
+        
         viewModel.email.bind { [weak self] value in
             self?.emailTextField.text = value
         }
         viewModel.password.bind { [weak self] value in
             self?.passwordTextField.text = value
         }
-        viewModel.confirmPassword.bind { [weak self] value in
-            self?.confirmPasswordTextField.text = value
-        }
         viewModel.validateFields.bind { [weak self] isValidated in
-            self?.registerButton.isEnabled = isValidated
+            self?.loginButton.isEnabled = isValidated
         }
     }
 }
+

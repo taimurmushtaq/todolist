@@ -15,6 +15,9 @@
 		4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DE22980623D0021ADF6 /* BindingButton.swift */; };
 		4A037DE5298065720021ADF6 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A037DE4298065720021ADF6 /* RegistrationViewController.xib */; };
 		4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DE629807CAF0021ADF6 /* PaddingTextField.swift */; };
+		4A037DED298080BC0021ADF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DEB298080BC0021ADF6 /* LoginViewController.swift */; };
+		4A037DEE298080BC0021ADF6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A037DEC298080BC0021ADF6 /* LoginViewController.xib */; };
+		4A037DF12980812C0021ADF6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DF02980812C0021ADF6 /* LoginViewModel.swift */; };
 		4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EA29804E66005B28BF /* AppDelegate.swift */; };
 		4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EC29804E66005B28BF /* SceneDelegate.swift */; };
 		4A65C7F229804E66005B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A65C7F029804E66005B28BF /* Main.storyboard */; };
@@ -59,6 +62,9 @@
 		4A037DE22980623D0021ADF6 /* BindingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingButton.swift; sourceTree = "<group>"; };
 		4A037DE4298065720021ADF6 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		4A037DE629807CAF0021ADF6 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
+		4A037DEB298080BC0021ADF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A037DEC298080BC0021ADF6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4A037DF02980812C0021ADF6 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4A65C7E729804E66005B28BF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A65C7EA29804E66005B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A65C7EC29804E66005B28BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,24 @@
 				4A037DE029805AC10021ADF6 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A037DE8298080970021ADF6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4A037DEB298080BC0021ADF6 /* LoginViewController.swift */,
+				4A037DEC298080BC0021ADF6 /* LoginViewController.xib */,
+				4A037DEF2980812C0021ADF6 /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4A037DEF2980812C0021ADF6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A037DF02980812C0021ADF6 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4A65C7DE29804E66005B28BF = {
@@ -212,6 +236,7 @@
 		4A65C82329804E99005B28BF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4A037DE8298080970021ADF6 /* Login */,
 				4A65C82429804E99005B28BF /* Registration */,
 			);
 			path = Modules;
@@ -223,7 +248,6 @@
 				4A65C82629804E99005B28BF /* RegistrationViewController.swift */,
 				4A037DE4298065720021ADF6 /* RegistrationViewController.xib */,
 				4A65C82529804E99005B28BF /* ViewModel */,
-				4A65C82729804E99005B28BF /* Router */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -234,13 +258,6 @@
 				4A037DDA298058590021ADF6 /* RegisterationViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4A65C82729804E99005B28BF /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		4A65C82F29804EAB005B28BF /* Main */ = {
@@ -367,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A037DEE298080BC0021ADF6 /* LoginViewController.xib in Resources */,
 				4A65C7F729804E68005B28BF /* LaunchScreen.storyboard in Resources */,
 				4A037DE5298065720021ADF6 /* RegistrationViewController.xib in Resources */,
 				4A037DD5298057540021ADF6 /* Assets.xcassets in Resources */,
@@ -399,9 +417,11 @@
 				4A65C82E29804E99005B28BF /* RegistrationViewController.swift in Sources */,
 				4A037DE129805AC10021ADF6 /* UIView+Extension.swift in Sources */,
 				4A65C83229804EEA005B28BF /* Colors.swift in Sources */,
+				4A037DED298080BC0021ADF6 /* LoginViewController.swift in Sources */,
 				4A65C82C29804E99005B28BF /* Observable.swift in Sources */,
 				4A65C82A29804E99005B28BF /* AppWindowManager.swift in Sources */,
 				4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */,
+				4A037DF12980812C0021ADF6 /* LoginViewModel.swift in Sources */,
 				4A65C82D29804E99005B28BF /* MainThreadChecker.swift in Sources */,
 				4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */,
 				4A037DD8298058330021ADF6 /* BindingTextField.swift in Sources */,

@@ -72,7 +72,7 @@ extension BindingButton {
     }
 }
 
-//MARK: - Textfield Events
+//MARK: - Button Events
 extension BindingButton {
     @objc func didTap(_ textField: UITextField) {
         buttonPressed()
