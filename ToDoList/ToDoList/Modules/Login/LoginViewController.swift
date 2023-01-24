@@ -46,8 +46,6 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     func updateUI() {
-        title = "Welcome"
-        
         logoImageView.roundCorners(radius: 8, borderWidth: 0, borderColor: .accentColor)
         
         emailTextField.isEnabled = true
@@ -91,4 +89,3 @@ extension LoginViewController {
         }
     }
 }
-

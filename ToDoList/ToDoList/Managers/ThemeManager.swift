@@ -17,19 +17,23 @@ enum ThemeManager {
 //MARK: - UINavigationBar Appearance
 private extension ThemeManager {
     static func configureNavigationBarAppearance() {
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithDefaultBackground()
-            appearance.backgroundColor = .accentColor
-            appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            appearance.titleTextAttributes  = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        } else {
-            UINavigationBar.appearance().barTintColor = .accentColor
-            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        }
+        let image = UIImage(systemName: "chevron.backward")?.withTintColor(.white, renderingMode: .alwaysOriginal) // fix indicator color
+        
+        let buttonAppearance = UIBarButtonItemAppearance()
+        buttonAppearance.normal.titleTextAttributes = [.foregroundColor : UIColor.white]
+        buttonAppearance.normal.backgroundImage?.withTintColor(.white)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.buttonAppearance = buttonAppearance
+        appearance.setBackIndicatorImage(image, transitionMaskImage: image)
+        appearance.backgroundColor = .accentColor
+        appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes  = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.backButtonAppearance.configureWithDefault(for: .plain)
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
+
