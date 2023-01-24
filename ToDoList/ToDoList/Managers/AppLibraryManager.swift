@@ -4,12 +4,10 @@
 //
 //  Created by Taimur Mushtaq on 24/01/2023.
 //
-
-//import Alamofire
-//import AlamofireImage
+import FirebaseCore
 
 enum AppLibManager {
     static func configure() {
-//        Alamofire.DataRequest.addAcceptableImageContentTypes(["image/jpg"])
+        FirebaseApp.configure()
     }
 }

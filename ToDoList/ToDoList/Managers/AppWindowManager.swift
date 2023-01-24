@@ -20,7 +20,7 @@ enum AppWindowManager {
     }
 }
 
-private extension AppWindowManager {
+extension AppWindowManager {
     static var window: UIWindow? {
         get {
             return (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window

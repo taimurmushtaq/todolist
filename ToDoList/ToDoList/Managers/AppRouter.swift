@@ -11,7 +11,7 @@ protocol RouterProtocol: AnyObject {
     var controller: UIViewController? { get set }
     init(_ controller: UIViewController?)
     
-    func routeToRegistration()
+    func routeToRegisteration()
 }
 
 class AppRouter: RouterProtocol {
@@ -21,7 +21,7 @@ class AppRouter: RouterProtocol {
         self.controller = controller
     }
     
-    func routeToRegistration() {
+    func routeToRegisteration() {
         let nextController = AppFactory.registerViewController(router: self)
         controller?.navigationController?.pushViewController(nextController, animated: true)
     }

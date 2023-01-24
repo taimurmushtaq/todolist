@@ -10,7 +10,7 @@ import UIKit
 protocol AppFactoryProtocol {
     static func navigationController() -> UINavigationController
     static func loginViewController() -> LoginViewController
-    static func registerViewController(router: RouterProtocol) -> RegistrationViewController
+    static func registerViewController(router: RouterProtocol) -> RegisterationViewController
 }
 
 class AppFactory: AppFactoryProtocol {
@@ -21,16 +21,16 @@ class AppFactory: AppFactoryProtocol {
     }
     
     static func loginViewController() -> LoginViewController {
-        let viewModel = LoginViewModel()
+        let viewModel = LoginViewModel(LoginNetworkService())
         let controller = LoginViewController(viewModel: viewModel)
         controller.router = AppRouter(controller)
         
         return controller
     }
     
-    static func registerViewController(router: RouterProtocol) -> RegistrationViewController {
-        let viewModel = RegisterationViewModel()
-        let controller = RegistrationViewController(viewModel: viewModel)
+    static func registerViewController(router: RouterProtocol) -> RegisterationViewController {
+        let viewModel = RegisterationViewModel(RegisterationNetworkService())
+        let controller = RegisterationViewController(viewModel: viewModel)
         controller.router = router
         
         return controller

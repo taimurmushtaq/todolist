@@ -15,6 +15,11 @@ struct LoginViewModel {
     
     //MARK: - Properties
     private let validator = ValidationManager()
+    private let networkService: LoginNetworkServiceProtocol
+    
+    init(_ networkService: LoginNetworkServiceProtocol) {
+        self.networkService = networkService
+    }
 }
 
 extension LoginViewModel {
@@ -26,5 +31,16 @@ extension LoginViewModel {
         } else  {
             validateFields.value = true
         }
+    }
+    
+    func performLogin() {
+        networkService.performLogin(withEmail: email.value, password: password.value, onCompletion: { result in
+            switch result {
+            case .success(let user):
+                ToastManager.showMessage("Login Successfull")
+            case .failure(let error):
+                ToastManager.showMessage(error.localizedDescription ?? "Some thing went wrong. Please try again")
+            }
+        })
     }
 }

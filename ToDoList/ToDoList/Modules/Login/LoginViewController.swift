@@ -36,6 +36,12 @@ class LoginViewController: UIViewController {
         
         updateUI()
         bindViews()
+        
+#if DEBUG
+        viewModel.email.value = "taimur.1989@gmail.com"
+        viewModel.password.value = "Password"
+        viewModel.performValidation()
+#endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,11 +77,11 @@ extension LoginViewController {
         }
         
         loginButton.bind { [weak self] in
-            
+            self?.viewModel.performLogin()
         }
         
         registerButton.bind { [weak self] in
-            self?.router.routeToRegistration()
+            self?.router.routeToRegisteration()
         }
         
         viewModel.email.bind { [weak self] value in

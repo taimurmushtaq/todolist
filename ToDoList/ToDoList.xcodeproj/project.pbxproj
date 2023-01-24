@@ -13,11 +13,17 @@
 		4A037DDE298058C80021ADF6 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DDD298058C80021ADF6 /* ValidationManager.swift */; };
 		4A037DE129805AC10021ADF6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DE029805AC10021ADF6 /* UIView+Extension.swift */; };
 		4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DE22980623D0021ADF6 /* BindingButton.swift */; };
-		4A037DE5298065720021ADF6 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A037DE4298065720021ADF6 /* RegistrationViewController.xib */; };
+		4A037DE5298065720021ADF6 /* RegisterationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A037DE4298065720021ADF6 /* RegisterationViewController.xib */; };
 		4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DE629807CAF0021ADF6 /* PaddingTextField.swift */; };
 		4A037DED298080BC0021ADF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DEB298080BC0021ADF6 /* LoginViewController.swift */; };
 		4A037DEE298080BC0021ADF6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A037DEC298080BC0021ADF6 /* LoginViewController.xib */; };
 		4A037DF12980812C0021ADF6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DF02980812C0021ADF6 /* LoginViewModel.swift */; };
+		4A037DF429808DDD0021ADF6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4A037DF329808DDD0021ADF6 /* FirebaseAuth */; };
+		4A037DF62980910F0021ADF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A037DF52980910F0021ADF6 /* GoogleService-Info.plist */; };
+		4A037DF9298091D70021ADF6 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 4A037DF8298091D70021ADF6 /* MBProgressHUD */; };
+		4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFA298092030021ADF6 /* ToastManager.swift */; };
+		4A037DFD2980967F0021ADF6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFC2980967F0021ADF6 /* NetworkService.swift */; };
+		4A037E0029809D4D0021ADF6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFF29809D4D0021ADF6 /* UserModel.swift */; };
 		4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EA29804E66005B28BF /* AppDelegate.swift */; };
 		4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EC29804E66005B28BF /* SceneDelegate.swift */; };
 		4A65C7F229804E66005B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A65C7F029804E66005B28BF /* Main.storyboard */; };
@@ -31,7 +37,7 @@
 		4A65C82B29804E99005B28BF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81F29804E99005B28BF /* BaseViewModel.swift */; };
 		4A65C82C29804E99005B28BF /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C82029804E99005B28BF /* Observable.swift */; };
 		4A65C82D29804E99005B28BF /* MainThreadChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C82129804E99005B28BF /* MainThreadChecker.swift */; };
-		4A65C82E29804E99005B28BF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C82629804E99005B28BF /* RegistrationViewController.swift */; };
+		4A65C82E29804E99005B28BF /* RegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C82629804E99005B28BF /* RegisterationViewController.swift */; };
 		4A65C83229804EEA005B28BF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83129804EEA005B28BF /* Colors.swift */; };
 		4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83329804F1D005B28BF /* AppRouter.swift */; };
 		4A65C83629804F1D005B28BF /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83429804F1D005B28BF /* AppFactory.swift */; };
@@ -60,11 +66,15 @@
 		4A037DDD298058C80021ADF6 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		4A037DE029805AC10021ADF6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4A037DE22980623D0021ADF6 /* BindingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingButton.swift; sourceTree = "<group>"; };
-		4A037DE4298065720021ADF6 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		4A037DE4298065720021ADF6 /* RegisterationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterationViewController.xib; sourceTree = "<group>"; };
 		4A037DE629807CAF0021ADF6 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		4A037DEB298080BC0021ADF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A037DEC298080BC0021ADF6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4A037DF02980812C0021ADF6 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4A037DF52980910F0021ADF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A037DFA298092030021ADF6 /* ToastManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		4A037DFC2980967F0021ADF6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4A037DFF29809D4D0021ADF6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4A65C7E729804E66005B28BF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A65C7EA29804E66005B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A65C7EC29804E66005B28BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +93,7 @@
 		4A65C81F29804E99005B28BF /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4A65C82029804E99005B28BF /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		4A65C82129804E99005B28BF /* MainThreadChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainThreadChecker.swift; sourceTree = "<group>"; };
-		4A65C82629804E99005B28BF /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		4A65C82629804E99005B28BF /* RegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterationViewController.swift; sourceTree = "<group>"; };
 		4A65C83129804EEA005B28BF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4A65C83329804F1D005B28BF /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		4A65C83429804F1D005B28BF /* AppFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
@@ -94,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A037DF9298091D70021ADF6 /* MBProgressHUD in Frameworks */,
+				4A037DF429808DDD0021ADF6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +162,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4A037DFE298099A90021ADF6 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				4A037DFC2980967F0021ADF6 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		4A037E0129809D520021ADF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A037DFF29809D4D0021ADF6 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4A65C7DE29804E66005B28BF = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +208,8 @@
 				4A037DDF29805AA50021ADF6 /* Extensions */,
 				4A037DD62980581C0021ADF6 /* UIComponents */,
 				4A65C82329804E99005B28BF /* Modules */,
-				4A65C82229804E99005B28BF /* Networking */,
+				4A037E0129809D520021ADF6 /* Models */,
+				4A037DFE298099A90021ADF6 /* NetworkService */,
 				4A65C83029804EB2005B28BF /* Resources */,
 			);
 			path = ToDoList;
@@ -206,6 +235,7 @@
 		4A65C81A29804E98005B28BF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A65C83429804F1D005B28BF /* AppFactory.swift */,
 				4A65C83329804F1D005B28BF /* AppRouter.swift */,
 				4A65C81B29804E98005B28BF /* AppLibraryManager.swift */,
@@ -226,13 +256,6 @@
 			path = Architecture;
 			sourceTree = "<group>";
 		};
-		4A65C82229804E99005B28BF /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		4A65C82329804E99005B28BF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,8 +268,8 @@
 		4A65C82429804E99005B28BF /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				4A65C82629804E99005B28BF /* RegistrationViewController.swift */,
-				4A037DE4298065720021ADF6 /* RegistrationViewController.xib */,
+				4A65C82629804E99005B28BF /* RegisterationViewController.swift */,
+				4A037DE4298065720021ADF6 /* RegisterationViewController.xib */,
 				4A65C82529804E99005B28BF /* ViewModel */,
 			);
 			path = Registration;
@@ -274,6 +297,7 @@
 		4A65C83029804EB2005B28BF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A037DF52980910F0021ADF6 /* GoogleService-Info.plist */,
 				4A65C83129804EEA005B28BF /* Colors.swift */,
 				4A65C7F329804E68005B28BF /* Assets.xcassets */,
 			);
@@ -296,6 +320,10 @@
 			dependencies = (
 			);
 			name = ToDoList;
+			packageProductDependencies = (
+				4A037DF329808DDD0021ADF6 /* FirebaseAuth */,
+				4A037DF8298091D70021ADF6 /* MBProgressHUD */,
+			);
 			productName = ToDoList;
 			productReference = 4A65C7E729804E66005B28BF /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
@@ -368,6 +396,10 @@
 				Base,
 			);
 			mainGroup = 4A65C7DE29804E66005B28BF;
+			packageReferences = (
+				4A037DF229808DDD0021ADF6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4A037DF7298091D70021ADF6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+			);
 			productRefGroup = 4A65C7E829804E66005B28BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -386,9 +418,10 @@
 			files = (
 				4A037DEE298080BC0021ADF6 /* LoginViewController.xib in Resources */,
 				4A65C7F729804E68005B28BF /* LaunchScreen.storyboard in Resources */,
-				4A037DE5298065720021ADF6 /* RegistrationViewController.xib in Resources */,
+				4A037DE5298065720021ADF6 /* RegisterationViewController.xib in Resources */,
 				4A037DD5298057540021ADF6 /* Assets.xcassets in Resources */,
 				4A65C7F229804E66005B28BF /* Main.storyboard in Resources */,
+				4A037DF62980910F0021ADF6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,9 +446,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A037DFD2980967F0021ADF6 /* NetworkService.swift in Sources */,
 				4A037DDE298058C80021ADF6 /* ValidationManager.swift in Sources */,
-				4A65C82E29804E99005B28BF /* RegistrationViewController.swift in Sources */,
+				4A65C82E29804E99005B28BF /* RegisterationViewController.swift in Sources */,
+				4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */,
 				4A037DE129805AC10021ADF6 /* UIView+Extension.swift in Sources */,
+				4A037E0029809D4D0021ADF6 /* UserModel.swift in Sources */,
 				4A65C83229804EEA005B28BF /* Colors.swift in Sources */,
 				4A037DED298080BC0021ADF6 /* LoginViewController.swift in Sources */,
 				4A65C82C29804E99005B28BF /* Observable.swift in Sources */,
@@ -626,7 +662,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.innovationfactory.ToDoList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innovationfactory.todolist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -661,7 +697,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.innovationfactory.ToDoList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innovationfactory.todolist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -788,6 +824,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A037DF229808DDD0021ADF6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		4A037DF7298091D70021ADF6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A037DF329808DDD0021ADF6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A037DF229808DDD0021ADF6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4A037DF8298091D70021ADF6 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A037DF7298091D70021ADF6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A65C7DF29804E66005B28BF /* Project object */;
 }

@@ -8,11 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="ToDoList" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterationViewController" customModule="ToDoList" customModuleProvider="target">
             <connections>
                 <outlet property="confirmPasswordTextField" destination="9Pg-dP-0Yy" id="rRh-10-DrP"/>
                 <outlet property="emailTextField" destination="6WA-3K-xHM" id="sPs-Ru-0Cb"/>
-                <outlet property="nameTextField" destination="Q2t-2b-Akc" id="iOF-aX-P0Y"/>
                 <outlet property="passwordTextField" destination="5qM-eU-1He" id="ia9-dm-3vu"/>
                 <outlet property="registerButton" destination="IeZ-bW-w3H" id="mRi-uN-jkM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="N7t-QV-TBz"/>
@@ -32,46 +31,18 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-uY-dpe">
                                     <rect key="frame" x="32" y="32" width="329.33333333333331" height="296"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" id="lnz-qm-DrI">
-                                            <rect key="frame" x="0.0" y="0.0" width="329.33333333333331" height="65"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fL-ge-5En">
-                                                    <rect key="frame" x="0.0" y="0.0" width="64.333333333333329" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2t-2b-Akc" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="wsD-nL-yCn"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Q2t-2b-Akc" secondAttribute="bottom" id="DKv-iG-g2a"/>
-                                                <constraint firstItem="3fL-ge-5En" firstAttribute="top" secondItem="lnz-qm-DrI" secondAttribute="top" id="EuY-XZ-3R6"/>
-                                                <constraint firstAttribute="trailing" secondItem="Q2t-2b-Akc" secondAttribute="trailing" id="GX0-Ck-JYS"/>
-                                                <constraint firstItem="3fL-ge-5En" firstAttribute="leading" secondItem="lnz-qm-DrI" secondAttribute="leading" id="M89-8d-k4R"/>
-                                                <constraint firstItem="Q2t-2b-Akc" firstAttribute="leading" secondItem="lnz-qm-DrI" secondAttribute="leading" id="NHD-gn-ahf"/>
-                                                <constraint firstItem="Q2t-2b-Akc" firstAttribute="top" secondItem="3fL-ge-5En" secondAttribute="bottom" constant="8" id="wc2-JH-gXp"/>
-                                            </constraints>
-                                        </view>
                                         <view contentMode="scaleToFill" id="au3-82-dTe">
-                                            <rect key="frame" x="0.0" y="77" width="329.33333333333331" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="329.33333333333331" height="90.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-Xf-MX1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="38.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="abc@xyz.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-3K-xHM" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666671" width="329.33333333333331" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="XXj-YJ-AZd"/>
                                                     </constraints>
@@ -89,17 +60,17 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" id="fUp-oe-EIo">
-                                            <rect key="frame" x="0.0" y="154" width="329.33333333333331" height="65"/>
+                                            <rect key="frame" x="0.0" y="102.66666666666666" width="329.33333333333331" height="90.666666666666657"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-kj-opN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="38.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5qM-eU-1He" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666686" width="329.33333333333331" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="iiZ-Qn-3rJ"/>
                                                     </constraints>
@@ -117,17 +88,17 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" id="Dyi-9Y-0EW">
-                                            <rect key="frame" x="0.0" y="231" width="329.33333333333331" height="65"/>
+                                            <rect key="frame" x="0.0" y="205.33333333333334" width="329.33333333333331" height="90.666666666666657"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18L-7o-lPM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="38.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Pg-dP-0Yy" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666657" width="329.33333333333331" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Tem-22-FSd"/>
                                                     </constraints>

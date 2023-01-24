@@ -1,5 +1,5 @@
 //
-//  RegistrationViewController.swift
+//  RegisterationViewController.swift
 //  ToDoList
 //
 //  Created by Taimur Mushtaq on 24/01/2023.
@@ -7,10 +7,9 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegisterationViewController: UIViewController {
     
     //MARK: - IBOutlet
-    @IBOutlet weak var nameTextField: BindingTextField!
     @IBOutlet weak var emailTextField: BindingTextField!
     @IBOutlet weak var passwordTextField: BindingTextField!
     @IBOutlet weak var confirmPasswordTextField: BindingTextField!
@@ -23,7 +22,7 @@ class RegistrationViewController: UIViewController {
     //MARK: - Init
     init(viewModel: RegisterationViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: "RegistrationViewController", bundle: .main)
+        super.init(nibName: "RegisterationViewController", bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +35,13 @@ class RegistrationViewController: UIViewController {
         
         updateUI()
         bindViews()
+        
+#if DEBUG
+        viewModel.email.value = "taimur.1989@gmail.com"
+        viewModel.password.value = "Password"
+        viewModel.confirmPassword.value = "Password"
+        viewModel.performValidation()
+#endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,11 +50,10 @@ class RegistrationViewController: UIViewController {
     }
 }
 
-extension RegistrationViewController {
+extension RegisterationViewController {
     func updateUI() {
         title = "SIGN UP"
         
-        nameTextField.isEnabled = true
         emailTextField.isEnabled = true
         passwordTextField.isEnabled = true
         confirmPasswordTextField.isEnabled = true
@@ -59,10 +64,6 @@ extension RegistrationViewController {
     }
     
     func bindViews() {
-        nameTextField.bind { [weak self] value in
-            self?.viewModel.name.value = value
-            self?.viewModel.performValidation()
-        }
         emailTextField.bind { [weak self] value in
             self?.viewModel.email.value = value
             self?.viewModel.performValidation()
@@ -77,12 +78,9 @@ extension RegistrationViewController {
         }
         
         registerButton.bind { [weak self] in
-            
+            self?.viewModel.performRegisteration()
         }
         
-        viewModel.name.bind { [weak self] value in
-            self?.nameTextField.text = value
-        }
         viewModel.email.bind { [weak self] value in
             self?.emailTextField.text = value
         }
@@ -94,6 +92,11 @@ extension RegistrationViewController {
         }
         viewModel.validateFields.bind { [weak self] isValidated in
             self?.registerButton.isEnabled = isValidated
+        }
+        
+        viewModel.RegisterationSuccessfull.bind { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+            ToastManager.showMessage("Registeration Successfull.\nPlease login with your credentials")
         }
     }
 }
