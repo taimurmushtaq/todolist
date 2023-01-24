@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="ToDoList" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmPasswordTextField" destination="9Pg-dP-0Yy" id="rRh-10-DrP"/>
+                <outlet property="emailTextField" destination="6WA-3K-xHM" id="sPs-Ru-0Cb"/>
+                <outlet property="nameTextField" destination="Q2t-2b-Akc" id="iOF-aX-P0Y"/>
+                <outlet property="passwordTextField" destination="5qM-eU-1He" id="ia9-dm-3vu"/>
+                <outlet property="registerButton" destination="IeZ-bW-w3H" id="mRi-uN-jkM"/>
+                <outlet property="view" destination="iN0-l3-epB" id="N7t-QV-TBz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4L-lC-Ll6">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxV-hY-vt8">
+                            <rect key="frame" x="0.0" y="0.0" width="393.33333333333331" height="436"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-uY-dpe">
+                                    <rect key="frame" x="32" y="32" width="329.33333333333331" height="296"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" id="lnz-qm-DrI">
+                                            <rect key="frame" x="0.0" y="0.0" width="329.33333333333331" height="65"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fL-ge-5En">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64.333333333333329" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2t-2b-Akc" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="wsD-nL-yCn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Q2t-2b-Akc" secondAttribute="bottom" id="DKv-iG-g2a"/>
+                                                <constraint firstItem="3fL-ge-5En" firstAttribute="top" secondItem="lnz-qm-DrI" secondAttribute="top" id="EuY-XZ-3R6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q2t-2b-Akc" secondAttribute="trailing" id="GX0-Ck-JYS"/>
+                                                <constraint firstItem="3fL-ge-5En" firstAttribute="leading" secondItem="lnz-qm-DrI" secondAttribute="leading" id="M89-8d-k4R"/>
+                                                <constraint firstItem="Q2t-2b-Akc" firstAttribute="leading" secondItem="lnz-qm-DrI" secondAttribute="leading" id="NHD-gn-ahf"/>
+                                                <constraint firstItem="Q2t-2b-Akc" firstAttribute="top" secondItem="3fL-ge-5En" secondAttribute="bottom" constant="8" id="wc2-JH-gXp"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" id="au3-82-dTe">
+                                            <rect key="frame" x="0.0" y="77" width="329.33333333333331" height="65"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-Xf-MX1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="abc@xyz.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-3K-xHM" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="XXj-YJ-AZd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6WA-3K-xHM" firstAttribute="top" secondItem="3Kk-Xf-MX1" secondAttribute="bottom" constant="8" id="4Jm-Zk-3HH"/>
+                                                <constraint firstAttribute="trailing" secondItem="6WA-3K-xHM" secondAttribute="trailing" id="949-Q0-CsP"/>
+                                                <constraint firstAttribute="bottom" secondItem="6WA-3K-xHM" secondAttribute="bottom" id="Fe4-2m-hYJ"/>
+                                                <constraint firstItem="3Kk-Xf-MX1" firstAttribute="leading" secondItem="au3-82-dTe" secondAttribute="leading" id="YAy-M9-ru5"/>
+                                                <constraint firstItem="6WA-3K-xHM" firstAttribute="leading" secondItem="au3-82-dTe" secondAttribute="leading" id="hTa-42-M2I"/>
+                                                <constraint firstItem="3Kk-Xf-MX1" firstAttribute="top" secondItem="au3-82-dTe" secondAttribute="top" id="vAd-bz-7Oi"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" id="fUp-oe-EIo">
+                                            <rect key="frame" x="0.0" y="154" width="329.33333333333331" height="65"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-kj-opN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5qM-eU-1He" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="iiZ-Qn-3rJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aDI-kj-opN" firstAttribute="top" secondItem="fUp-oe-EIo" secondAttribute="top" id="322-Kb-bp7"/>
+                                                <constraint firstAttribute="trailing" secondItem="5qM-eU-1He" secondAttribute="trailing" id="GOU-RR-FnP"/>
+                                                <constraint firstItem="5qM-eU-1He" firstAttribute="top" secondItem="aDI-kj-opN" secondAttribute="bottom" constant="8" id="HSR-b6-BiZ"/>
+                                                <constraint firstItem="5qM-eU-1He" firstAttribute="leading" secondItem="fUp-oe-EIo" secondAttribute="leading" id="jY1-Vn-daB"/>
+                                                <constraint firstItem="aDI-kj-opN" firstAttribute="leading" secondItem="fUp-oe-EIo" secondAttribute="leading" id="wLU-yS-AXs"/>
+                                                <constraint firstAttribute="bottom" secondItem="5qM-eU-1He" secondAttribute="bottom" id="wU6-6e-f45"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" id="Dyi-9Y-0EW">
+                                            <rect key="frame" x="0.0" y="231" width="329.33333333333331" height="65"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18L-7o-lPM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Pg-dP-0Yy" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="21" width="329.33333333333331" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="Tem-22-FSd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="18L-7o-lPM" firstAttribute="leading" secondItem="Dyi-9Y-0EW" secondAttribute="leading" id="5Sa-Ai-bek"/>
+                                                <constraint firstItem="9Pg-dP-0Yy" firstAttribute="leading" secondItem="Dyi-9Y-0EW" secondAttribute="leading" id="Edh-qt-b8A"/>
+                                                <constraint firstItem="9Pg-dP-0Yy" firstAttribute="top" secondItem="18L-7o-lPM" secondAttribute="bottom" constant="8" id="NB6-C8-3xd"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Pg-dP-0Yy" secondAttribute="bottom" id="S8U-ZG-hY6"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Pg-dP-0Yy" secondAttribute="trailing" id="SGA-Fl-aZw"/>
+                                                <constraint firstItem="18L-7o-lPM" firstAttribute="top" secondItem="Dyi-9Y-0EW" secondAttribute="top" id="vqI-Ah-l5y"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-bW-w3H" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="360" width="329.33333333333331" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="e9a-BQ-QGJ"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="IeZ-bW-w3H" secondAttribute="trailing" constant="32" id="FiB-7u-lNF"/>
+                                <constraint firstAttribute="bottom" secondItem="IeZ-bW-w3H" secondAttribute="bottom" constant="32" id="JXD-2W-clo"/>
+                                <constraint firstItem="iCc-uY-dpe" firstAttribute="top" secondItem="OxV-hY-vt8" secondAttribute="top" constant="32" id="Lc6-h2-7pv"/>
+                                <constraint firstItem="IeZ-bW-w3H" firstAttribute="top" secondItem="iCc-uY-dpe" secondAttribute="bottom" constant="32" id="Wd4-Wl-BaH"/>
+                                <constraint firstItem="iCc-uY-dpe" firstAttribute="leading" secondItem="OxV-hY-vt8" secondAttribute="leading" constant="32" id="arg-YH-4ZD"/>
+                                <constraint firstItem="IeZ-bW-w3H" firstAttribute="leading" secondItem="OxV-hY-vt8" secondAttribute="leading" constant="32" id="mDc-XF-EU2"/>
+                                <constraint firstAttribute="trailing" secondItem="iCc-uY-dpe" secondAttribute="trailing" constant="32" id="nv2-N0-Cu3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="OxV-hY-vt8" secondAttribute="bottom" id="bWi-lo-fNS"/>
+                        <constraint firstItem="OxV-hY-vt8" firstAttribute="top" secondItem="C4L-lC-Ll6" secondAttribute="top" id="cvP-Gm-Gab"/>
+                        <constraint firstAttribute="trailing" secondItem="OxV-hY-vt8" secondAttribute="trailing" id="uwT-UP-mzL"/>
+                        <constraint firstItem="OxV-hY-vt8" firstAttribute="leading" secondItem="C4L-lC-Ll6" secondAttribute="leading" id="z7u-bu-CL8"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="4JA-YS-85k"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <constraints>
+                <constraint firstItem="C4L-lC-Ll6" firstAttribute="trailing" secondItem="4JA-YS-85k" secondAttribute="trailing" id="AQF-yL-iNe"/>
+                <constraint firstItem="OxV-hY-vt8" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1.00085" id="DJ2-xO-a3v"/>
+                <constraint firstItem="C4L-lC-Ll6" firstAttribute="leading" secondItem="4JA-YS-85k" secondAttribute="leading" id="YU4-mt-8S3"/>
+                <constraint firstItem="C4L-lC-Ll6" firstAttribute="bottom" secondItem="4JA-YS-85k" secondAttribute="bottom" id="hxh-cb-ik1"/>
+                <constraint firstItem="C4L-lC-Ll6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i2d-4f-MEd"/>
+            </constraints>
+            <point key="canvasLocation" x="-335.1145038167939" y="-107.04225352112677"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="IeZ-bW-w3H">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

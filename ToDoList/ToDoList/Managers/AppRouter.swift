@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  AppRouter.swift
 //  ToDoList
 //
 //  Created by Taimur Mushtaq on 24/01/2023.
@@ -12,7 +12,7 @@ protocol RouterProtocol: AnyObject {
     init(_ controller: UIViewController?)
 }
 
-class TDLRouter: RouterProtocol {
+class AppRouter: RouterProtocol {
     weak var controller: UIViewController?
     
     required init(_ controller: UIViewController?) {

@@ -20,7 +20,7 @@ private extension ThemeManager {
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithDefaultBackground()
-            appearance.backgroundColor = UIColor.accentColor
+            appearance.backgroundColor = .accentColor
             appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             appearance.titleTextAttributes  = [NSAttributedString.Key.foregroundColor: UIColor.white]
             
@@ -28,7 +28,7 @@ private extension ThemeManager {
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
     
         } else {
-            UINavigationBar.appearance().barTintColor = UIColor.accentColor
+            UINavigationBar.appearance().barTintColor = .accentColor
             UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }
