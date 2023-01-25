@@ -11,6 +11,8 @@ import UIKit
 class BindingTextField: PaddingTextField {
     //MARK: - Variables
     var textChanged: (String) -> Void = { _ in }
+    var didEndEditing: () -> Void = { }
+    
     override var isEnabled: Bool { didSet { configureUI() } }
     
     //MARK: - Lifecycle
@@ -33,6 +35,7 @@ class BindingTextField: PaddingTextField {
 extension BindingTextField {
     func configureSelectors() {
         addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingDidEnd)
     }
     
     func configureUI() {
@@ -43,6 +46,9 @@ extension BindingTextField {
     func bind(callback: @escaping (String) -> Void) {
         textChanged = callback
     }
+    func bindEndEditing(callback: @escaping () -> Void) {
+        didEndEditing = callback
+    }
 }
 
 //MARK: - Textfield Events
@@ -51,5 +57,9 @@ extension BindingTextField {
         if let text = textField.text {
             textChanged(text)
         }
+    }
+    
+    @objc func textFieldDidEndEditing(_ textField: UITextField) {
+        didEndEditing()
     }
 }

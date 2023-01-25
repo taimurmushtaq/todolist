@@ -18,6 +18,15 @@ class SaveTaskViewController: BaseViewController {
     var viewModel:SaveTaskViewModel
     var router: RouterProtocol!
     
+    var datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .dateAndTime
+        picker.preferredDatePickerStyle = .automatic
+        picker.locale = Locale(identifier: "en_US")
+        picker.minimumDate = Date()
+        return picker
+    }()
+    
     //MARK: - Init
     init(viewModel: SaveTaskViewModel) {
         self.viewModel = viewModel
@@ -54,6 +63,8 @@ extension SaveTaskViewController {
         saveButton.enableTheme = true
         saveButton.isEnabled = false
         saveButton.theme = .filled
+        
+        dateTimeTextField.inputView = datePicker
     }
     
     func bindViews() {
@@ -63,6 +74,13 @@ extension SaveTaskViewController {
         }
         dateTimeTextField.bind { [weak self] value in
             self?.viewModel.dateTime.value = value
+            self?.viewModel.performValidation()
+        }
+        dateTimeTextField.bindEndEditing { [weak self] in
+            let dateString = self?.datePicker.date.convertToString(withFormat: DateFormats.taskTimerFormat.rawValue) ?? ""
+            
+            self?.dateTimeTextField.text = dateString
+            self?.viewModel.dateTime.value = dateString
             self?.viewModel.performValidation()
         }
         
