@@ -22,7 +22,7 @@
 		4A037DF62980910F0021ADF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A037DF52980910F0021ADF6 /* GoogleService-Info.plist */; };
 		4A037DF9298091D70021ADF6 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 4A037DF8298091D70021ADF6 /* MBProgressHUD */; };
 		4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFA298092030021ADF6 /* ToastManager.swift */; };
-		4A037DFD2980967F0021ADF6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFC2980967F0021ADF6 /* NetworkService.swift */; };
+		4A037DFD2980967F0021ADF6 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */; };
 		4A037E0029809D4D0021ADF6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFF29809D4D0021ADF6 /* UserModel.swift */; };
 		4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EA29804E66005B28BF /* AppDelegate.swift */; };
 		4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EC29804E66005B28BF /* SceneDelegate.swift */; };
@@ -41,6 +41,9 @@
 		4A65C83229804EEA005B28BF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83129804EEA005B28BF /* Colors.swift */; };
 		4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83329804F1D005B28BF /* AppRouter.swift */; };
 		4A65C83629804F1D005B28BF /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83429804F1D005B28BF /* AppFactory.swift */; };
+		4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F302980EEC500051703 /* AuthNetworkService.swift */; };
+		4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F322980F51500051703 /* RegisterationNetworkService.swift */; };
+		4A874F352980F56100051703 /* NetworkServiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F342980F56100051703 /* NetworkServiceEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +76,7 @@
 		4A037DF02980812C0021ADF6 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4A037DF52980910F0021ADF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A037DFA298092030021ADF6 /* ToastManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
-		4A037DFC2980967F0021ADF6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		4A037DFF29809D4D0021ADF6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4A65C7E729804E66005B28BF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A65C7EA29804E66005B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +100,9 @@
 		4A65C83129804EEA005B28BF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4A65C83329804F1D005B28BF /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		4A65C83429804F1D005B28BF /* AppFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		4A874F302980EEC500051703 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
+		4A874F322980F51500051703 /* RegisterationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationNetworkService.swift; sourceTree = "<group>"; };
+		4A874F342980F56100051703 /* NetworkServiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +171,10 @@
 		4A037DFE298099A90021ADF6 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				4A037DFC2980967F0021ADF6 /* NetworkService.swift */,
+				4A874F302980EEC500051703 /* AuthNetworkService.swift */,
+				4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */,
+				4A874F342980F56100051703 /* NetworkServiceEnum.swift */,
+				4A874F322980F51500051703 /* RegisterationNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -235,12 +244,12 @@
 		4A65C81A29804E98005B28BF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A65C83429804F1D005B28BF /* AppFactory.swift */,
-				4A65C83329804F1D005B28BF /* AppRouter.swift */,
 				4A65C81B29804E98005B28BF /* AppLibraryManager.swift */,
-				4A65C81C29804E98005B28BF /* ThemeManager.swift */,
+				4A65C83329804F1D005B28BF /* AppRouter.swift */,
 				4A65C81D29804E98005B28BF /* AppWindowManager.swift */,
+				4A65C81C29804E98005B28BF /* ThemeManager.swift */,
+				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A037DDD298058C80021ADF6 /* ValidationManager.swift */,
 			);
 			path = Managers;
@@ -446,7 +455,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A037DFD2980967F0021ADF6 /* NetworkService.swift in Sources */,
+				4A037DFD2980967F0021ADF6 /* LoginNetworkService.swift in Sources */,
+				4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */,
 				4A037DDE298058C80021ADF6 /* ValidationManager.swift in Sources */,
 				4A65C82E29804E99005B28BF /* RegisterationViewController.swift in Sources */,
 				4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */,
@@ -465,6 +475,8 @@
 				4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */,
 				4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */,
 				4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */,
+				4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */,
+				4A874F352980F56100051703 /* NetworkServiceEnum.swift in Sources */,
 				4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */,
 				4A037DDB298058590021ADF6 /* RegisterationViewModel.swift in Sources */,
 				4A65C82829804E99005B28BF /* AppLibraryManager.swift in Sources */,

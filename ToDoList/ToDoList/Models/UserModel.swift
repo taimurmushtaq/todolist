@@ -8,16 +8,18 @@
 import UIKit
 
 struct UserModel: Codable {
+    let uid: String
     let email: String
-    let password: String
+    let displayName: String?
 }
 
 extension UserModel: Hashable, Equatable {
     func hash(into hasher: inout Hasher) {
+        hasher.combine(uid)
         hasher.combine(email)
     }
     
     static func == (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.email == rhs.email
+        return lhs.uid == rhs.uid && lhs.email == rhs.email
     }
 }
