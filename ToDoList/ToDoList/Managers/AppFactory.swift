@@ -12,6 +12,7 @@ protocol AppFactoryProtocol {
     static func loginViewController() -> LoginViewController
     static func registerViewController(router: RouterProtocol) -> RegisterationViewController
     static func tasksListViewController() -> TasksListViewController
+    static func saveTaskViewController(router: RouterProtocol, taskViewModel: TaskViewModel?) -> SaveTaskViewController
 }
 
 class AppFactory: AppFactoryProtocol {
@@ -40,6 +41,14 @@ class AppFactory: AppFactoryProtocol {
         let controller = TasksListViewController(viewModel: viewModel)
         controller.router = AppRouter(controller)
 
+        return controller
+    }
+    
+    static func saveTaskViewController(router: RouterProtocol, taskViewModel: TaskViewModel?) -> SaveTaskViewController {
+        let viewModel = SaveTaskViewModel(SaveTaskNetworkService(), taskViewModel: taskViewModel )
+        let controller = SaveTaskViewController(viewModel: viewModel)
+        controller.router = router
+        
         return controller
     }
 }

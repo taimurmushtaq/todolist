@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SaveTaskViewController" customModule="ToDoList" customModuleProvider="target">
+            <connections>
+                <outlet property="dateTimeTextField" destination="5Eo-9z-A6X" id="zKw-FY-ygv"/>
+                <outlet property="saveButton" destination="AM1-BL-psv" id="KnU-1o-8fU"/>
+                <outlet property="titleTextField" destination="Z1E-Vi-8hP" id="EBc-kT-g20"/>
+                <outlet property="view" destination="bVZ-Z5-ZRk" id="QR4-KJ-yQO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bVZ-Z5-ZRk">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSj-3B-hZD">
+                    <rect key="frame" x="0.0" y="0.0" width="139" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjG-Ih-24p">
+                            <rect key="frame" x="0.0" y="0.0" width="139" height="436"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eZb-lN-SZX">
+                                    <rect key="frame" x="32" y="32" width="329.33333333333331" height="296"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" id="RnZ-y5-VeQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="329.33333333333331" height="142"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nq7-GV-ugo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="90"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1E-Vi-8hP" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="98" width="329.33333333333331" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="U4J-qo-WzC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Z1E-Vi-8hP" firstAttribute="top" secondItem="nq7-GV-ugo" secondAttribute="bottom" constant="8" id="AL8-t8-afb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z1E-Vi-8hP" secondAttribute="bottom" id="Cf9-Pv-NUh"/>
+                                                <constraint firstItem="nq7-GV-ugo" firstAttribute="top" secondItem="RnZ-y5-VeQ" secondAttribute="top" id="Cki-4Y-Xrj"/>
+                                                <constraint firstItem="Z1E-Vi-8hP" firstAttribute="leading" secondItem="RnZ-y5-VeQ" secondAttribute="leading" id="JBO-iX-KpE"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z1E-Vi-8hP" secondAttribute="trailing" id="itH-Jk-Y3S"/>
+                                                <constraint firstItem="nq7-GV-ugo" firstAttribute="leading" secondItem="RnZ-y5-VeQ" secondAttribute="leading" id="kMy-dH-SHC"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" id="cb7-Ij-DcP">
+                                            <rect key="frame" x="0.0" y="154" width="329.33333333333331" height="142"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T48-kl-5Vp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="90"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Eo-9z-A6X" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="98" width="329.33333333333331" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="7sx-7J-v6k"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="T48-kl-5Vp" firstAttribute="top" secondItem="cb7-Ij-DcP" secondAttribute="top" id="8id-2e-S2C"/>
+                                                <constraint firstItem="5Eo-9z-A6X" firstAttribute="top" secondItem="T48-kl-5Vp" secondAttribute="bottom" constant="8" id="Al6-vB-uQt"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Eo-9z-A6X" secondAttribute="trailing" id="IUX-VX-6g3"/>
+                                                <constraint firstItem="T48-kl-5Vp" firstAttribute="leading" secondItem="cb7-Ij-DcP" secondAttribute="leading" id="aIt-Ke-rx1"/>
+                                                <constraint firstItem="5Eo-9z-A6X" firstAttribute="leading" secondItem="cb7-Ij-DcP" secondAttribute="leading" id="tjr-Jx-zSx"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Eo-9z-A6X" secondAttribute="bottom" id="zQ2-gy-YMw"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM1-BL-psv" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="360" width="75" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="V5u-KH-jeo"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="AM1-BL-psv" secondAttribute="bottom" constant="32" id="0qr-Vc-2Ls"/>
+                                <constraint firstItem="AM1-BL-psv" firstAttribute="top" secondItem="eZb-lN-SZX" secondAttribute="bottom" constant="32" id="7Kz-Gg-FIu"/>
+                                <constraint firstItem="eZb-lN-SZX" firstAttribute="leading" secondItem="sjG-Ih-24p" secondAttribute="leading" constant="32" id="7LD-Tn-WTv"/>
+                                <constraint firstItem="AM1-BL-psv" firstAttribute="leading" secondItem="sjG-Ih-24p" secondAttribute="leading" constant="32" id="deK-Se-jjO"/>
+                                <constraint firstItem="eZb-lN-SZX" firstAttribute="top" secondItem="sjG-Ih-24p" secondAttribute="top" constant="32" id="flt-fz-zAd"/>
+                                <constraint firstAttribute="trailing" secondItem="eZb-lN-SZX" secondAttribute="trailing" constant="32" id="nmz-vg-BvB"/>
+                                <constraint firstAttribute="trailing" secondItem="AM1-BL-psv" secondAttribute="trailing" constant="32" id="sJb-Ql-qm7"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="sjG-Ih-24p" firstAttribute="top" secondItem="ZSj-3B-hZD" secondAttribute="top" id="76q-nE-j4h"/>
+                        <constraint firstItem="sjG-Ih-24p" firstAttribute="leading" secondItem="ZSj-3B-hZD" secondAttribute="leading" id="7lR-h0-lws"/>
+                        <constraint firstAttribute="trailing" secondItem="sjG-Ih-24p" secondAttribute="trailing" id="V5c-Xb-gSe"/>
+                        <constraint firstAttribute="bottom" secondItem="sjG-Ih-24p" secondAttribute="bottom" id="k4f-5B-mhH"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="YjA-F9-rfp"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <constraints>
+                <constraint firstItem="ZSj-3B-hZD" firstAttribute="leading" secondItem="YjA-F9-rfp" secondAttribute="leading" id="5FC-W7-aLp"/>
+                <constraint firstItem="ZSj-3B-hZD" firstAttribute="top" secondItem="bVZ-Z5-ZRk" secondAttribute="top" id="5FS-Iq-MrI"/>
+                <constraint firstItem="ZSj-3B-hZD" firstAttribute="bottom" secondItem="YjA-F9-rfp" secondAttribute="bottom" id="ASH-pN-A8I"/>
+                <constraint firstItem="sjG-Ih-24p" firstAttribute="width" secondItem="bVZ-Z5-ZRk" secondAttribute="width" id="CO3-hZ-7O7"/>
+                <constraint firstItem="ZSj-3B-hZD" firstAttribute="trailing" secondItem="YjA-F9-rfp" secondAttribute="trailing" id="jS1-wq-XsC"/>
+            </constraints>
+            <point key="canvasLocation" x="-335.1145038167939" y="-107.04225352112677"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

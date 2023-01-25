@@ -14,6 +14,8 @@ protocol RouterProtocol: AnyObject {
     func routeToRegisteration()
     func routToLogin()
     func routToTasks()
+    func routToSaveTasks(_ taskViewModel: TaskViewModel?)
+    func goBack()
 }
 
 class AppRouter: RouterProtocol {
@@ -21,6 +23,10 @@ class AppRouter: RouterProtocol {
     
     required init(_ controller: UIViewController?) {
         self.controller = controller
+    }
+    
+    func goBack(){
+        controller?.navigationController?.popViewController(animated: true)
     }
     
     func routeToRegisteration() {
@@ -40,5 +46,10 @@ class AppRouter: RouterProtocol {
         navController.viewControllers = [AppFactory.tasksListViewController()]
         
         AppWindowManager.window?.rootViewController = navController
+    }
+    
+    func routToSaveTasks(_ taskViewModel: TaskViewModel?) {
+        let nextController = AppFactory.saveTaskViewController(router: self, taskViewModel: taskViewModel)
+        controller?.navigationController?.pushViewController(nextController, animated: true)
     }
 }

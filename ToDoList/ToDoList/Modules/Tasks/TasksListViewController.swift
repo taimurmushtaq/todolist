@@ -135,7 +135,9 @@ extension TasksListViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension TasksListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ToastManager.showMessage("TaskCell Selected")
+        if let task = viewModel.item(atIndex: indexPath) {
+            router.routToSaveTasks(task)
+        }
     }
 }
 

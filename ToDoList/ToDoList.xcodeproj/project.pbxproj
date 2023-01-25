@@ -24,6 +24,11 @@
 		4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFA298092030021ADF6 /* ToastManager.swift */; };
 		4A037DFD2980967F0021ADF6 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */; };
 		4A037E0029809D4D0021ADF6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A037DFF29809D4D0021ADF6 /* UserModel.swift */; };
+		4A4BF17C298160D30008AA34 /* SaveTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF17B298160D30008AA34 /* SaveTaskViewController.swift */; };
+		4A4BF17E298160DE0008AA34 /* SaveTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4BF17D298160DE0008AA34 /* SaveTaskViewController.xib */; };
+		4A4BF1832981620E0008AA34 /* SaveTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF1822981620E0008AA34 /* SaveTaskViewModel.swift */; };
+		4A4BF185298162970008AA34 /* SaveTaskNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF184298162970008AA34 /* SaveTaskNetworkService.swift */; };
+		4A4BF18929816AF50008AA34 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A4BF18829816AF50008AA34 /* IQKeyboardManagerSwift */; };
 		4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EA29804E66005B28BF /* AppDelegate.swift */; };
 		4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EC29804E66005B28BF /* SceneDelegate.swift */; };
 		4A65C7F229804E66005B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A65C7F029804E66005B28BF /* Main.storyboard */; };
@@ -90,6 +95,10 @@
 		4A037DFA298092030021ADF6 /* ToastManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 		4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		4A037DFF29809D4D0021ADF6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4A4BF17B298160D30008AA34 /* SaveTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTaskViewController.swift; sourceTree = "<group>"; };
+		4A4BF17D298160DE0008AA34 /* SaveTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveTaskViewController.xib; sourceTree = "<group>"; };
+		4A4BF1822981620E0008AA34 /* SaveTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTaskViewModel.swift; sourceTree = "<group>"; };
+		4A4BF184298162970008AA34 /* SaveTaskNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTaskNetworkService.swift; sourceTree = "<group>"; };
 		4A65C7E729804E66005B28BF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A65C7EA29804E66005B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A65C7EC29804E66005B28BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4BF18929816AF50008AA34 /* IQKeyboardManagerSwift in Frameworks */,
 				4A874F532981213500051703 /* FirebaseDatabaseSwift in Frameworks */,
 				4A874F512981213500051703 /* FirebaseDatabase in Frameworks */,
 				4A037DF9298091D70021ADF6 /* MBProgressHUD in Frameworks */,
@@ -200,6 +210,7 @@
 				4A874F302980EEC500051703 /* AuthNetworkService.swift */,
 				4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */,
 				4A874F322980F51500051703 /* RegisterationNetworkService.swift */,
+				4A4BF184298162970008AA34 /* SaveTaskNetworkService.swift */,
 				4A874F3E2981031900051703 /* TasksNetworkService.swift */,
 			);
 			path = NetworkService;
@@ -346,6 +357,8 @@
 		4A874F362980F7F100051703 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				4A4BF17B298160D30008AA34 /* SaveTaskViewController.swift */,
+				4A4BF17D298160DE0008AA34 /* SaveTaskViewController.xib */,
 				4A874F372980F81000051703 /* TasksListViewController.swift */,
 				4A874F382980F81000051703 /* TasksListViewController.xib */,
 				4A874F542981229100051703 /* Views */,
@@ -357,6 +370,7 @@
 		4A874F3B2980F86700051703 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4A4BF1822981620E0008AA34 /* SaveTaskViewModel.swift */,
 				4A874F592981233000051703 /* TaskViewModel.swift */,
 				4A874F3C2980F87B00051703 /* TasksListViewModel.swift */,
 			);
@@ -400,6 +414,7 @@
 				4A037DF8298091D70021ADF6 /* MBProgressHUD */,
 				4A874F502981213500051703 /* FirebaseDatabase */,
 				4A874F522981213500051703 /* FirebaseDatabaseSwift */,
+				4A4BF18829816AF50008AA34 /* IQKeyboardManagerSwift */,
 			);
 			productName = ToDoList;
 			productReference = 4A65C7E729804E66005B28BF /* ToDoList.app */;
@@ -476,6 +491,7 @@
 			packageReferences = (
 				4A037DF229808DDD0021ADF6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4A037DF7298091D70021ADF6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				4A4BF18729816AF50008AA34 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 4A65C7E829804E66005B28BF /* Products */;
 			projectDirPath = "";
@@ -494,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A037DEE298080BC0021ADF6 /* LoginViewController.xib in Resources */,
+				4A4BF17E298160DE0008AA34 /* SaveTaskViewController.xib in Resources */,
 				4A65C7F729804E68005B28BF /* LaunchScreen.storyboard in Resources */,
 				4A037DE5298065720021ADF6 /* RegisterationViewController.xib in Resources */,
 				4A037DD5298057540021ADF6 /* Assets.xcassets in Resources */,
@@ -528,6 +545,7 @@
 				4A037DFD2980967F0021ADF6 /* LoginNetworkService.swift in Sources */,
 				4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */,
 				4A037DDE298058C80021ADF6 /* ValidationManager.swift in Sources */,
+				4A4BF1832981620E0008AA34 /* SaveTaskViewModel.swift in Sources */,
 				4A65C82E29804E99005B28BF /* RegisterationViewController.swift in Sources */,
 				4A874F44298109BC00051703 /* BaseViewController.swift in Sources */,
 				4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */,
@@ -550,6 +568,7 @@
 				4A037DD8298058330021ADF6 /* BindingTextField.swift in Sources */,
 				4A874F5A2981233000051703 /* TaskViewModel.swift in Sources */,
 				4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */,
+				4A4BF185298162970008AA34 /* SaveTaskNetworkService.swift in Sources */,
 				4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */,
 				4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */,
 				4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */,
@@ -559,6 +578,7 @@
 				4A037DDB298058590021ADF6 /* RegisterationViewModel.swift in Sources */,
 				4A65C82829804E99005B28BF /* AppLibraryManager.swift in Sources */,
 				4A65C83629804F1D005B28BF /* AppFactory.swift in Sources */,
+				4A4BF17C298160D30008AA34 /* SaveTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,6 +952,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		4A4BF18729816AF50008AA34 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -944,6 +972,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A037DF7298091D70021ADF6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
 			productName = MBProgressHUD;
+		};
+		4A4BF18829816AF50008AA34 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A4BF18729816AF50008AA34 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		4A874F502981213500051703 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
