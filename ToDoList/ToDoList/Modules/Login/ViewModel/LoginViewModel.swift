@@ -12,6 +12,7 @@ struct LoginViewModel {
     var email = Observable("")
     var password = Observable("")
     var validateFields = Observable(false)
+    var successfullySignin = Observable(false)
     
     //MARK: - Properties
     private let validator = ValidationManager()
@@ -36,10 +37,10 @@ extension LoginViewModel {
     func performLogin() {
         networkService.performLogin(withEmail: email.value, password: password.value, onCompletion: { result in
             switch result {
-            case .success(let user):
-                ToastManager.showMessage("Login Successfull")
+            case .success(_):
+                successfullySignin.value.toggle()
             case .failure(let error):
-                ToastManager.showMessage(error.localizedDescription ?? "Some thing went wrong. Please try again")
+                ToastManager.showMessage(error.localizedDescription)
             }
         })
     }

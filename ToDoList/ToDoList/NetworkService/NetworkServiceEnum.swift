@@ -7,6 +7,8 @@
 
 import Foundation
 
-enum AuthError: Error {
+enum NetworkServiceError: Error {
+    case dataParsingError
+    case networkError
     case unknown
 }

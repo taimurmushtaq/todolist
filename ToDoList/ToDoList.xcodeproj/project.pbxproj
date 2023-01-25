@@ -34,9 +34,7 @@
 		4A65C82829804E99005B28BF /* AppLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81B29804E98005B28BF /* AppLibraryManager.swift */; };
 		4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81C29804E98005B28BF /* ThemeManager.swift */; };
 		4A65C82A29804E99005B28BF /* AppWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81D29804E98005B28BF /* AppWindowManager.swift */; };
-		4A65C82B29804E99005B28BF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81F29804E99005B28BF /* BaseViewModel.swift */; };
 		4A65C82C29804E99005B28BF /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C82029804E99005B28BF /* Observable.swift */; };
-		4A65C82D29804E99005B28BF /* MainThreadChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C82129804E99005B28BF /* MainThreadChecker.swift */; };
 		4A65C82E29804E99005B28BF /* RegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C82629804E99005B28BF /* RegisterationViewController.swift */; };
 		4A65C83229804EEA005B28BF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83129804EEA005B28BF /* Colors.swift */; };
 		4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C83329804F1D005B28BF /* AppRouter.swift */; };
@@ -44,6 +42,14 @@
 		4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F302980EEC500051703 /* AuthNetworkService.swift */; };
 		4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F322980F51500051703 /* RegisterationNetworkService.swift */; };
 		4A874F352980F56100051703 /* NetworkServiceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F342980F56100051703 /* NetworkServiceEnum.swift */; };
+		4A874F3A2980F81000051703 /* TasksListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A874F382980F81000051703 /* TasksListViewController.xib */; };
+		4A874F3D2980F87B00051703 /* TasksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F3C2980F87B00051703 /* TasksListViewModel.swift */; };
+		4A874F3F2981031900051703 /* TasksNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F3E2981031900051703 /* TasksNetworkService.swift */; };
+		4A874F412981033900051703 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F402981033900051703 /* TaskModel.swift */; };
+		4A874F42298106D600051703 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F372980F81000051703 /* TasksListViewController.swift */; };
+		4A874F44298109BC00051703 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F43298109BC00051703 /* BaseViewController.swift */; };
+		4A874F4629810BB700051703 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F4529810BB700051703 /* BaseNavigationController.swift */; };
+		4A874F48298112CF00051703 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F47298112CF00051703 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,9 +99,7 @@
 		4A65C81B29804E98005B28BF /* AppLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLibraryManager.swift; sourceTree = "<group>"; };
 		4A65C81C29804E98005B28BF /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		4A65C81D29804E98005B28BF /* AppWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWindowManager.swift; sourceTree = "<group>"; };
-		4A65C81F29804E99005B28BF /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		4A65C82029804E99005B28BF /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		4A65C82129804E99005B28BF /* MainThreadChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainThreadChecker.swift; sourceTree = "<group>"; };
 		4A65C82629804E99005B28BF /* RegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterationViewController.swift; sourceTree = "<group>"; };
 		4A65C83129804EEA005B28BF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4A65C83329804F1D005B28BF /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -103,6 +107,14 @@
 		4A874F302980EEC500051703 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
 		4A874F322980F51500051703 /* RegisterationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationNetworkService.swift; sourceTree = "<group>"; };
 		4A874F342980F56100051703 /* NetworkServiceEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceEnum.swift; sourceTree = "<group>"; };
+		4A874F372980F81000051703 /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
+		4A874F382980F81000051703 /* TasksListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksListViewController.xib; sourceTree = "<group>"; };
+		4A874F3C2980F87B00051703 /* TasksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModel.swift; sourceTree = "<group>"; };
+		4A874F3E2981031900051703 /* TasksNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksNetworkService.swift; sourceTree = "<group>"; };
+		4A874F402981033900051703 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		4A874F43298109BC00051703 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4A874F4529810BB700051703 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		4A874F47298112CF00051703 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,10 +183,11 @@
 		4A037DFE298099A90021ADF6 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				4A874F342980F56100051703 /* NetworkServiceEnum.swift */,
 				4A874F302980EEC500051703 /* AuthNetworkService.swift */,
 				4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */,
-				4A874F342980F56100051703 /* NetworkServiceEnum.swift */,
 				4A874F322980F51500051703 /* RegisterationNetworkService.swift */,
+				4A874F3E2981031900051703 /* TasksNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -183,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				4A037DFF29809D4D0021ADF6 /* UserModel.swift */,
+				4A874F402981033900051703 /* TaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,9 +272,9 @@
 		4A65C81E29804E99005B28BF /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				4A65C81F29804E99005B28BF /* BaseViewModel.swift */,
-				4A65C82129804E99005B28BF /* MainThreadChecker.swift */,
+				4A874F43298109BC00051703 /* BaseViewController.swift */,
 				4A65C82029804E99005B28BF /* Observable.swift */,
+				4A874F4529810BB700051703 /* BaseNavigationController.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -270,6 +284,7 @@
 			children = (
 				4A037DE8298080970021ADF6 /* Login */,
 				4A65C82429804E99005B28BF /* Registration */,
+				4A874F362980F7F100051703 /* Tasks */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -309,8 +324,27 @@
 				4A037DF52980910F0021ADF6 /* GoogleService-Info.plist */,
 				4A65C83129804EEA005B28BF /* Colors.swift */,
 				4A65C7F329804E68005B28BF /* Assets.xcassets */,
+				4A874F47298112CF00051703 /* Images.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4A874F362980F7F100051703 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				4A874F372980F81000051703 /* TasksListViewController.swift */,
+				4A874F382980F81000051703 /* TasksListViewController.xib */,
+				4A874F3B2980F86700051703 /* ViewModel */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		4A874F3B2980F86700051703 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A874F3C2980F87B00051703 /* TasksListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +464,7 @@
 				4A037DE5298065720021ADF6 /* RegisterationViewController.xib in Resources */,
 				4A037DD5298057540021ADF6 /* Assets.xcassets in Resources */,
 				4A65C7F229804E66005B28BF /* Main.storyboard in Resources */,
+				4A874F3A2980F81000051703 /* TasksListViewController.xib in Resources */,
 				4A037DF62980910F0021ADF6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,23 +494,28 @@
 				4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */,
 				4A037DDE298058C80021ADF6 /* ValidationManager.swift in Sources */,
 				4A65C82E29804E99005B28BF /* RegisterationViewController.swift in Sources */,
+				4A874F44298109BC00051703 /* BaseViewController.swift in Sources */,
 				4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */,
+				4A874F3D2980F87B00051703 /* TasksListViewModel.swift in Sources */,
 				4A037DE129805AC10021ADF6 /* UIView+Extension.swift in Sources */,
+				4A874F4629810BB700051703 /* BaseNavigationController.swift in Sources */,
+				4A874F42298106D600051703 /* TasksListViewController.swift in Sources */,
 				4A037E0029809D4D0021ADF6 /* UserModel.swift in Sources */,
 				4A65C83229804EEA005B28BF /* Colors.swift in Sources */,
 				4A037DED298080BC0021ADF6 /* LoginViewController.swift in Sources */,
 				4A65C82C29804E99005B28BF /* Observable.swift in Sources */,
 				4A65C82A29804E99005B28BF /* AppWindowManager.swift in Sources */,
+				4A874F412981033900051703 /* TaskModel.swift in Sources */,
 				4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */,
 				4A037DF12980812C0021ADF6 /* LoginViewModel.swift in Sources */,
-				4A65C82D29804E99005B28BF /* MainThreadChecker.swift in Sources */,
 				4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */,
+				4A874F48298112CF00051703 /* Images.swift in Sources */,
 				4A037DD8298058330021ADF6 /* BindingTextField.swift in Sources */,
-				4A65C82B29804E99005B28BF /* BaseViewModel.swift in Sources */,
 				4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */,
 				4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */,
 				4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */,
 				4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */,
+				4A874F3F2981031900051703 /* TasksNetworkService.swift in Sources */,
 				4A874F352980F56100051703 /* NetworkServiceEnum.swift in Sources */,
 				4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */,
 				4A037DDB298058590021ADF6 /* RegisterationViewModel.swift in Sources */,

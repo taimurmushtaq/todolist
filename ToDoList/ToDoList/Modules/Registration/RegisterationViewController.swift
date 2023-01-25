@@ -48,6 +48,10 @@ class RegisterationViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 extension RegisterationViewController {
@@ -94,9 +98,8 @@ extension RegisterationViewController {
             self?.registerButton.isEnabled = isValidated
         }
         
-        viewModel.RegisterationSuccessfull.bind { [weak self] _ in
-            self?.navigationController?.popViewController(animated: true)
-            ToastManager.showMessage("Registeration Successfull.\nPlease login with your credentials")
+        viewModel.successfullyRegistered.bind { [weak self] _ in
+            self?.router.routToTasks()
         }
     }
 }

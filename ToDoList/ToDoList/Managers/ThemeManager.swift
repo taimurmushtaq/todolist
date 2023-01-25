@@ -21,16 +21,17 @@ private extension ThemeManager {
         
         let buttonAppearance = UIBarButtonItemAppearance()
         buttonAppearance.normal.titleTextAttributes = [.foregroundColor : UIColor.white]
-        buttonAppearance.normal.backgroundImage?.withTintColor(.white)
+        buttonAppearance.normal.backgroundImage?.withTintColor(.white, renderingMode: .alwaysTemplate)
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithDefaultBackground()
         appearance.buttonAppearance = buttonAppearance
+        appearance.backButtonAppearance = buttonAppearance
+        appearance.doneButtonAppearance = buttonAppearance
         appearance.setBackIndicatorImage(image, transitionMaskImage: image)
         appearance.backgroundColor = .accentColor
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        appearance.titleTextAttributes  = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        appearance.backButtonAppearance.configureWithDefault(for: .plain)
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance

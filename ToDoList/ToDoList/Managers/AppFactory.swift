@@ -8,16 +8,15 @@
 import UIKit
 
 protocol AppFactoryProtocol {
-    static func navigationController() -> UINavigationController
+    static func navigationController() -> BaseNavigationController
     static func loginViewController() -> LoginViewController
     static func registerViewController(router: RouterProtocol) -> RegisterationViewController
+    static func tasksListViewController() -> TasksListViewController
 }
 
 class AppFactory: AppFactoryProtocol {
-    static func navigationController() -> UINavigationController {
-        let navController = UINavigationController()
-        navController.modalPresentationStyle = .fullScreen
-        return navController
+    static func navigationController() -> BaseNavigationController {
+        return BaseNavigationController()
     }
     
     static func loginViewController() -> LoginViewController {
@@ -35,5 +34,12 @@ class AppFactory: AppFactoryProtocol {
         
         return controller
     }
-}
+    
+    static func tasksListViewController() -> TasksListViewController {
+        let viewModel = TasksListViewModel(TasksNetworkService())
+        let controller = TasksListViewController(viewModel: viewModel)
+        controller.router = AppRouter(controller)
 
+        return controller
+    }
+}

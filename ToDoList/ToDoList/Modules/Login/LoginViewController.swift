@@ -48,6 +48,10 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
 }
 
 extension LoginViewController {
@@ -92,6 +96,10 @@ extension LoginViewController {
         }
         viewModel.validateFields.bind { [weak self] isValidated in
             self?.loginButton.isEnabled = isValidated
+        }
+        
+        viewModel.successfullySignin.bind { [weak self] _ in
+            self?.router.routToTasks()
         }
     }
 }

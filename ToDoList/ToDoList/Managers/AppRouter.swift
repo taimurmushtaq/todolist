@@ -13,6 +13,7 @@ protocol RouterProtocol: AnyObject {
     
     func routeToRegisteration()
     func routToLogin()
+    func routToTasks()
 }
 
 class AppRouter: RouterProtocol {
@@ -30,6 +31,13 @@ class AppRouter: RouterProtocol {
     func routToLogin() {
         let navController = AppFactory.navigationController()
         navController.viewControllers = [AppFactory.loginViewController()]
+        
+        AppWindowManager.window?.rootViewController = navController
+    }
+    
+    func routToTasks() {
+        let navController = AppFactory.navigationController()
+        navController.viewControllers = [AppFactory.tasksListViewController()]
         
         AppWindowManager.window?.rootViewController = navController
     }
