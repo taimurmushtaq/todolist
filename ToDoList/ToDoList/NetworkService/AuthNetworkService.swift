@@ -22,10 +22,11 @@ class AuthNetworkService: AuthNetworkServiceProtocol {
             return nil
         }
     }
+    
     func handleAuthState(_ onCompletion: @escaping (Result<UserModel, NetworkServiceError>) -> Void) {
         Auth.auth().addStateDidChangeListener { auth, user in
             
-            if let user = auth.currentUser {
+            if let user = user {
                 onCompletion(.success(UserModel(uid: user.uid, email: user.email!, displayName: user.displayName)))
             } else {
                 onCompletion(.failure(NetworkServiceError.unknown))
@@ -33,5 +34,3 @@ class AuthNetworkService: AuthNetworkServiceProtocol {
         }
     }
 }
-
-

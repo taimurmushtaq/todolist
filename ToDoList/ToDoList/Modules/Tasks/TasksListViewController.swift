@@ -37,6 +37,12 @@ class TasksListViewController: UIViewController {
         updateUI()
         bindViews()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.handleAuthState()
+    }
 }
 
 extension TasksListViewController {

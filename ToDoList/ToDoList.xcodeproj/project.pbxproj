@@ -272,9 +272,9 @@
 		4A65C81E29804E99005B28BF /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				4A874F4529810BB700051703 /* BaseNavigationController.swift */,
 				4A874F43298109BC00051703 /* BaseViewController.swift */,
 				4A65C82029804E99005B28BF /* Observable.swift */,
-				4A874F4529810BB700051703 /* BaseNavigationController.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
