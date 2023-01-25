@@ -50,9 +50,10 @@ class TasksListViewController: UIViewController {
 extension TasksListViewController {
     func configureTableView() {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .accentColor 
+        refreshControl.tintColor = .accentColor
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         
+        tableView.allowsSelectionDuringEditing = false
         tableView.refreshControl = refreshControl
         tableView.register(UINib.init(nibName: TaskTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: TaskTableViewCell.identifier)
     }
@@ -86,7 +87,9 @@ extension TasksListViewController {
 //MARK: - Selectros
 extension TasksListViewController {
     @objc func logoutUser() {
-        viewModel.performLogut()
+        showLogoutAlert { [weak self] in
+            self?.viewModel.performLogut()
+        }
     }
     
     @objc func handleRefresh() {
@@ -105,20 +108,30 @@ extension TasksListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var taskViewModel = viewModel.item(atIndex: indexPath)!
+        let taskViewModel = viewModel.item(atIndex: indexPath)!
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier) as! TaskTableViewCell
         cell.configureCell(withViewModel: taskViewModel)
         cell.checkButton.bind { [weak self] in
             if taskViewModel.isTaskComplete {
-                self?.undoTaskCompletion { self?.viewModel.changeTaskStatus(indexPath: indexPath) }
+                self?.showUndoTaskCompletionAlert { self?.viewModel.changeTaskStatus(indexPath: indexPath) }
             } else {
-                self?.confirmTaskCompletion({ self?.viewModel.changeTaskStatus(indexPath: indexPath) })
+                self?.showConfirmTaskCompletionAlert { self?.viewModel.changeTaskStatus(indexPath: indexPath) }
             }
         }
         return cell
     }
-}
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return viewModel.canEditRow(atIndex: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            showDeleteTaskAlert { [weak self] in self?.viewModel.deleteTask(indexPath: indexPath) }
+        }
+    }
+}
+
 //MARK: - UITableViewDelegate
 extension TasksListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -126,8 +139,21 @@ extension TasksListViewController: UITableViewDelegate {
     }
 }
 
+//MARK: - Alerts and sheets
 extension TasksListViewController {
-    func confirmTaskCompletion(_ onComplete: @escaping ()-> Void) {
+    func showLogoutAlert(_ onComplete: @escaping ()-> Void) {
+        let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
+            onComplete()
+        }))
+        
+        alertController.addAction(UIAlertAction.init(title: "No", style: .cancel))
+        
+        present(alertController, animated: true)
+    }
+    
+    func showConfirmTaskCompletionAlert(_ onComplete: @escaping ()-> Void) {
         let alertController = UIAlertController(title: "Complete Task", message: "Are you sure you want to mark this task complete?", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
@@ -139,8 +165,20 @@ extension TasksListViewController {
         present(alertController, animated: true)
     }
     
-    func undoTaskCompletion(_ onComplete: @escaping ()-> Void) {
+    func showUndoTaskCompletionAlert(_ onComplete: @escaping ()-> Void) {
         let alertController = UIAlertController(title: "Undo Task Completion", message: "Are you sure you want to mark this task incomplete?", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
+            onComplete()
+        }))
+        
+        alertController.addAction(UIAlertAction.init(title: "No", style: .cancel))
+        
+        present(alertController, animated: true)
+    }
+    
+    func showDeleteTaskAlert(_ onComplete: @escaping ()-> Void) {
+        let alertController = UIAlertController(title: "Delete Task", message: "Are you sure you want to delete this task", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
             onComplete()

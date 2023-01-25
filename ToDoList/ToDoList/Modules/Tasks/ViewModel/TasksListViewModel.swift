@@ -12,7 +12,6 @@ class TasksListViewModel {
     var successfullySignOut = Observable(false)
     var refreshTasks = Observable("")
     
-    
     //MARK: - Properties
     private let taskNetworkService: TasksNetworkServiceProtocol
     private let authNetworkService: AuthNetworkServiceProtocol
@@ -21,10 +20,6 @@ class TasksListViewModel {
     init(_ taskNetworkService: TasksNetworkServiceProtocol, _ authNetworkService: AuthNetworkServiceProtocol) {
         self.taskNetworkService = taskNetworkService
         self.authNetworkService = authNetworkService
-    }
-    
-    func setTask(array: [TaskViewModel]) {
-        tasksArray = array
     }
 }
 
@@ -44,6 +39,10 @@ extension TasksListViewModel {
         
         return nil
     }
+    
+    func canEditRow(atIndex indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
 
 extension TasksListViewModel {
@@ -51,12 +50,17 @@ extension TasksListViewModel {
         taskNetworkService.fetchTasks { [weak self] result in
             switch result {
             case .success(let tasks):
-                self?.setTask(array: tasks.map(TaskViewModel.init))
+                self?.tasksArray = tasks.map(TaskViewModel.init)
                 self?.refreshTasks.value = ""
             case .failure(let error):
                 ToastManager.showMessage(error.localizedDescription)
             }
         }
+    }
+    
+    func deleteTask(indexPath: IndexPath) {
+        tasksArray.remove(at: indexPath.row)
+        refreshTasks.value = ""
     }
     
     func changeTaskStatus(indexPath: IndexPath) {
