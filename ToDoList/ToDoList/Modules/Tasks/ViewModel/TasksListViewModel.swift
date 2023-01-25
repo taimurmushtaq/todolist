@@ -25,17 +25,13 @@ extension TasksListViewModel {
     func performLogut() {
         do {
             try taskNetworkService.performLogout()
-            successfullySignOut.value.toggle()
-        } catch (let error){
-            ToastManager.showMessage(error.localizedDescription)
-        }
+        } catch { }
     }
     
     func handleAuthState() {
         authNetworkService.handleAuthState { result in
-            if case let .failure(error) = result {
-                performLogut()
-                ToastManager.showMessage(error.localizedDescription)
+            if case .failure(_) = result {
+                successfullySignOut.value.toggle()
             }
         }
     }
