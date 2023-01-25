@@ -21,7 +21,6 @@ class SaveTaskViewController: BaseViewController {
     var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .dateAndTime
-        picker.preferredDatePickerStyle = .automatic
         picker.locale = Locale(identifier: "en_US")
         picker.minimumDate = Date()
         return picker
