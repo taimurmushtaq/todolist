@@ -65,6 +65,7 @@ extension RegisterationViewController {
         registerButton.setTitle("Register", for: .normal)
         registerButton.isEnabled = false
         registerButton.theme = .filled
+        registerButton.enableTheme = true
     }
     
     func bindViews() {

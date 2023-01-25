@@ -10,22 +10,28 @@ import FirebaseAuth
 import FirebaseDatabase
 
 protocol TasksNetworkServiceProtocol {
-    func fetchTasks(_ onCompletion: @escaping (Result<TaskModel, Error>) -> Void)
+    func fetchTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void)
     func performLogout() throws
 }
 
-class TasksNetworkService: TasksNetworkServiceProtocol {
+class TasksNetworkService {
     private var ref: DatabaseReference!
-
+    
     init() {
         self.ref = Database.database().reference()
     }
+}
+
+extension TasksNetworkService: TasksNetworkServiceProtocol {
     
-    func fetchTasks(_ onCompletion: @escaping (Result<TaskModel, Error>) -> Void) {
-        //onCompletion(.failure(NetworkServiceError.dataParsingError))
+    func fetchTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void) {
+        let tasks = TaskModel(title: "Innovation Factory Application Task", dateTime: "28 Jan 2023 11:00 AM", isComplete: false)
+        onCompletion(.success([tasks, tasks, tasks]))
     }
     
     func performLogout() throws {
         try Auth.auth().signOut()
     }
 }
+
+

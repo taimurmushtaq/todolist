@@ -13,17 +13,26 @@ enum UIComponentTheme: Int{
     case empty
 }
 
-@IBDesignable
 class BindingButton: UIButton {
     //MARK: - Variables
+    
     var theme:UIComponentTheme = .filled
     var buttonPressed: () -> Void = { }
+    
+    var enableTheme:Bool = false { didSet { configureUI() } }
     override var isEnabled: Bool { didSet { configureUI() } }
     
     
     //MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        configureSelectors()
+        configureUI()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
         configureSelectors()
         configureUI()
@@ -44,6 +53,8 @@ extension BindingButton {
     }
     
     func configureUI() {
+        if !enableTheme { return }
+        
         if isEnabled {
             if theme == .filled {
                 setTitleColor(.white, for: .normal)

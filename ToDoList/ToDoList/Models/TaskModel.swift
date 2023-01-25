@@ -9,6 +9,6 @@ import Foundation
 
 struct TaskModel: Codable {
     let title: String
-    let description: String
     let dateTime: String
+    var isComplete:Bool
 }

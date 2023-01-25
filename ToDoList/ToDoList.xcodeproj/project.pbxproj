@@ -52,6 +52,10 @@
 		4A874F48298112CF00051703 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F47298112CF00051703 /* Images.swift */; };
 		4A874F512981213500051703 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4A874F502981213500051703 /* FirebaseDatabase */; };
 		4A874F532981213500051703 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A874F522981213500051703 /* FirebaseDatabaseSwift */; };
+		4A874F57298122AA00051703 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F55298122AA00051703 /* TaskTableViewCell.swift */; };
+		4A874F58298122AA00051703 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A874F56298122AA00051703 /* TaskTableViewCell.xib */; };
+		4A874F5A2981233000051703 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F592981233000051703 /* TaskViewModel.swift */; };
+		4A874F5C2981239B00051703 /* String+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F5B2981239B00051703 /* String+Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,10 @@
 		4A874F43298109BC00051703 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4A874F4529810BB700051703 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		4A874F47298112CF00051703 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		4A874F55298122AA00051703 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		4A874F56298122AA00051703 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
+		4A874F592981233000051703 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		4A874F5B2981239B00051703 /* String+Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 		4A037DDF29805AA50021ADF6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4A874F5B2981239B00051703 /* String+Date+Extension.swift */,
 				4A037DE029805AC10021ADF6 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
@@ -339,6 +348,7 @@
 			children = (
 				4A874F372980F81000051703 /* TasksListViewController.swift */,
 				4A874F382980F81000051703 /* TasksListViewController.xib */,
+				4A874F542981229100051703 /* Views */,
 				4A874F3B2980F86700051703 /* ViewModel */,
 			);
 			path = Tasks;
@@ -347,6 +357,7 @@
 		4A874F3B2980F86700051703 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4A874F592981233000051703 /* TaskViewModel.swift */,
 				4A874F3C2980F87B00051703 /* TasksListViewModel.swift */,
 			);
 			path = ViewModel;
@@ -357,6 +368,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A874F542981229100051703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A874F55298122AA00051703 /* TaskTableViewCell.swift */,
+				4A874F56298122AA00051703 /* TaskTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +497,7 @@
 				4A65C7F729804E68005B28BF /* LaunchScreen.storyboard in Resources */,
 				4A037DE5298065720021ADF6 /* RegisterationViewController.xib in Resources */,
 				4A037DD5298057540021ADF6 /* Assets.xcassets in Resources */,
+				4A874F58298122AA00051703 /* TaskTableViewCell.xib in Resources */,
 				4A65C7F229804E66005B28BF /* Main.storyboard in Resources */,
 				4A874F3A2980F81000051703 /* TasksListViewController.xib in Resources */,
 				4A037DF62980910F0021ADF6 /* GoogleService-Info.plist in Resources */,
@@ -512,6 +533,8 @@
 				4A037DFB298092040021ADF6 /* ToastManager.swift in Sources */,
 				4A874F3D2980F87B00051703 /* TasksListViewModel.swift in Sources */,
 				4A037DE129805AC10021ADF6 /* UIView+Extension.swift in Sources */,
+				4A874F5C2981239B00051703 /* String+Date+Extension.swift in Sources */,
+				4A874F57298122AA00051703 /* TaskTableViewCell.swift in Sources */,
 				4A874F4629810BB700051703 /* BaseNavigationController.swift in Sources */,
 				4A874F42298106D600051703 /* TasksListViewController.swift in Sources */,
 				4A037E0029809D4D0021ADF6 /* UserModel.swift in Sources */,
@@ -525,6 +548,7 @@
 				4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */,
 				4A874F48298112CF00051703 /* Images.swift in Sources */,
 				4A037DD8298058330021ADF6 /* BindingTextField.swift in Sources */,
+				4A874F5A2981233000051703 /* TaskViewModel.swift in Sources */,
 				4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */,
 				4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */,
 				4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */,

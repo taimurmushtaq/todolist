@@ -64,10 +64,12 @@ extension LoginViewController {
         loginButton.setTitle("Login", for: .normal)
         loginButton.theme = .filled
         loginButton.isEnabled = false
+        loginButton.enableTheme = true
         
         registerButton.setTitle("Register", for: .normal)
         registerButton.theme = .empty
         registerButton.isEnabled = true
+        registerButton.enableTheme = true
     }
     
     func bindViews() {
