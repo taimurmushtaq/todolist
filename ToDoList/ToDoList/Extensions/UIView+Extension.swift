@@ -14,4 +14,20 @@ extension UIView {
         layer.borderColor = borderColor.cgColor
         layer.masksToBounds = true
     }
+    
+    func addShadow() {
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowRadius = 5.0
+        layer.shadowOffset = .zero
+        layer.masksToBounds = false
+    }
+    
+    func removeShadow() {
+        layer.shadowColor = UIColor.clear.cgColor
+        layer.shadowOpacity = 0
+        layer.shadowRadius = 0
+        layer.shadowOffset = .zero
+        layer.masksToBounds = true
+    }
 }

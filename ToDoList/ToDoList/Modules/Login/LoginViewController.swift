@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     //MARK: - IBOutlet
     @IBOutlet weak var logoImageView: UIImageView!

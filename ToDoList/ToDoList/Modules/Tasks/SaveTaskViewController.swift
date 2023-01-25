@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SaveTaskViewController: UIViewController {
+class SaveTaskViewController: BaseViewController {
     
     //MARK: - IBOutlet
     @IBOutlet weak var titleTextField: BindingTextField!

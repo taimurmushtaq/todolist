@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterationViewController: UIViewController {
+class RegisterationViewController: BaseViewController {
     
     //MARK: - IBOutlet
     @IBOutlet weak var emailTextField: BindingTextField!

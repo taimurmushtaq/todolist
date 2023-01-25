@@ -17,17 +17,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U17-Z8-V2q" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
-                        <rect key="frame" x="8" y="4.6666666666666679" width="32" height="32"/>
+                        <rect key="frame" x="8" y="15" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="32" id="BOK-Rv-ehE"/>
-                            <constraint firstAttribute="width" constant="32" id="Vty-lh-rml"/>
+                            <constraint firstAttribute="height" constant="24" id="BOK-Rv-ehE"/>
+                            <constraint firstAttribute="width" constant="24" id="Vty-lh-rml"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="un_check"/>
                         <state key="selected" image="check"/>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-C5-pc7">
-                        <rect key="frame" x="47.999999999999986" y="8" width="237.66666666666663" height="38"/>
+                        <rect key="frame" x="39.999999999999986" y="8" width="245.66666666666663" height="38"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwc-OD-RNE">
                                 <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="17"/>
@@ -47,9 +47,9 @@
                 <constraints>
                     <constraint firstItem="U17-Z8-V2q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="4bI-LI-Vka"/>
                     <constraint firstItem="fQs-C5-pc7" firstAttribute="leading" secondItem="U17-Z8-V2q" secondAttribute="trailing" constant="8" id="92b-60-iRJ"/>
+                    <constraint firstItem="U17-Z8-V2q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KBU-e1-W7K"/>
                     <constraint firstAttribute="trailing" secondItem="fQs-C5-pc7" secondAttribute="trailing" constant="8" id="TT6-pP-RKf"/>
                     <constraint firstAttribute="bottom" secondItem="fQs-C5-pc7" secondAttribute="bottom" constant="8" id="dTp-UY-A44"/>
-                    <constraint firstItem="U17-Z8-V2q" firstAttribute="centerY" secondItem="Mwc-OD-RNE" secondAttribute="centerY" constant="4" id="rds-fY-fID"/>
                     <constraint firstItem="fQs-C5-pc7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xI0-6p-BU0"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>

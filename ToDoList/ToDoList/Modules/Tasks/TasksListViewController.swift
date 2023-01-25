@@ -7,9 +7,10 @@
 
 import UIKit
 
-class TasksListViewController: UIViewController {
+class TasksListViewController: BaseViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addTaskButton: BindingButton!
     
     //MARK: - Properties
     var viewModel:TasksListViewModel
@@ -53,6 +54,7 @@ extension TasksListViewController {
         refreshControl.tintColor = .accentColor
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 128, right: 0)
         tableView.allowsSelectionDuringEditing = false
         tableView.refreshControl = refreshControl
         tableView.register(UINib.init(nibName: TaskTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: TaskTableViewCell.identifier)
@@ -70,9 +72,19 @@ extension TasksListViewController {
     
     func updateUI() {
         title = "To-Do List"
+        
+        addTaskButton.setTitle("Add Task", for: .normal)
+        addTaskButton.enableTheme = true
+        addTaskButton.isEnabled = true
+        addTaskButton.theme = .filled
+        addTaskButton.addShadow()
     }
     
     func bindViews() {
+        addTaskButton.bind { [weak self] in
+            self?.router.routToSaveTasks(nil)
+        }
+        
         viewModel.successfullySignOut.bind { [weak self] _ in
             self?.router.routToLogin()
         }

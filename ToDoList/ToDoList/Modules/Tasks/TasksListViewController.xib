@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TasksListViewController" customModule="ToDoList" customModuleProvider="target">
             <connections>
+                <outlet property="addTaskButton" destination="wDC-L9-q1g" id="3Lz-8I-8ne"/>
                 <outlet property="tableView" destination="C1h-Ut-ger" id="dzP-52-JaW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="fmt-0S-02x"/>
             </connections>
@@ -27,13 +28,25 @@
                         <outlet property="delegate" destination="-1" id="5WT-wg-ZMh"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDC-L9-q1g" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
+                    <rect key="frame" x="132.66666666666666" y="746" width="127.99999999999997" height="40"/>
+                    <color key="backgroundColor" red="0.22352941179999999" green="0.49019607840000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6RJ-dh-uaO"/>
+                        <constraint firstAttribute="width" constant="128" id="KpO-Ls-qBg"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Add Task"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wDC-L9-q1g" secondAttribute="bottom" constant="32" id="8Er-j9-12k"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="C1h-Ut-ger" secondAttribute="bottom" id="I3b-no-Sz3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C1h-Ut-ger" secondAttribute="trailing" id="XMl-vD-33T"/>
                 <constraint firstItem="C1h-Ut-ger" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oG8-a4-lX2"/>
+                <constraint firstItem="wDC-L9-q1g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qYq-p5-SLi"/>
                 <constraint firstItem="C1h-Ut-ger" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zSj-XU-hee"/>
             </constraints>
             <point key="canvasLocation" x="137" y="20"/>
