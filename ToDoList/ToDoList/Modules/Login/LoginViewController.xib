@@ -25,16 +25,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4L-lC-Ll6">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <rect key="frame" x="0.0" y="59" width="139" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxV-hY-vt8">
-                            <rect key="frame" x="0.0" y="0.0" width="393.33333333333331" height="787"/>
+                            <rect key="frame" x="0.0" y="0.0" width="139" height="787"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-Qb-f9V">
-                                    <rect key="frame" x="0.0" y="0.0" width="393.33333333333331" height="256.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="139" height="256.66666666666669"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-O3-oWc">
-                                            <rect key="frame" x="146.66666666666666" y="78.666666666666643" width="100" height="99.666666666666671"/>
+                                            <rect key="frame" x="19.666666666666671" y="78.333333333333343" width="100" height="100"/>
                                             <color key="backgroundColor" name="AccentColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="CUD-m4-3oC"/>
@@ -42,7 +42,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To-Do List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4W-8k-exf">
-                                            <rect key="frame" x="120.66666666666667" y="202.33333333333334" width="152.33333333333331" height="38.333333333333343"/>
+                                            <rect key="frame" x="-6.6666666666666714" y="202.33333333333331" width="152.33333333333337" height="38.333333333333343"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                             <color key="textColor" name="AccentColor"/>
                                             <nil key="highlightedColor"/>
@@ -119,10 +119,10 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Lut-gp-LdB">
-                                    <rect key="frame" x="32" y="616.66666666666663" width="329.33333333333331" height="138.33333333333337"/>
+                                    <rect key="frame" x="32" y="616.66666666666663" width="75" height="138.33333333333337"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-bW-w3H" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="329.33333333333331" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="e9a-BQ-QGJ"/>
                                             </constraints>
@@ -130,13 +130,13 @@
                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOv-qL-Tfd">
-                                            <rect key="frame" x="0.0" y="62.000000000000007" width="329.33333333333331" height="14.333333333333336"/>
+                                            <rect key="frame" x="0.0" y="62.000000000000007" width="75" height="14.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Jj-Izt" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="94.333333333333371" width="329.33333333333331" height="44"/>
+                                            <rect key="frame" x="0.0" y="94.333333333333371" width="75" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="ZyZ-mx-lM2"/>
                                             </constraints>
@@ -164,7 +164,6 @@
                         <constraint firstItem="OxV-hY-vt8" firstAttribute="top" secondItem="C4L-lC-Ll6" secondAttribute="top" id="3vX-Hy-QmF"/>
                         <constraint firstAttribute="bottom" secondItem="OxV-hY-vt8" secondAttribute="bottom" id="bWi-lo-fNS"/>
                         <constraint firstAttribute="trailing" secondItem="OxV-hY-vt8" secondAttribute="trailing" id="uwT-UP-mzL"/>
-                        <constraint firstItem="OxV-hY-vt8" firstAttribute="width" secondItem="C4L-lC-Ll6" secondAttribute="width" multiplier="1.00085" id="vsw-NT-OmK"/>
                         <constraint firstItem="OxV-hY-vt8" firstAttribute="leading" secondItem="C4L-lC-Ll6" secondAttribute="leading" id="z7u-bu-CL8"/>
                     </constraints>
                 </scrollView>
@@ -174,24 +173,17 @@
             <constraints>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="trailing" secondItem="4JA-YS-85k" secondAttribute="trailing" id="AQF-yL-iNe"/>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="leading" secondItem="4JA-YS-85k" secondAttribute="leading" id="YU4-mt-8S3"/>
+                <constraint firstItem="OxV-hY-vt8" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="esF-rD-x6E"/>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="bottom" secondItem="4JA-YS-85k" secondAttribute="bottom" id="hxh-cb-ik1"/>
-                <constraint firstItem="C4L-lC-Ll6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i2d-4f-MEd"/>
+                <constraint firstItem="C4L-lC-Ll6" firstAttribute="top" secondItem="4JA-YS-85k" secondAttribute="top" id="i2d-4f-MEd"/>
             </constraints>
             <point key="canvasLocation" x="-335.1145038167939" y="-107.04225352112677"/>
         </view>
     </objects>
-    <designables>
-        <designable name="IeZ-bW-w3H">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
-        </designable>
-        <designable name="LPJ-Jj-Izt">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
-        </designable>
-    </designables>
     <resources>
         <image name="logo" width="341.33334350585938" height="341.33334350585938"/>
         <namedColor name="AccentColor">
-            <color red="0.22352941176470589" green="0.49019607843137253" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

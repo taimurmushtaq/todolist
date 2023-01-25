@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4L-lC-Ll6">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <rect key="frame" x="0.0" y="59" width="139" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxV-hY-vt8">
-                            <rect key="frame" x="0.0" y="0.0" width="393.33333333333331" height="436"/>
+                            <rect key="frame" x="0.0" y="0.0" width="139" height="436"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-uY-dpe">
                                     <rect key="frame" x="32" y="32" width="329.33333333333331" height="296"/>
@@ -42,7 +42,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="abc@xyz.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-3K-xHM" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="46.666666666666671" width="329.33333333333331" height="44"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666657" width="329.33333333333331" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="XXj-YJ-AZd"/>
                                                     </constraints>
@@ -98,7 +98,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Pg-dP-0Yy" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="46.666666666666657" width="329.33333333333331" height="44"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666686" width="329.33333333333331" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Tem-22-FSd"/>
                                                     </constraints>
@@ -118,7 +118,7 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-bW-w3H" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
-                                    <rect key="frame" x="32" y="360" width="329.33333333333331" height="44"/>
+                                    <rect key="frame" x="32" y="360" width="75" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="e9a-BQ-QGJ"/>
                                     </constraints>
@@ -149,19 +149,14 @@
             <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="trailing" secondItem="4JA-YS-85k" secondAttribute="trailing" id="AQF-yL-iNe"/>
-                <constraint firstItem="OxV-hY-vt8" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1.00085" id="DJ2-xO-a3v"/>
+                <constraint firstItem="OxV-hY-vt8" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="BOL-3x-M23"/>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="leading" secondItem="4JA-YS-85k" secondAttribute="leading" id="YU4-mt-8S3"/>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="bottom" secondItem="4JA-YS-85k" secondAttribute="bottom" id="hxh-cb-ik1"/>
-                <constraint firstItem="C4L-lC-Ll6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i2d-4f-MEd"/>
+                <constraint firstItem="C4L-lC-Ll6" firstAttribute="top" secondItem="4JA-YS-85k" secondAttribute="top" id="i2d-4f-MEd"/>
             </constraints>
             <point key="canvasLocation" x="-335.1145038167939" y="-107.04225352112677"/>
         </view>
     </objects>
-    <designables>
-        <designable name="IeZ-bW-w3H">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
