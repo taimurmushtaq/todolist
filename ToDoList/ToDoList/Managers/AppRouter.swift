@@ -12,6 +12,7 @@ protocol RouterProtocol: AnyObject {
     init(_ controller: UIViewController?)
     
     func routeToRegisteration()
+    func routToLogin()
 }
 
 class AppRouter: RouterProtocol {
@@ -24,5 +25,12 @@ class AppRouter: RouterProtocol {
     func routeToRegisteration() {
         let nextController = AppFactory.registerViewController(router: self)
         controller?.navigationController?.pushViewController(nextController, animated: true)
+    }
+    
+    func routToLogin() {
+        let navController = AppFactory.navigationController()
+        navController.viewControllers = [AppFactory.loginViewController()]
+        
+        AppWindowManager.window?.rootViewController = navController
     }
 }

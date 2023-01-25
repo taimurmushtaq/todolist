@@ -12,12 +12,7 @@ enum AppWindowManager {
         guard let window = (scene as? UIWindowScene) else { return }
         
         let navController = AppFactory.navigationController()
-        
-        //if AuthNetworkService.currentUser == nil {
-            navController.viewControllers = [AppFactory.loginViewController()]
-        //} else {
-            
-        //}
+        navController.viewControllers = [AppFactory.loginViewController()]
         
         self.window = UIWindow(windowScene: window)
         self.window?.rootViewController = navController
