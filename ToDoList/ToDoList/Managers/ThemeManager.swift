@@ -25,9 +25,7 @@ private extension ThemeManager {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithDefaultBackground()
-        appearance.buttonAppearance = buttonAppearance
         appearance.backButtonAppearance = buttonAppearance
-        appearance.doneButtonAppearance = buttonAppearance
         appearance.setBackIndicatorImage(image, transitionMaskImage: image)
         appearance.backgroundColor = .accentColor
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

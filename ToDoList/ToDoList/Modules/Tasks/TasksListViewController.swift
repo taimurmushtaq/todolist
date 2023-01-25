@@ -41,10 +41,13 @@ class TasksListViewController: UIViewController {
 
 extension TasksListViewController {
     func configureNavigationItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.logout,
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(logoutUser))
+        let logoutButton = UIBarButtonItem(image: Images.logout,
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(logoutUser))
+        
+        logoutButton.tintColor = .white
+        navigationItem.rightBarButtonItem = logoutButton
     }
     
     func updateUI() {
