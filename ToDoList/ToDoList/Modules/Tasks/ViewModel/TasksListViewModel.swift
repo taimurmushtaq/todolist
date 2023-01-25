@@ -22,6 +22,17 @@ struct TasksListViewModel {
 }
 
 extension TasksListViewModel {
+    func fetchTasks() {
+        taskNetworkService.fetchTasks { result in
+            switch result {
+            case .success(let taskModel):
+                break
+            case .failure(let error):
+                ToastManager.showMessage(error.localizedDescription)
+            }
+        }
+    }
+    
     func performLogut() {
         do {
             try taskNetworkService.performLogout()

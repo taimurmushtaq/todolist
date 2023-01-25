@@ -36,12 +36,9 @@ class TasksListViewController: UIViewController {
         configureNavigationItems()
         updateUI()
         bindViews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         viewModel.handleAuthState()
+        viewModel.fetchTasks()
     }
 }
 

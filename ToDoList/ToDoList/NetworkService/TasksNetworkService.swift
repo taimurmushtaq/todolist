@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
 
 protocol TasksNetworkServiceProtocol {
     func fetchTasks(_ onCompletion: @escaping (Result<TaskModel, Error>) -> Void)
@@ -14,8 +15,14 @@ protocol TasksNetworkServiceProtocol {
 }
 
 class TasksNetworkService: TasksNetworkServiceProtocol {
+    private var ref: DatabaseReference!
+
+    init() {
+        self.ref = Database.database().reference()
+    }
+    
     func fetchTasks(_ onCompletion: @escaping (Result<TaskModel, Error>) -> Void) {
-        onCompletion(.failure(NetworkServiceError.dataParsingError))
+        //onCompletion(.failure(NetworkServiceError.dataParsingError))
     }
     
     func performLogout() throws {
