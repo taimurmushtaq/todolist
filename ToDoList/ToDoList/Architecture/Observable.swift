@@ -1,6 +1,5 @@
 //
 //  Oberveable.swift
-//  EasyPaisa
 //  ToDoList
 //
 //  Created by Taimur Mushtaq on 24/01/2023.

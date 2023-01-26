@@ -7,29 +7,46 @@
 
 import Foundation
 import FirebaseAuth
-import FirebaseDatabase
 
 protocol TasksNetworkServiceProtocol {
-    func fetchTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void)
+    func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void)
+    func deleteTask(_ taskId: String, onCompletion: @escaping (Result<Void, Error>) -> Void)
     func performLogout() throws
 }
 
-class TasksNetworkService {
-    private var ref: DatabaseReference!
-    
-    init() {
-        self.ref = Database.database().reference()
-    }
+protocol AddTaskNetworkServiceProtcol {
+    func saveTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void)
 }
 
-extension TasksNetworkService: TasksNetworkServiceProtocol {
+protocol UpdateTaskNetworkServiceProtcol {
+    func updateTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void)
+}
+
+class TasksNetworkService: TasksNetworkServiceProtocol {
+    let dataBaseManager = FireBaseDataBaseManager()
     
-    func fetchTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void) {
-        let tasks = TaskModel(taskId: UUID().uuidString,
-                              title: "Innovation Factory Application Task",
-                              dateTime: Date().convertToString(withFormat: DateFormats.taskTimerFormat.rawValue) ,
-                              isComplete: false)
-        onCompletion(.success([tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks]))
+    func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void) {
+        dataBaseManager.observeTasks { result in
+            if case .success(let value) = result,
+               let object = value as? [String: [String: Any]] {
+                
+                let tasks = object.map { key, value in
+                    return TaskModel(taskId: key, taskDataModel: value.toModel(ofType: TaskDataModel.self)!)
+                }
+                
+                onCompletion(.success(tasks))
+            }
+        }
+    }
+    
+    func deleteTask(_ taskId: String, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        dataBaseManager.deleteTask(taskId: taskId) { result in
+            if case .failure(let error) = result {
+                onCompletion(.failure(error))
+            } else {
+                onCompletion(.success(()))
+            }
+        }
     }
     
     func performLogout() throws {
@@ -37,4 +54,31 @@ extension TasksNetworkService: TasksNetworkServiceProtocol {
     }
 }
 
-
+class SaveTaskNetworkService: AddTaskNetworkServiceProtcol, UpdateTaskNetworkServiceProtcol {
+    let dataBaseManager = FireBaseDataBaseManager()
+    
+    func saveTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        if let taskDict = taskModel.taskDataModel.toObject() as? [String: Any] {
+            dataBaseManager.saveTask(taskModelDict: taskDict) { result in
+                if case .failure(let error) = result {
+                    onCompletion(.failure(error))
+                } else {
+                    onCompletion(.success(()))
+                }
+            }
+        }
+    }
+    
+    func updateTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        if let taskDict = taskModel.taskDataModel.toObject() as? [String: Any] {
+            dataBaseManager.updateTask(taskId: taskModel.taskId, taskModelDict: taskDict) { result in
+                if case .failure(let error) = result {
+                    onCompletion(.failure(error))
+                } else {
+                    onCompletion(.success(()))
+                }
+            }
+        }
+        
+    }
+}

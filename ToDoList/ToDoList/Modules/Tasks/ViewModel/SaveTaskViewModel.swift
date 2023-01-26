@@ -31,8 +31,8 @@ extension SaveTaskViewModel {
     var isEditing:Bool { return taskModel != nil }
     
     func updateFields() {
-        title.value = taskModel?.title ?? ""
-        dateTime.value = taskModel?.dateTime ?? ""
+        title.value = taskModel?.taskDataModel.title ?? ""
+        dateTime.value = taskModel?.taskDataModel.dateTime ?? ""
         performValidation()
     }
     
@@ -46,7 +46,8 @@ extension SaveTaskViewModel {
     
     func saveTask() {
         if isEditing {
-            let existingTask = TaskModel(taskId: taskModel!.taskId, title: title.value, dateTime: dateTime.value, isComplete: taskModel!.isComplete)
+            let existingTaskDataModel = TaskDataModel(title: title.value, dateTime: dateTime.value, isComplete: taskModel!.taskDataModel.isComplete)
+            let existingTask = TaskModel(taskId: taskModel!.taskId, taskDataModel: existingTaskDataModel)
             networkService.updateTask(existingTask) { result in
                 if case .failure( let error) = result {
                     taskFailed.value = error.localizedDescription
@@ -55,7 +56,9 @@ extension SaveTaskViewModel {
                 }
             }
         } else {
-            let newTask = TaskModel(taskId: UUID().uuidString, title: title.value, dateTime: dateTime.value, isComplete: false)
+            let taskDataModel = TaskDataModel(title: title.value, dateTime: dateTime.value, isComplete: false)
+            let newTask = TaskModel(taskId: "", taskDataModel: taskDataModel)
+            
             networkService.saveTask(newTask) { result in
                 if case .failure( let error) = result {
                     taskFailed.value = error.localizedDescription

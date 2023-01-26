@@ -27,7 +27,6 @@
 		4A4BF17C298160D30008AA34 /* SaveTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF17B298160D30008AA34 /* SaveTaskViewController.swift */; };
 		4A4BF17E298160DE0008AA34 /* SaveTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4BF17D298160DE0008AA34 /* SaveTaskViewController.xib */; };
 		4A4BF1832981620E0008AA34 /* SaveTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF1822981620E0008AA34 /* SaveTaskViewModel.swift */; };
-		4A4BF185298162970008AA34 /* SaveTaskNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF184298162970008AA34 /* SaveTaskNetworkService.swift */; };
 		4A4BF18929816AF50008AA34 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A4BF18829816AF50008AA34 /* IQKeyboardManagerSwift */; };
 		4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EA29804E66005B28BF /* AppDelegate.swift */; };
 		4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EC29804E66005B28BF /* SceneDelegate.swift */; };
@@ -61,6 +60,10 @@
 		4A874F58298122AA00051703 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A874F56298122AA00051703 /* TaskTableViewCell.xib */; };
 		4A874F5A2981233000051703 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F592981233000051703 /* TaskViewModel.swift */; };
 		4A874F5C2981239B00051703 /* String+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F5B2981239B00051703 /* String+Date+Extension.swift */; };
+		4AF6A1C8298306E800396853 /* FireBaseDataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */; };
+		4AF6A1CA29830B1300396853 /* String+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1C929830B1300396853 /* String+Codable+Extension.swift */; };
+		4AF6A1CD2983186200396853 /* Dictionary+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CB2983186200396853 /* Dictionary+Codable+Extension.swift */; };
+		4AF6A1CE2983186200396853 /* Array+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +101,6 @@
 		4A4BF17B298160D30008AA34 /* SaveTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTaskViewController.swift; sourceTree = "<group>"; };
 		4A4BF17D298160DE0008AA34 /* SaveTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveTaskViewController.xib; sourceTree = "<group>"; };
 		4A4BF1822981620E0008AA34 /* SaveTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTaskViewModel.swift; sourceTree = "<group>"; };
-		4A4BF184298162970008AA34 /* SaveTaskNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTaskNetworkService.swift; sourceTree = "<group>"; };
 		4A65C7E729804E66005B28BF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A65C7EA29804E66005B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A65C7EC29804E66005B28BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,10 @@
 		4A874F56298122AA00051703 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		4A874F592981233000051703 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		4A874F5B2981239B00051703 /* String+Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date+Extension.swift"; sourceTree = "<group>"; };
+		4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDataBaseManager.swift; sourceTree = "<group>"; };
+		4AF6A1C929830B1300396853 /* String+Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Codable+Extension.swift"; sourceTree = "<group>"; };
+		4AF6A1CB2983186200396853 /* Dictionary+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Codable+Extension.swift"; sourceTree = "<group>"; };
+		4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Codable+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,9 @@
 		4A037DDF29805AA50021ADF6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */,
+				4AF6A1CB2983186200396853 /* Dictionary+Codable+Extension.swift */,
+				4AF6A1C929830B1300396853 /* String+Codable+Extension.swift */,
 				4A874F5B2981239B00051703 /* String+Date+Extension.swift */,
 				4A037DE029805AC10021ADF6 /* UIView+Extension.swift */,
 			);
@@ -210,7 +219,6 @@
 				4A874F302980EEC500051703 /* AuthNetworkService.swift */,
 				4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */,
 				4A874F322980F51500051703 /* RegisterationNetworkService.swift */,
-				4A4BF184298162970008AA34 /* SaveTaskNetworkService.swift */,
 				4A874F3E2981031900051703 /* TasksNetworkService.swift */,
 			);
 			path = NetworkService;
@@ -290,6 +298,7 @@
 				4A65C81C29804E98005B28BF /* ThemeManager.swift */,
 				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A037DDD298058C80021ADF6 /* ValidationManager.swift */,
+				4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -559,6 +568,7 @@
 				4A65C83229804EEA005B28BF /* Colors.swift in Sources */,
 				4A037DED298080BC0021ADF6 /* LoginViewController.swift in Sources */,
 				4A65C82C29804E99005B28BF /* Observable.swift in Sources */,
+				4AF6A1CD2983186200396853 /* Dictionary+Codable+Extension.swift in Sources */,
 				4A65C82A29804E99005B28BF /* AppWindowManager.swift in Sources */,
 				4A874F412981033900051703 /* TaskModel.swift in Sources */,
 				4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */,
@@ -568,12 +578,14 @@
 				4A037DD8298058330021ADF6 /* BindingTextField.swift in Sources */,
 				4A874F5A2981233000051703 /* TaskViewModel.swift in Sources */,
 				4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */,
-				4A4BF185298162970008AA34 /* SaveTaskNetworkService.swift in Sources */,
 				4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */,
 				4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */,
+				4AF6A1C8298306E800396853 /* FireBaseDataBaseManager.swift in Sources */,
 				4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */,
+				4AF6A1CE2983186200396853 /* Array+Codable+Extension.swift in Sources */,
 				4A874F3F2981031900051703 /* TasksNetworkService.swift in Sources */,
 				4A874F352980F56100051703 /* NetworkServiceEnum.swift in Sources */,
+				4AF6A1CA29830B1300396853 /* String+Codable+Extension.swift in Sources */,
 				4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */,
 				4A037DDB298058590021ADF6 /* RegisterationViewModel.swift in Sources */,
 				4A65C82829804E99005B28BF /* AppLibraryManager.swift in Sources */,

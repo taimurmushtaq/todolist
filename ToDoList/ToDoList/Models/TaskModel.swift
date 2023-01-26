@@ -9,17 +9,15 @@ import Foundation
 
 struct TaskModel: Codable {
     let taskId: String
+    var taskDataModel: TaskDataModel
+}
+
+struct TaskDataModel: Codable {
     let title: String
     let dateTime: String
     var isComplete:Bool
-}
-
-extension TaskModel: Hashable, Equatable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(taskId)
-    }
     
-    static func == (lhs: TaskModel, rhs: TaskModel) -> Bool {
-        return lhs.taskId == rhs.taskId
+    mutating func changeTaskStatus() {
+        isComplete.toggle()
     }
 }

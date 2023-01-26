@@ -38,13 +38,9 @@ class TasksListViewController: BaseViewController {
         configureTableView()
         updateUI()
         bindViews()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         viewModel.handleAuthState()
-        viewModel.fetchTasks()
+        viewModel.observeTasks()
     }
 }
 
@@ -105,7 +101,7 @@ extension TasksListViewController {
     }
     
     @objc func handleRefresh() {
-        viewModel.fetchTasks()
+        viewModel.observeTasks()
     }
 }
 

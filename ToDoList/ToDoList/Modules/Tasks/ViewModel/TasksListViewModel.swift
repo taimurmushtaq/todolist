@@ -46,8 +46,8 @@ extension TasksListViewModel {
 }
 
 extension TasksListViewModel {
-    func fetchTasks() {
-        taskNetworkService.fetchTasks { [weak self] result in
+    func observeTasks() {
+        taskNetworkService.observeTasks { [weak self] result in
             switch result {
             case .success(let tasks):
                 self?.tasksArray = tasks.map(TaskViewModel.init)
@@ -59,8 +59,12 @@ extension TasksListViewModel {
     }
     
     func deleteTask(indexPath: IndexPath) {
-        tasksArray.remove(at: indexPath.row)
-        refreshTasks.value = ""
+        if let item = item(atIndex: indexPath) {
+            taskNetworkService.deleteTask(item.taskId) { [weak self] result in
+                self?.tasksArray.remove(at: indexPath.row)
+                self?.refreshTasks.value = ""
+            }
+        }
     }
     
     func changeTaskStatus(indexPath: IndexPath) {

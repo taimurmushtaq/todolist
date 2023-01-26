@@ -10,15 +10,16 @@ import UIKit
 class TaskViewModel {
     var taskModel: TaskModel
     
-    var taskTitle:String { return taskModel.title }
-    var taskDateTime:String { return taskModel.dateTime }
-    var isTaskComplete:Bool { return taskModel.isComplete }
+    var taskId:String { return taskModel.taskId }
+    var taskTitle:String { return taskModel.taskDataModel.title }
+    var taskDateTime:String { return taskModel.taskDataModel.dateTime }
+    var isTaskComplete:Bool { return taskModel.taskDataModel.isComplete }
     
     init(taskModel: TaskModel) {
         self.taskModel = taskModel
     }
     
     func changeTaskStatus() {
-        taskModel.isComplete.toggle()
+        taskModel.taskDataModel.isComplete.toggle()
     }
 }
