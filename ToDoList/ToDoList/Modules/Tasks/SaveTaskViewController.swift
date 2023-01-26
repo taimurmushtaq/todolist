@@ -96,8 +96,11 @@ extension SaveTaskViewController {
         viewModel.validateFields.bind { [weak self] isValidated in
             self?.saveButton.isEnabled = isValidated
         }
-        viewModel.successfullySaved.bind { [weak self] _ in
+        viewModel.taskSaved.bind { [weak self] _ in
             self?.router.goBack()
+        }
+        viewModel.taskFailed.bind { errorMessage in
+            ToastManager.showMessage(errorMessage)
         }
     }
 }

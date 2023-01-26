@@ -14,25 +14,26 @@ struct SaveTaskViewModel {
     var dateTime = Observable("")
     
     var validateFields = Observable(false)
-    var successfullySaved = Observable(false)
+    var taskSaved = Observable(false)
+    var taskFailed = Observable("")
     
     //MARK: - Properties
-    private let networkService: SaveTaskNetworkServiceProtcol
-    private let taskViewModel: TaskViewModel?
+    private let networkService: AddTaskNetworkServiceProtcol & UpdateTaskNetworkServiceProtcol
+    private var taskModel: TaskModel?
     
-    init(_ networkService: SaveTaskNetworkServiceProtcol, taskViewModel: TaskViewModel?) {
+    init(_ networkService: AddTaskNetworkServiceProtcol & UpdateTaskNetworkServiceProtcol, taskModel: TaskModel?) {
         self.networkService = networkService
-        self.taskViewModel = taskViewModel
+        self.taskModel = taskModel
     }
 }
 
 extension SaveTaskViewModel {
-    var isEditing:Bool { return taskViewModel != nil }
+    var isEditing:Bool { return taskModel != nil }
     
     func updateFields() {
-        title.value = taskViewModel?.taskTitle ?? ""
-        dateTime.value = taskViewModel?.taskDateTime ?? ""
-        validateFields.value.toggle()
+        title.value = taskModel?.title ?? ""
+        dateTime.value = taskModel?.dateTime ?? ""
+        performValidation()
     }
     
     func performValidation() {
@@ -43,5 +44,25 @@ extension SaveTaskViewModel {
         }
     }
     
-    func saveTask() { }
+    func saveTask() {
+        if isEditing {
+            let existingTask = TaskModel(taskId: taskModel!.taskId, title: title.value, dateTime: dateTime.value, isComplete: taskModel!.isComplete)
+            networkService.updateTask(existingTask) { result in
+                if case .failure( let error) = result {
+                    taskFailed.value = error.localizedDescription
+                } else {
+                    taskSaved.value = true
+                }
+            }
+        } else {
+            let newTask = TaskModel(taskId: UUID().uuidString, title: title.value, dateTime: dateTime.value, isComplete: false)
+            networkService.saveTask(newTask) { result in
+                if case .failure( let error) = result {
+                    taskFailed.value = error.localizedDescription
+                } else {
+                    taskSaved.value = true
+                }
+            }
+        }
+    }
 }

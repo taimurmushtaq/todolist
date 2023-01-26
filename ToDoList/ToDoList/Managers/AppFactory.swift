@@ -45,7 +45,7 @@ class AppFactory: AppFactoryProtocol {
     }
     
     static func saveTaskViewController(router: RouterProtocol, taskViewModel: TaskViewModel?) -> SaveTaskViewController {
-        let viewModel = SaveTaskViewModel(SaveTaskNetworkService(), taskViewModel: taskViewModel )
+        let viewModel = SaveTaskViewModel(SaveTaskNetworkService(), taskModel: taskViewModel?.taskModel)
         let controller = SaveTaskViewController(viewModel: viewModel)
         controller.router = router
         

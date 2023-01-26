@@ -8,16 +8,20 @@
 import Foundation
 import FirebaseAuth
 
-protocol SaveTaskNetworkServiceProtcol {
-    func saveTask(_ title: String, dateTime: String, isComplete:Bool, onCompletion: @escaping (Result<TaskModel, Error>) -> Void)
-    func updateTask(_ title: String, dateTime: String, isComplete:Bool, onCompletion: @escaping (Result<TaskModel, Error>) -> Void)
+protocol AddTaskNetworkServiceProtcol {
+    func saveTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void)
 }
 
-class SaveTaskNetworkService: SaveTaskNetworkServiceProtcol {
-    func saveTask(_ title: String, dateTime: String, isComplete:Bool, onCompletion: @escaping (Result<TaskModel, Error>) -> Void) {
-        
+protocol UpdateTaskNetworkServiceProtcol {
+    func updateTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void)
+}
+
+class SaveTaskNetworkService: AddTaskNetworkServiceProtcol, UpdateTaskNetworkServiceProtcol {
+    func saveTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        onCompletion(.success(()))
     }
-    func updateTask(_ title: String, dateTime: String, isComplete:Bool, onCompletion: @escaping (Result<TaskModel, Error>) -> Void) {
-        
+    
+    func updateTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        onCompletion(.failure(NetworkServiceError.dataParsingError))
     }
 }

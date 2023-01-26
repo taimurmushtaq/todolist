@@ -25,8 +25,9 @@ class TasksNetworkService {
 extension TasksNetworkService: TasksNetworkServiceProtocol {
     
     func fetchTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void) {
-        let tasks = TaskModel(title: "Innovation Factory Application Task",
-                              dateTime: Date().convertToString(withFormat: DateFormats.taskTimerFormat.rawValue) ?? "",
+        let tasks = TaskModel(taskId: UUID().uuidString,
+                              title: "Innovation Factory Application Task",
+                              dateTime: Date().convertToString(withFormat: DateFormats.taskTimerFormat.rawValue) ,
                               isComplete: false)
         onCompletion(.success([tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks, tasks]))
     }
