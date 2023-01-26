@@ -10,7 +10,7 @@ import FirebaseAuth
 
 protocol AuthNetworkServiceProtocol {
     static var currentUser: UserModel? { get }
-    func handleAuthState(_ onCompletion: @escaping (Result<UserModel, NetworkServiceError>) -> Void)
+    func handleAuthState(_ onCompletion: @escaping (Result<UserModel, ResultErrors>) -> Void)
 }
 
 class AuthNetworkService: AuthNetworkServiceProtocol {
@@ -23,13 +23,13 @@ class AuthNetworkService: AuthNetworkServiceProtocol {
         }
     }
     
-    func handleAuthState(_ onCompletion: @escaping (Result<UserModel, NetworkServiceError>) -> Void) {
+    func handleAuthState(_ onCompletion: @escaping (Result<UserModel, ResultErrors>) -> Void) {
         Auth.auth().addStateDidChangeListener { auth, user in
             
             if let user = user {
                 onCompletion(.success(UserModel(uid: user.uid, email: user.email!, displayName: user.displayName)))
             } else {
-                onCompletion(.failure(NetworkServiceError.unknown))
+                onCompletion(.failure(ResultErrors.unknown))
             }
         }
     }

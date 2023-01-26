@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 
 protocol TasksNetworkServiceProtocol {
-    func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void)
+    func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], ResultErrors>) -> Void)
     func deleteTask(_ taskId: String, onCompletion: @escaping (Result<Void, Error>) -> Void)
     func performLogout() throws
 }
@@ -25,7 +25,7 @@ protocol UpdateTaskNetworkServiceProtcol {
 class TasksNetworkService: TasksNetworkServiceProtocol {
     let dataBaseManager = FireBaseDataBaseManager()
     
-    func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void) {
+    func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], ResultErrors>) -> Void) {
         dataBaseManager.observeTasks { result in
             if case .success(let value) = result,
                let object = value as? [String: [String: Any]] {
