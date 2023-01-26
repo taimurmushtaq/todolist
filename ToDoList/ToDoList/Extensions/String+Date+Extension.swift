@@ -9,7 +9,7 @@ import Foundation
 
 enum DateFormats: String {
     case simpleFormat = "dd/MM/yyyy"
-    case taskTimerFormat = "mm:hh a, dd MMM YYYY"
+    case taskTimerFormat = "hh:mm a, dd MMM YYYY"
 }
 
 extension String {
