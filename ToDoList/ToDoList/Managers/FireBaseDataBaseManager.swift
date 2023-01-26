@@ -12,12 +12,6 @@ enum FireBaseDataBasePath: String {
     case tasks = "Tasks"
 }
 
-enum FireBaseDataBaseTaskColumns: String {
-    case title = "title"
-    case dateTime = "dateTime"
-    case isComplete = "isComplete"
-}
-
 class FireBaseDataBaseManager {
     private var ref: DatabaseReference!
     

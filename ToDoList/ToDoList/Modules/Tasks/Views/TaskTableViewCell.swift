@@ -22,6 +22,6 @@ extension TaskTableViewCell {
     func configureCell(withViewModel viewModel: TaskViewModel) {
         checkButton.isSelected = viewModel.isTaskComplete
         titleLabel.text = viewModel.taskTitle
-        dateTimeLabel.text = viewModel.taskDateTime
+        dateTimeLabel.text = viewModel.taskDateTimeString
     }
 }

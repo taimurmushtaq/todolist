@@ -11,7 +11,7 @@ import FirebaseAuth
 struct SaveTaskViewModel {
     //MARK: - Observables
     var title = Observable("")
-    var dateTime = Observable("")
+    var dateTime = Observable(TimeInterval())
     
     var validateFields = Observable(false)
     var taskSaved = Observable(false)
@@ -31,13 +31,17 @@ extension SaveTaskViewModel {
     var isEditing:Bool { return taskModel != nil }
     
     func updateFields() {
-        title.value = taskModel?.taskDataModel.title ?? ""
-        dateTime.value = taskModel?.taskDataModel.dateTime ?? ""
+        if let taskTitle = taskModel?.taskDataModel.title {
+            title.value = taskTitle
+        }
+        if let timeInterval = taskModel?.taskDataModel.timeInterval {
+            dateTime.value = timeInterval
+        }
         performValidation()
     }
     
     func performValidation() {
-        if title.value.isEmpty || dateTime.value.isEmpty {
+        if title.value.isEmpty || dateTime.value == 0.0 {
             validateFields.value = false
         } else  {
             validateFields.value = true
@@ -46,7 +50,7 @@ extension SaveTaskViewModel {
     
     func saveTask() {
         if isEditing {
-            let existingTaskDataModel = TaskDataModel(title: title.value, dateTime: dateTime.value, isComplete: taskModel!.taskDataModel.isComplete)
+            let existingTaskDataModel = TaskDataModel(title: title.value, timeInterval: dateTime.value, isComplete: taskModel!.taskDataModel.isComplete)
             let existingTask = TaskModel(taskId: taskModel!.taskId, taskDataModel: existingTaskDataModel)
             networkService.updateTask(existingTask) { result in
                 if case .failure( let error) = result {
@@ -56,7 +60,7 @@ extension SaveTaskViewModel {
                 }
             }
         } else {
-            let taskDataModel = TaskDataModel(title: title.value, dateTime: dateTime.value, isComplete: false)
+            let taskDataModel = TaskDataModel(title: title.value, timeInterval: dateTime.value, isComplete: false)
             let newTask = TaskModel(taskId: "", taskDataModel: taskDataModel)
             
             networkService.saveTask(newTask) { result in

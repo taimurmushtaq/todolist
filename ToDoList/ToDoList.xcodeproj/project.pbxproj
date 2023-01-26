@@ -64,6 +64,7 @@
 		4AF6A1CA29830B1300396853 /* String+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1C929830B1300396853 /* String+Codable+Extension.swift */; };
 		4AF6A1CD2983186200396853 /* Dictionary+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CB2983186200396853 /* Dictionary+Codable+Extension.swift */; };
 		4AF6A1CE2983186200396853 /* Array+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */; };
+		4AF6A1D029832E0A00396853 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		4AF6A1C929830B1300396853 /* String+Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Codable+Extension.swift"; sourceTree = "<group>"; };
 		4AF6A1CB2983186200396853 /* Dictionary+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Codable+Extension.swift"; sourceTree = "<group>"; };
 		4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Codable+Extension.swift"; sourceTree = "<group>"; };
+		4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		4AF6A1D12983371900396853 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoList.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +260,7 @@
 		4A65C7E929804E66005B28BF /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				4AF6A1D12983371900396853 /* ToDoList.entitlements */,
 				4A65C7F829804E68005B28BF /* Info.plist */,
 				4A65C81E29804E99005B28BF /* Architecture */,
 				4A65C82F29804EAB005B28BF /* Main */,
@@ -299,6 +303,7 @@
 				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A037DDD298058C80021ADF6 /* ValidationManager.swift */,
 				4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */,
+				4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -570,6 +575,7 @@
 				4A65C82C29804E99005B28BF /* Observable.swift in Sources */,
 				4AF6A1CD2983186200396853 /* Dictionary+Codable+Extension.swift in Sources */,
 				4A65C82A29804E99005B28BF /* AppWindowManager.swift in Sources */,
+				4AF6A1D029832E0A00396853 /* LocalNotificationManager.swift in Sources */,
 				4A874F412981033900051703 /* TaskModel.swift in Sources */,
 				4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */,
 				4A037DF12980812C0021ADF6 /* LoginViewModel.swift in Sources */,
@@ -766,9 +772,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3XWZLKYAV;
+				DEVELOPMENT_TEAM = TALXMDWBCD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "To-Do List";
@@ -784,7 +791,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.innovationfactory.app.todolist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smart.todolist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -801,9 +808,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3XWZLKYAV;
+				DEVELOPMENT_TEAM = TALXMDWBCD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "To-Do List";
@@ -819,7 +827,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.innovationfactory.app.todolist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smart.todolist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

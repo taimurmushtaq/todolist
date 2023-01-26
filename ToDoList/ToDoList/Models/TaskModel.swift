@@ -14,10 +14,12 @@ struct TaskModel: Codable {
 
 struct TaskDataModel: Codable {
     let title: String
-    let dateTime: String
+    let timeInterval: TimeInterval
     var isComplete:Bool
     
     mutating func changeTaskStatus() {
         isComplete.toggle()
     }
+    
+    var taskDate:Date { get { return Date(timeIntervalSince1970: timeInterval) } }
 }

@@ -46,13 +46,8 @@ class TasksListViewController: BaseViewController {
 
 extension TasksListViewController {
     func configureTableView() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .accentColor
-        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 128, right: 0)
         tableView.allowsSelectionDuringEditing = false
-        tableView.refreshControl = refreshControl
         tableView.register(UINib.init(nibName: TaskTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: TaskTableViewCell.identifier)
     }
     
@@ -105,10 +100,6 @@ extension TasksListViewController {
         showLogoutAlert { [weak self] in
             self?.viewModel.performLogut()
         }
-    }
-    
-    @objc func handleRefresh() {
-        viewModel.observeTasks()
     }
 }
 

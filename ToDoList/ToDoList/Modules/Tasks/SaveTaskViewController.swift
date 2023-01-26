@@ -21,8 +21,13 @@ class SaveTaskViewController: BaseViewController {
     var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .dateAndTime
-        picker.locale = Locale(identifier: "en_US")
+        picker.timeZone = TimeZone.current
+        picker.locale = Locale.current
         picker.minimumDate = Date()
+        if #available(iOS 13.4, *) {
+            picker.preferredDatePickerStyle = .wheels
+        }
+        picker.sizeToFit()
         return picker
     }()
     
@@ -71,16 +76,16 @@ extension SaveTaskViewController {
             self?.viewModel.title.value = value
             self?.viewModel.performValidation()
         }
-        dateTimeTextField.bind { [weak self] value in
-            self?.viewModel.dateTime.value = value
-            self?.viewModel.performValidation()
-        }
+        
         dateTimeTextField.bindEndEditing { [weak self] in
-            let dateString = self?.datePicker.date.convertToString(withFormat: DateFormats.taskTimerFormat.rawValue) ?? ""
+            guard let strongSelf = self else { return }
             
-            self?.dateTimeTextField.text = dateString
-            self?.viewModel.dateTime.value = dateString
-            self?.viewModel.performValidation()
+            let date = strongSelf.datePicker.date
+            let dateString = date.convertToString(withFormat: DateFormats.taskTimerFormat.rawValue)
+            
+            strongSelf.dateTimeTextField.text = dateString
+            strongSelf.viewModel.dateTime.value = date.timeIntervalSince1970
+            strongSelf.viewModel.performValidation()
         }
         
         saveButton.bind { [weak self] in
@@ -91,7 +96,7 @@ extension SaveTaskViewController {
             self?.titleTextField.text = value
         }
         viewModel.dateTime.bind { [weak self] value in
-            self?.dateTimeTextField.text = value
+            self?.dateTimeTextField.text = Date(timeIntervalSince1970: value).convertToString(withFormat: DateFormats.taskTimerFormat.rawValue)
         }
         viewModel.validateFields.bind { [weak self] isValidated in
             self?.saveButton.isEnabled = isValidated

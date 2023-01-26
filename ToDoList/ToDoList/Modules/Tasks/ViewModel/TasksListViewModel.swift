@@ -47,6 +47,17 @@ extension TasksListViewModel {
     func canEditRow(atIndex indexPath: IndexPath) -> Bool {
         return true
     }
+    
+    func configureLocalNotification() {
+        LocalNotificationManager.cancelAllNotification()
+        for task in tasksArray {
+            if !task.isTaskComplete, task.taskDate > Date() {
+                LocalNotificationManager.addNotification(withTitle: task.taskTitle,
+                                                    identifier: task.taskId,
+                                                    onDate: task.taskDate)
+            }
+        }
+    }
 }
 
 extension TasksListViewModel {
@@ -56,6 +67,7 @@ extension TasksListViewModel {
             case .success(let tasks):
                 self?.tasksArray = tasks.map(TaskViewModel.init)
                 self?.refreshTasks.value = ""
+                self?.configureLocalNotification()
             case .failure(let error):
                 ToastManager.showMessage(error.localizedDescription)
             }
@@ -76,7 +88,7 @@ extension TasksListViewModel {
             item.changeTaskStatus()
             
             let existingTaskDataModel = TaskDataModel(title: item.taskTitle,
-                                                      dateTime: item.taskDateTime,
+                                                      timeInterval: item.taskTimeInterval,
                                                       isComplete: item.isTaskComplete)
             let existingTask = TaskModel(taskId: item.taskId, taskDataModel: existingTaskDataModel)
             updateTaskNetworkService.updateTask(existingTask) { [weak self] result in

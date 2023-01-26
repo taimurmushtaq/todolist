@@ -11,9 +11,12 @@ class TaskViewModel {
     var taskModel: TaskModel
     
     var taskId:String { return taskModel.taskId }
+    var taskTimeInterval:TimeInterval { return taskModel.taskDataModel.timeInterval }
     var taskTitle:String { return taskModel.taskDataModel.title }
-    var taskDateTime:String { return taskModel.taskDataModel.dateTime }
+    var taskDate:Date { return taskModel.taskDataModel.taskDate }
     var isTaskComplete:Bool { return taskModel.taskDataModel.isComplete }
+    
+    var taskDateTimeString:String { return taskDate.convertToString(withFormat: DateFormats.taskTimerFormat.rawValue)}
     
     init(taskModel: TaskModel) {
         self.taskModel = taskModel
