@@ -11,14 +11,18 @@ class TasksListViewModel {
     //MARK: - Observables
     var successfullySignOut = Observable(false)
     var refreshTasks = Observable("")
+    var taskSaved = Observable(false)
+    var taskFailed = Observable("")
     
     //MARK: - Properties
     private let taskNetworkService: TasksNetworkServiceProtocol
+    private let updateTaskNetworkService: UpdateTaskNetworkServiceProtcol
     private let authNetworkService: AuthNetworkServiceProtocol
     var tasksArray = [TaskViewModel]()
     
-    init(_ taskNetworkService: TasksNetworkServiceProtocol, _ authNetworkService: AuthNetworkServiceProtocol) {
+    init(_ taskNetworkService: TasksNetworkServiceProtocol, _ updateTaskNetworkService: UpdateTaskNetworkServiceProtcol, _ authNetworkService: AuthNetworkServiceProtocol) {
         self.taskNetworkService = taskNetworkService
+        self.updateTaskNetworkService = updateTaskNetworkService
         self.authNetworkService = authNetworkService
     }
 }
@@ -70,7 +74,18 @@ extension TasksListViewModel {
     func changeTaskStatus(indexPath: IndexPath) {
         if let item = item(atIndex: indexPath) {
             item.changeTaskStatus()
-            refreshTasks.value = ""
+            
+            let existingTaskDataModel = TaskDataModel(title: item.taskTitle,
+                                                      dateTime: item.taskDateTime,
+                                                      isComplete: item.isTaskComplete)
+            let existingTask = TaskModel(taskId: item.taskId, taskDataModel: existingTaskDataModel)
+            updateTaskNetworkService.updateTask(existingTask) { [weak self] result in
+                if case .failure( let error) = result {
+                    self?.taskFailed.value = error.localizedDescription
+                } else {
+                    self?.refreshTasks.value = ""
+                }
+            }
         }
     }
     

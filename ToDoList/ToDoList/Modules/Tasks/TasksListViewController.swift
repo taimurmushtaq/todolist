@@ -89,6 +89,13 @@ extension TasksListViewController {
             self?.tableView.refreshControl?.endRefreshing()
             self?.tableView.reloadData()
         }
+        
+        viewModel.taskSaved.bind { [weak self] _ in
+            self?.tableView.reloadData()
+        }
+        viewModel.taskFailed.bind { errorMessage in
+            ToastManager.showMessage(errorMessage)
+        }
     }
 }
 

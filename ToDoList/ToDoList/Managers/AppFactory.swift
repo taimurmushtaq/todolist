@@ -37,7 +37,7 @@ class AppFactory: AppFactoryProtocol {
     }
     
     static func tasksListViewController() -> TasksListViewController {
-        let viewModel = TasksListViewModel(TasksNetworkService(), AuthNetworkService())
+        let viewModel = TasksListViewModel(TasksNetworkService(), SaveTaskNetworkService(), AuthNetworkService())
         let controller = TasksListViewController(viewModel: viewModel)
         controller.router = AppRouter(controller)
 
