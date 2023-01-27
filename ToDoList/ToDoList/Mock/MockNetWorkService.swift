@@ -22,6 +22,10 @@ class MockNetworkService {
         
         taskArray.append(taskModel)
     }
+    
+    func clealAllTasks() {
+        taskArray.removeAll()
+    }
 }
 
 extension MockNetworkService: AuthNetworkServiceProtocol {

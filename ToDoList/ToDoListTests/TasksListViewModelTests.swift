@@ -18,6 +18,8 @@ final class TasksListViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
+        MockNetworkService.instance.clealAllTasks()
+        
         sut = TasksListViewModel(MockNetworkService.instance, MockNetworkService.instance, MockNetworkService.instance)
         sut.observeTasks()
         sut.handleAuthState()
@@ -46,6 +48,17 @@ extension TasksListViewModelTests {
     func addTask() {
         MockNetworkService.instance.addTask()
         MockNetworkService.instance.taskObserver(.success(MockNetworkService.instance.taskArray))
+    }
+}
+
+extension TasksListViewModelTests {
+    func test_tableViewDataSourceMethods() {
+        XCTAssertTrue(sut.numberOfSections == 1)
+        XCTAssertTrue(sut.numberOfRows(inSection: 0) == 0)
+        
+        addTask()
+        XCTAssertTrue(sut.numberOfRows(inSection: 0) == 1)
+        XCTAssertTrue(sut.item(atIndex: IndexPath(row: 0, section: 0)) == sut.tasksArray.first!)
     }
 }
 

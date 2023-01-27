@@ -26,3 +26,13 @@ class TaskViewModel {
         taskModel.taskDataModel.isComplete.toggle()
     }
 }
+
+extension TaskViewModel: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(taskId)
+    }
+    
+    static func == (lhs: TaskViewModel, rhs: TaskViewModel) -> Bool {
+        lhs.taskId == rhs.taskId
+    }
+}
