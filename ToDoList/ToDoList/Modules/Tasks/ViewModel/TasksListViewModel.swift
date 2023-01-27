@@ -77,7 +77,6 @@ extension TasksListViewModel {
     func deleteTask(indexPath: IndexPath) {
         if let item = item(atIndex: indexPath) {
             taskNetworkService.deleteTask(item.taskId) { [weak self] result in
-                self?.tasksArray.remove(at: indexPath.row)
                 self?.refreshTasks.value = ""
             }
         }

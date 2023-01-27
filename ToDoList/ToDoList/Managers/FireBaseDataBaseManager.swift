@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseAuth
 
 enum FireBaseDataBasePath: String {
     case tasks = "Tasks"
@@ -14,9 +15,10 @@ enum FireBaseDataBasePath: String {
 
 class FireBaseDataBaseManager {
     private var ref: DatabaseReference!
+    private var currentUser = Auth.auth().currentUser
     
     init() {
-        ref = Database.database().reference(withPath: FireBaseDataBasePath.tasks.rawValue)
+        ref = Database.database().reference(withPath: FireBaseDataBasePath.tasks.rawValue).child(currentUser!.uid)
     }
 }
 

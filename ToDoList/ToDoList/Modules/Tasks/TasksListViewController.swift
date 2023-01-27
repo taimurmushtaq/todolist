@@ -81,7 +81,6 @@ extension TasksListViewController {
         }
         
         viewModel.refreshTasks.bind { [weak self] _ in
-            self?.tableView.refreshControl?.endRefreshing()
             self?.tableView.reloadData()
         }
         
@@ -110,7 +109,15 @@ extension TasksListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows(inSection: section)
+        let numberOfRows = viewModel.numberOfRows(inSection: section)
+        
+        if numberOfRows == 0 {
+            tableView.setEmptyMessage("No Task Found")
+        } else {
+            tableView.restore()
+        }
+        
+        return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -65,6 +65,7 @@
 		4AF6A1CD2983186200396853 /* Dictionary+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CB2983186200396853 /* Dictionary+Codable+Extension.swift */; };
 		4AF6A1CE2983186200396853 /* Array+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */; };
 		4AF6A1D029832E0A00396853 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */; };
+		4AF6A1D329834F7400396853 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1D229834F7400396853 /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Codable+Extension.swift"; sourceTree = "<group>"; };
 		4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		4AF6A1D12983371900396853 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoList.entitlements; sourceTree = "<group>"; };
+		4AF6A1D229834F7400396853 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				4AF6A1C929830B1300396853 /* String+Codable+Extension.swift */,
 				4A874F5B2981239B00051703 /* String+Date+Extension.swift */,
 				4A037DE029805AC10021ADF6 /* UIView+Extension.swift */,
+				4AF6A1D229834F7400396853 /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				4A874F412981033900051703 /* TaskModel.swift in Sources */,
 				4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */,
 				4A037DF12980812C0021ADF6 /* LoginViewModel.swift in Sources */,
+				4AF6A1D329834F7400396853 /* UITableView+Extension.swift in Sources */,
 				4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */,
 				4A874F48298112CF00051703 /* Images.swift in Sources */,
 				4A037DD8298058330021ADF6 /* BindingTextField.swift in Sources */,
