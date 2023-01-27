@@ -12,7 +12,7 @@ struct LoginViewModel {
     var email = Observable("")
     var password = Observable("")
     var validateFields = Observable(false)
-    var signInSuccessFul = Observable(false)
+    var signInSuccessful = Observable(false)
     var signInFailed = Observable("")
     
     //MARK: - Properties
@@ -38,7 +38,7 @@ extension LoginViewModel {
         networkService.performLogin(withEmail: email.value, password: password.value, onCompletion: { result in
             switch result {
             case .success(_):
-                signInSuccessFul.value.toggle()
+                signInSuccessful.value.toggle()
             case .failure(let error):
                 signInFailed.value = error.localizedDescription
             }

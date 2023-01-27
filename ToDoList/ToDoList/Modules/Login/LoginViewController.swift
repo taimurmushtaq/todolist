@@ -104,7 +104,7 @@ extension LoginViewController {
             self?.loginButton.isEnabled = isValidated
         }
         
-        viewModel.signInSuccessFul.bind { [weak self] _ in
+        viewModel.signInSuccessful.bind { [weak self] _ in
             AppLoader.instance.hide()
             self?.router.routToTasks()
         }

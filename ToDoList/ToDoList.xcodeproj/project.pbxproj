@@ -32,7 +32,7 @@
 		4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C7EC29804E66005B28BF /* SceneDelegate.swift */; };
 		4A65C7F229804E66005B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A65C7F029804E66005B28BF /* Main.storyboard */; };
 		4A65C7F729804E68005B28BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A65C7F529804E68005B28BF /* LaunchScreen.storyboard */; };
-		4A65C80229804E69005B28BF /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C80129804E69005B28BF /* ToDoListTests.swift */; };
+		4A65C80229804E69005B28BF /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C80129804E69005B28BF /* LoginViewModelTests.swift */; };
 		4A65C82829804E99005B28BF /* AppLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81B29804E98005B28BF /* AppLibraryManager.swift */; };
 		4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81C29804E98005B28BF /* ThemeManager.swift */; };
 		4A65C82A29804E99005B28BF /* AppWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C81D29804E98005B28BF /* AppWindowManager.swift */; };
@@ -135,7 +135,7 @@
 		4A65C7F629804E68005B28BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A65C7F829804E68005B28BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A65C7FD29804E69005B28BF /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A65C80129804E69005B28BF /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		4A65C80129804E69005B28BF /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		4A65C80729804E69005B28BF /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A65C81B29804E98005B28BF /* AppLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLibraryManager.swift; sourceTree = "<group>"; };
 		4A65C81C29804E98005B28BF /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		4A65C80029804E69005B28BF /* ToDoListTests */ = {
 			isa = PBXGroup;
 			children = (
-				4A65C80129804E69005B28BF /* ToDoListTests.swift */,
+				4A65C80129804E69005B28BF /* LoginViewModelTests.swift */,
 			);
 			path = ToDoListTests;
 			sourceTree = "<group>";
@@ -732,7 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A65C80229804E69005B28BF /* ToDoListTests.swift in Sources */,
+				4A65C80229804E69005B28BF /* LoginViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
