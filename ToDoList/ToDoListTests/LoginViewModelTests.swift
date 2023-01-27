@@ -1,6 +1,6 @@
 //
-//  ToDoListTests.swift
-//  ToDoListTests
+//  LoginViewModelTests.swift
+//  LoginViewModelTests
 //
 //  Created by Taimur Mushtaq on 24/01/2023.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import ToDoList
 
-final class ToDoListTests: XCTestCase {
+final class LoginViewModelTests: XCTestCase {
     var sut: LoginViewModel!
     
     var email = ""
@@ -26,10 +26,11 @@ final class ToDoListTests: XCTestCase {
     
     override func tearDownWithError() throws {
         try super.tearDownWithError()
+        sut = nil
     }
 }
 
-extension ToDoListTests {
+extension LoginViewModelTests {
     func bindViewModel() {
         sut.email.bind { value in
             self.email = value
@@ -49,7 +50,7 @@ extension ToDoListTests {
     }
 }
 
-extension ToDoListTests {
+extension LoginViewModelTests {
     func test_whenEmailIsChanged() {
         sut.email.value = ""
         XCTAssertEqual(email, sut.email.value)
