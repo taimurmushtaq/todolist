@@ -37,11 +37,11 @@ class LoginViewController: BaseViewController {
         updateUI()
         bindViews()
         
-#if DEBUG
-        viewModel.email.value = "taimur.1989@gmail.com"
-        viewModel.password.value = "Password"
-        viewModel.performValidation()
-#endif
+        //#if DEBUG
+        //        viewModel.email.value = "taimur.1989@gmail.com"
+        //        viewModel.password.value = "Password"
+        //        viewModel.performValidation()
+        //#endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,12 +61,12 @@ extension LoginViewController {
         emailTextField.isEnabled = true
         passwordTextField.isEnabled = true
         
-        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitle(AppStrings.buttonTitles.login.rawValue, for: .normal)
         loginButton.theme = .filled
         loginButton.isEnabled = false
         loginButton.enableTheme = true
         
-        registerButton.setTitle("Register", for: .normal)
+        registerButton.setTitle(AppStrings.buttonTitles.register.rawValue, for: .normal)
         registerButton.theme = .empty
         registerButton.isEnabled = true
         registerButton.enableTheme = true

@@ -67,6 +67,7 @@
 		4AF6A1D029832E0A00396853 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */; };
 		4AF6A1D329834F7400396853 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1D229834F7400396853 /* UITableView+Extension.swift */; };
 		4AF6A1D5298352EB00396853 /* AppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1D4298352EB00396853 /* AppLoader.swift */; };
+		4AF6A1D72983EDF400396853 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1D62983EDF400396853 /* AppStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		4AF6A1D12983371900396853 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoList.entitlements; sourceTree = "<group>"; };
 		4AF6A1D229834F7400396853 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		4AF6A1D4298352EB00396853 /* AppLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoader.swift; sourceTree = "<group>"; };
+		4AF6A1D62983EDF400396853 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +370,7 @@
 			children = (
 				4A65C83129804EEA005B28BF /* Colors.swift */,
 				4A874F47298112CF00051703 /* Images.swift */,
+				4AF6A1D62983EDF400396853 /* AppStrings.swift */,
 				4A037DF52980910F0021ADF6 /* GoogleService-Info.plist */,
 				4A65C7F329804E68005B28BF /* Assets.xcassets */,
 			);
@@ -596,6 +599,7 @@
 				4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */,
 				4AF6A1C8298306E800396853 /* FireBaseDataBaseManager.swift in Sources */,
 				4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */,
+				4AF6A1D72983EDF400396853 /* AppStrings.swift in Sources */,
 				4AF6A1CE2983186200396853 /* Array+Codable+Extension.swift in Sources */,
 				4A874F3F2981031900051703 /* TasksNetworkService.swift in Sources */,
 				4A874F352980F56100051703 /* ResultErrors.swift in Sources */,

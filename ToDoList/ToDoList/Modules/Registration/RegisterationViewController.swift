@@ -35,13 +35,6 @@ class RegisterationViewController: BaseViewController {
         
         updateUI()
         bindViews()
-        
-#if DEBUG
-        viewModel.email.value = "taimur.1989@gmail.com"
-        viewModel.password.value = "Password"
-        viewModel.confirmPassword.value = "Password"
-        viewModel.performValidation()
-#endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,13 +49,13 @@ class RegisterationViewController: BaseViewController {
 
 extension RegisterationViewController {
     func updateUI() {
-        title = "SIGN UP"
+        title = AppStrings.controllerTitles.signup.rawValue
         
         emailTextField.isEnabled = true
         passwordTextField.isEnabled = true
         confirmPasswordTextField.isEnabled = true
         
-        registerButton.setTitle("Register", for: .normal)
+        registerButton.setTitle(AppStrings.buttonTitles.register.rawValue, for: .normal)
         registerButton.isEnabled = false
         registerButton.theme = .filled
         registerButton.enableTheme = true

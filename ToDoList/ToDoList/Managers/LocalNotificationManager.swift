@@ -20,7 +20,7 @@ enum LocalNotificationManager {
     static func addNotification(withTitle title:String, identifier:String, onDate date: Date) {
         let content = UNMutableNotificationContent()
         content.title = title
-        content.body = "You task is due at \(date.convertToString(withFormat: DateFormats.taskTimerFormat.rawValue))"
+        content.body = "\(AppStrings.notificationContent.body.rawValue) \(date.convertToString(withFormat: DateFormats.taskTimerFormat.rawValue))"
         content.categoryIdentifier = identifier
         content.sound = .default
         

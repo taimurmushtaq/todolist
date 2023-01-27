@@ -58,12 +58,12 @@ class SaveTaskViewController: BaseViewController {
 
 extension SaveTaskViewController {
     func updateUI() {
-        title = viewModel.isEditing ? "Update Task" : "Add Task"
+        title = viewModel.isEditing ? AppStrings.controllerTitles.updateTask.rawValue : AppStrings.controllerTitles.addTask.rawValue
         
         titleTextField.isEnabled = true
         dateTimeTextField.isEnabled = true
         
-        saveButton.setTitle(viewModel.isEditing ? "Update" : "Add", for: .normal)
+        saveButton.setTitle(viewModel.isEditing ? AppStrings.buttonTitles.update.rawValue : AppStrings.buttonTitles.add.rawValue, for: .normal)
         saveButton.enableTheme = true
         saveButton.isEnabled = false
         saveButton.theme = .filled

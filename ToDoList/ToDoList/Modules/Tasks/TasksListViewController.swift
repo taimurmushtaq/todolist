@@ -62,9 +62,9 @@ extension TasksListViewController {
     }
     
     func updateUI() {
-        title = "To-Do List"
+        title = AppStrings.controllerTitles.toDoList.rawValue
         
-        addTaskButton.setTitle("Add Task", for: .normal)
+        addTaskButton.setTitle(AppStrings.buttonTitles.addTask.rawValue, for: .normal)
         addTaskButton.enableTheme = true
         addTaskButton.isEnabled = true
         addTaskButton.theme = .filled
@@ -117,7 +117,7 @@ extension TasksListViewController: UITableViewDataSource {
         let numberOfRows = viewModel.numberOfRows(inSection: section)
         
         if numberOfRows == 0 {
-            tableView.setEmptyMessage("No Task Found")
+            tableView.setEmptyMessage(AppStrings.labelText.noTaskFound.rawValue)
         } else {
             tableView.restore()
         }
@@ -177,49 +177,53 @@ extension TasksListViewController: UITableViewDelegate {
 //MARK: - Alerts and sheets
 extension TasksListViewController {
     func showLogoutAlert(_ onComplete: @escaping ()-> Void) {
-        let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: AppStrings.alertTitle.logout.rawValue,
+                                                message: AppStrings.alertMessages.logoutConfirmation.rawValue, preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.yes.rawValue, style: .default, handler: { action in
             onComplete()
         }))
         
-        alertController.addAction(UIAlertAction.init(title: "No", style: .cancel))
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.no.rawValue, style: .cancel))
         
         present(alertController, animated: true)
     }
     
     func showConfirmTaskCompletionAlert(_ onComplete: @escaping ()-> Void) {
-        let alertController = UIAlertController(title: "Complete Task", message: "Are you sure you want to mark this task complete?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: AppStrings.alertTitle.completeTask.rawValue,
+                                                message: AppStrings.alertMessages.taskCompletionConfirmation.rawValue, preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.yes.rawValue, style: .default, handler: { action in
             onComplete()
         }))
         
-        alertController.addAction(UIAlertAction.init(title: "No", style: .cancel))
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.no.rawValue, style: .cancel))
         
         present(alertController, animated: true)
     }
     
     func showUndoTaskCompletionAlert(_ onComplete: @escaping ()-> Void) {
-        let alertController = UIAlertController(title: "Undo Task Completion", message: "Are you sure you want to mark this task incomplete?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: AppStrings.alertTitle.unDoTaskCompletion.rawValue,
+                                                message: AppStrings.alertMessages.undoTaskCompletionConfirmation.rawValue, preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.yes.rawValue, style: .default, handler: { action in
             onComplete()
         }))
         
-        alertController.addAction(UIAlertAction.init(title: "No", style: .cancel))
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.no.rawValue, style: .cancel))
         
         present(alertController, animated: true)
     }
     
     func showDeleteTaskAlert(_ onComplete: @escaping ()-> Void) {
-        let alertController = UIAlertController(title: "Delete Task", message: "Are you sure you want to delete this task", preferredStyle: .alert)
+        let alertController = UIAlertController(title: AppStrings.alertTitle.deleteTask.rawValue,
+                                                message: AppStrings.alertMessages.taskDeletionConfirmation.rawValue, preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: { action in
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.yes.rawValue, style: .default, handler: { action in
             onComplete()
         }))
         
-        alertController.addAction(UIAlertAction.init(title: "No", style: .cancel))
+        alertController.addAction(UIAlertAction.init(title: AppStrings.buttonTitles.no.rawValue, style: .cancel))
         
         present(alertController, animated: true)
     }
