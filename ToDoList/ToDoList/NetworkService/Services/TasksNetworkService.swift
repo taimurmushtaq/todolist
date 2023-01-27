@@ -8,20 +8,6 @@
 import Foundation
 import FirebaseAuth
 
-protocol TasksNetworkServiceProtocol {
-    func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void)
-    func deleteTask(_ taskId: String, onCompletion: @escaping (Result<Void, Error>) -> Void)
-    func performLogout() throws
-}
-
-protocol AddTaskNetworkServiceProtcol {
-    func saveTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void)
-}
-
-protocol UpdateTaskNetworkServiceProtcol {
-    func updateTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void)
-}
-
 class TasksNetworkService: TasksNetworkServiceProtocol {
     let dataBaseManager = FireBaseDataBaseManager()
     

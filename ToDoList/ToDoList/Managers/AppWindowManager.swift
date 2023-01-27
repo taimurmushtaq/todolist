@@ -11,15 +11,20 @@ enum AppWindowManager {
     static func setupWindow(forScene scene: UIScene) {
         guard let window = (scene as? UIWindowScene) else { return }
         
-        let navController = AppFactory.navigationController()
+        self.window = UIWindow(windowScene: window)
         
-        if AuthNetworkService.currentUser == nil {
-            navController.viewControllers = [AppFactory.loginViewController()]
+        let navController = BaseNavigationController()
+        
+        if let environment = ProcessInfo.processInfo.environment["ENV"], environment == "TEST" {
+            navController.viewControllers = [MockAppFactory.loginViewController()]
         } else {
-            navController.viewControllers = [AppFactory.tasksListViewController()]
+            if AuthNetworkService.currentUser == nil {
+                navController.viewControllers = [AppFactory.loginViewController()]
+            } else {
+                navController.viewControllers = [AppFactory.tasksListViewController()]
+            }
         }
         
-        self.window = UIWindow(windowScene: window)
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
     }

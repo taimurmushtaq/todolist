@@ -19,7 +19,6 @@ struct RegisterationViewModel {
     var registrationFailed = Observable("")
     
     //MARK: - Properties
-    private let validator = ValidationManager()
     private let networkService: RegisterationNetworkServiceProtocol
     
     init(_ networkService: RegisterationNetworkServiceProtocol) {
@@ -29,7 +28,7 @@ struct RegisterationViewModel {
 
 extension RegisterationViewModel {
     func performValidation() {
-        if email.value.isEmpty || !validator.isValidEmail(email.value) {
+        if email.value.isEmpty || !ValidationManager.isValidEmail(email.value) {
             validateFields.value = false
         } else if password.value.isEmpty || confirmPassword.value.isEmpty  || password.value != confirmPassword.value {
             validateFields.value = false

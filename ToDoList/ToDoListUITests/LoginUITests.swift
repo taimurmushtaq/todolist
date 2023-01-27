@@ -63,7 +63,7 @@ extension LoginUITests {
         loginPageObject.passwordTextField.tap()
         loginPageObject.passwordTextField.typeText(LoginElementConent.validPassword.rawValue)
         
-        XCTAssertEqual(loginPageObject.loginButton.isEnabled, false)
+        XCTAssertEqual(loginPageObject.loginButton.isEnabled, true)
     }
     
     func test_whenLoginIsPerformedWithValidCredentials() {

@@ -73,6 +73,7 @@
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="abc@xyz.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-3K-xHM" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="98" width="329.33333333333331" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="emailTextField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="XXj-YJ-AZd"/>
                                                     </constraints>
@@ -101,6 +102,7 @@
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5qM-eU-1He" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="97.999999999999943" width="329.33333333333331" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="passwordTextField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="iiZ-Qn-3rJ"/>
                                                     </constraints>
@@ -124,6 +126,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-bW-w3H" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="loginButton"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="e9a-BQ-QGJ"/>
                                             </constraints>
@@ -138,6 +141,7 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Jj-Izt" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="94.333333333333371" width="75" height="44"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="registerButton"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="ZyZ-mx-lM2"/>
                                             </constraints>

@@ -1,13 +1,13 @@
 //
-//  AppRouter.swift
+//  MockAppRouter.swift
 //  ToDoList
 //
-//  Created by Taimur Mushtaq on 24/01/2023.
+//  Created by Taimur Mushtaq on 27/01/2023.
 //
 
 import UIKit
 
-class AppRouter: RouterProtocol {
+class MockAppRouter: RouterProtocol {
     weak var controller: UIViewController?
     
     required init(_ controller: UIViewController?) {
@@ -19,20 +19,20 @@ class AppRouter: RouterProtocol {
     }
     
     func routeToRegisteration() {
-        let nextController = AppFactory.registerViewController(router: self)
+        let nextController = MockAppFactory.registerViewController(router: self)
         controller?.navigationController?.pushViewController(nextController, animated: true)
     }
     
     func routToLogin() {
-        AppWindowManager.window?.rootViewController = BaseNavigationController(rootViewController: AppFactory.loginViewController())
+        AppWindowManager.window?.rootViewController = BaseNavigationController(rootViewController: MockAppFactory.loginViewController())
     }
     
     func routToTasks() {
-        AppWindowManager.window?.rootViewController = BaseNavigationController(rootViewController: AppFactory.tasksListViewController())
+        AppWindowManager.window?.rootViewController = BaseNavigationController(rootViewController: MockAppFactory.tasksListViewController())
     }
     
     func routToSaveTasks(_ taskViewModel: TaskViewModel?) {
-        let nextController = AppFactory.saveTaskViewController(router: self, taskViewModel: taskViewModel)
+        let nextController = MockAppFactory.saveTaskViewController(router: self, taskViewModel: taskViewModel)
         controller?.navigationController?.pushViewController(nextController, animated: true)
     }
 }

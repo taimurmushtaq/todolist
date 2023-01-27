@@ -58,6 +58,11 @@
 		4A715B342984177B006D08FC /* LoginPageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B2B2984177B006D08FC /* LoginPageObject.swift */; };
 		4A715B352984177B006D08FC /* TaskListPageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B2C2984177B006D08FC /* TaskListPageObject.swift */; };
 		4A715B362984177B006D08FC /* SpringBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B2E2984177B006D08FC /* SpringBoard.swift */; };
+		4A715B39298418B3006D08FC /* NetworkSericeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B38298418B3006D08FC /* NetworkSericeProtocol.swift */; };
+		4A715B3B298418FF006D08FC /* ManagerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B3A298418FF006D08FC /* ManagerProtocols.swift */; };
+		4A715B3D29841C39006D08FC /* MockAppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B3C29841C39006D08FC /* MockAppFactory.swift */; };
+		4A715B4029841C77006D08FC /* MockNetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B3F29841C77006D08FC /* MockNetWorkService.swift */; };
+		4A715B4229841CB0006D08FC /* MockAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4129841CB0006D08FC /* MockAppRouter.swift */; };
 		4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F302980EEC500051703 /* AuthNetworkService.swift */; };
 		4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F322980F51500051703 /* RegisterationNetworkService.swift */; };
 		4A874F352980F56100051703 /* ResultErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F342980F56100051703 /* ResultErrors.swift */; };
@@ -145,6 +150,11 @@
 		4A715B2B2984177B006D08FC /* LoginPageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageObject.swift; sourceTree = "<group>"; };
 		4A715B2C2984177B006D08FC /* TaskListPageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListPageObject.swift; sourceTree = "<group>"; };
 		4A715B2E2984177B006D08FC /* SpringBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringBoard.swift; sourceTree = "<group>"; };
+		4A715B38298418B3006D08FC /* NetworkSericeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSericeProtocol.swift; sourceTree = "<group>"; };
+		4A715B3A298418FF006D08FC /* ManagerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerProtocols.swift; sourceTree = "<group>"; };
+		4A715B3C29841C39006D08FC /* MockAppFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAppFactory.swift; sourceTree = "<group>"; };
+		4A715B3F29841C77006D08FC /* MockNetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetWorkService.swift; sourceTree = "<group>"; };
+		4A715B4129841CB0006D08FC /* MockAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppRouter.swift; sourceTree = "<group>"; };
 		4A874F302980EEC500051703 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
 		4A874F322980F51500051703 /* RegisterationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationNetworkService.swift; sourceTree = "<group>"; };
 		4A874F342980F56100051703 /* ResultErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultErrors.swift; sourceTree = "<group>"; };
@@ -255,11 +265,9 @@
 		4A037DFE298099A90021ADF6 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				4A874F302980EEC500051703 /* AuthNetworkService.swift */,
-				4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */,
-				4A874F322980F51500051703 /* RegisterationNetworkService.swift */,
 				4A874F342980F56100051703 /* ResultErrors.swift */,
-				4A874F3E2981031900051703 /* TasksNetworkService.swift */,
+				4A715B38298418B3006D08FC /* NetworkSericeProtocol.swift */,
+				4A715B372984188E006D08FC /* Services */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 				4A65C81A29804E98005B28BF /* Managers */,
 				4A037DDF29805AA50021ADF6 /* Extensions */,
 				4A037DD62980581C0021ADF6 /* UIComponents */,
+				4A715B3E29841C47006D08FC /* Mock */,
 				4A65C82329804E99005B28BF /* Modules */,
 				4A037E0129809D520021ADF6 /* Models */,
 				4A037DFE298099A90021ADF6 /* NetworkService */,
@@ -340,6 +349,7 @@
 				4A65C81D29804E98005B28BF /* AppWindowManager.swift */,
 				4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */,
 				4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */,
+				4A715B3A298418FF006D08FC /* ManagerProtocols.swift */,
 				4A65C81C29804E98005B28BF /* ThemeManager.swift */,
 				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A037DDD298058C80021ADF6 /* ValidationManager.swift */,
@@ -426,6 +436,27 @@
 				4A715B2E2984177B006D08FC /* SpringBoard.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4A715B372984188E006D08FC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A874F302980EEC500051703 /* AuthNetworkService.swift */,
+				4A037DFC2980967F0021ADF6 /* LoginNetworkService.swift */,
+				4A874F322980F51500051703 /* RegisterationNetworkService.swift */,
+				4A874F3E2981031900051703 /* TasksNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A715B3E29841C47006D08FC /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				4A715B3C29841C39006D08FC /* MockAppFactory.swift */,
+				4A715B3F29841C77006D08FC /* MockNetWorkService.swift */,
+				4A715B4129841CB0006D08FC /* MockAppRouter.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		4A874F362980F7F100051703 /* Tasks */ = {
@@ -655,21 +686,26 @@
 				4A874F412981033900051703 /* TaskModel.swift in Sources */,
 				4A65C7EB29804E66005B28BF /* AppDelegate.swift in Sources */,
 				4A037DF12980812C0021ADF6 /* LoginViewModel.swift in Sources */,
+				4A715B4029841C77006D08FC /* MockNetWorkService.swift in Sources */,
 				4AF6A1D329834F7400396853 /* UITableView+Extension.swift in Sources */,
 				4A65C83529804F1D005B28BF /* AppRouter.swift in Sources */,
 				4A874F48298112CF00051703 /* Images.swift in Sources */,
 				4A037DD8298058330021ADF6 /* BindingTextField.swift in Sources */,
 				4A874F5A2981233000051703 /* TaskViewModel.swift in Sources */,
 				4A65C82929804E99005B28BF /* ThemeManager.swift in Sources */,
+				4A715B39298418B3006D08FC /* NetworkSericeProtocol.swift in Sources */,
+				4A715B3B298418FF006D08FC /* ManagerProtocols.swift in Sources */,
 				4A037DE32980623D0021ADF6 /* BindingButton.swift in Sources */,
 				4A037DE729807CAF0021ADF6 /* PaddingTextField.swift in Sources */,
 				4AF6A1C8298306E800396853 /* FireBaseDataBaseManager.swift in Sources */,
+				4A715B3D29841C39006D08FC /* MockAppFactory.swift in Sources */,
 				4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */,
 				4AF6A1D72983EDF400396853 /* AppStrings.swift in Sources */,
 				4AF6A1CE2983186200396853 /* Array+Codable+Extension.swift in Sources */,
 				4A874F3F2981031900051703 /* TasksNetworkService.swift in Sources */,
 				4A874F352980F56100051703 /* ResultErrors.swift in Sources */,
 				4AF6A1CA29830B1300396853 /* String+Codable+Extension.swift in Sources */,
+				4A715B4229841CB0006D08FC /* MockAppRouter.swift in Sources */,
 				4A65C7ED29804E66005B28BF /* SceneDelegate.swift in Sources */,
 				4A037DDB298058590021ADF6 /* RegisterationViewModel.swift in Sources */,
 				4A65C82829804E99005B28BF /* AppLibraryManager.swift in Sources */,

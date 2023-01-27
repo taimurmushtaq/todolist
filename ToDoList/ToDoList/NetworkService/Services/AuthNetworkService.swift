@@ -8,11 +8,6 @@
 import Foundation
 import FirebaseAuth
 
-protocol AuthNetworkServiceProtocol {
-    static var currentUser: UserModel? { get }
-    func handleAuthState(_ onCompletion: @escaping (Result<UserModel, ResultErrors>) -> Void)
-}
-
 class AuthNetworkService: AuthNetworkServiceProtocol {
     static var currentUser: UserModel? {
         get {

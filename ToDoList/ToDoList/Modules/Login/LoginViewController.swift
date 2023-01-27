@@ -55,6 +55,7 @@ class LoginViewController: BaseViewController {
 }
 
 extension LoginViewController {
+    
     func updateUI() {
         logoImageView.roundCorners(radius: 8, borderWidth: 0, borderColor: .accentColor)
         

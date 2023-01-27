@@ -15,12 +15,12 @@ class SaveTaskPageObject {
     }
     
     var titleTextField: XCUIElement {
-        app.tables["titleTextField"]
+        app.textFields["titleTextField"]
     }
     var dateTextField: XCUIElement {
         app.textFields["dateTextField"]
     }
     var saveButton: XCUIElement {
-        app.textFields["saveButton"]
+        app.buttons["saveButton"]
     }
 }

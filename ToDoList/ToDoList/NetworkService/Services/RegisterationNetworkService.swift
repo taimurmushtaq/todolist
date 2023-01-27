@@ -8,10 +8,6 @@
 import Foundation
 import FirebaseAuth
 
-protocol RegisterationNetworkServiceProtocol {
-    func performRegisteration(withEmail email: String, password: String, onCompletion: @escaping (Result<UserModel, Error>) -> Void)
-}
-
 class RegisterationNetworkService: RegisterationNetworkServiceProtocol {
     func performRegisteration(withEmail email: String, password: String, onCompletion: @escaping (Result<UserModel, Error>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in

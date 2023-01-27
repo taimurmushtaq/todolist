@@ -15,10 +15,10 @@ class LoginPageObject {
     }
     
     var emailTextField: XCUIElement {
-        app.tables["emailTextField"]
+        app.textFields["emailTextField"]
     }
     var passwordTextField: XCUIElement {
-        app.textFields["passwordTextField"]
+        app.secureTextFields["passwordTextField"]
     }
     var loginButton: XCUIElement {
         app.buttons["loginButton"]

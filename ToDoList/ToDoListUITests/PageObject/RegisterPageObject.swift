@@ -15,13 +15,13 @@ class RegisterPageObject {
     }
     
     var emailTextField: XCUIElement {
-        app.tables["emailTextField"]
+        app.textFields["emailTextField"]
     }
     var passwordTextField: XCUIElement {
-        app.textFields["passwordTextField"]
+        app.secureTextFields["passwordTextField"]
     }
     var confirmPasswordTextField: XCUIElement {
-        app.textFields["confirmPasswordTextField"]
+        app.secureTextFields["confirmPasswordTextField"]
     }
     var registerButton: XCUIElement {
         app.buttons["registerButton"]

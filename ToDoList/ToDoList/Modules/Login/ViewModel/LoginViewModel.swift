@@ -16,7 +16,6 @@ struct LoginViewModel {
     var signInFailed = Observable("")
     
     //MARK: - Properties
-    private let validator = ValidationManager()
     private let networkService: LoginNetworkServiceProtocol
     
     init(_ networkService: LoginNetworkServiceProtocol) {
@@ -26,7 +25,7 @@ struct LoginViewModel {
 
 extension LoginViewModel {
     func performValidation() {
-        if email.value.isEmpty || !validator.isValidEmail(email.value) {
+        if email.value.isEmpty || !ValidationManager.isValidEmail(email.value) {
             validateFields.value = false
         } else if password.value.isEmpty {
             validateFields.value = false

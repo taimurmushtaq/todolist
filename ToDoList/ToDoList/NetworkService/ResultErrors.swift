@@ -9,6 +9,7 @@ import Foundation
 
 enum ResultErrors: Error {
     case networkError
+    case invalidCredentials
     case dataParsingError
     case dataSavingError
     case dataUpdationError
@@ -18,6 +19,7 @@ enum ResultErrors: Error {
     var description: String {
         switch self {
         case .networkError: return "Please check your internet connection"
+        case .invalidCredentials: return "please enter valid credentials"
         case .dataParsingError: return "Data parsing failed. Please try again later."
         case .dataSavingError: return "Unble to save Task. Please try again later."
         case .dataUpdationError: return "Unble to update Task. Please try again later."
