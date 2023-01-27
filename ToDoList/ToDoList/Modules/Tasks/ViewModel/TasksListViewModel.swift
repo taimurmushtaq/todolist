@@ -11,8 +11,8 @@ class TasksListViewModel {
     //MARK: - Observables
     var successfullySignOut = Observable(false)
     var refreshTasks = Observable("")
-    var taskSaved = Observable(false)
-    var taskFailed = Observable("")
+    var taskUpdated = Observable(false)
+    var taskUpdateFailed = Observable("")
     
     //MARK: - Properties
     private let taskNetworkService: TasksNetworkServiceProtocol
@@ -77,7 +77,11 @@ extension TasksListViewModel {
     func deleteTask(indexPath: IndexPath) {
         if let item = item(atIndex: indexPath) {
             taskNetworkService.deleteTask(item.taskId) { [weak self] result in
-                self?.refreshTasks.value = ""
+                if case .failure( let error) = result {
+                    self?.taskUpdateFailed.value = error.localizedDescription
+                } else {
+                    self?.taskUpdated.value.toggle()
+                }
             }
         }
     }
@@ -92,11 +96,13 @@ extension TasksListViewModel {
             let existingTask = TaskModel(taskId: item.taskId, taskDataModel: existingTaskDataModel)
             updateTaskNetworkService.updateTask(existingTask) { [weak self] result in
                 if case .failure( let error) = result {
-                    self?.taskFailed.value = error.localizedDescription
+                    self?.taskUpdateFailed.value = error.localizedDescription
                 } else {
-                    self?.refreshTasks.value = ""
+                    self?.taskUpdated.value.toggle()
                 }
             }
+        } else {
+            taskUpdateFailed.value = ResultErrors.unknown.description
         }
     }
     

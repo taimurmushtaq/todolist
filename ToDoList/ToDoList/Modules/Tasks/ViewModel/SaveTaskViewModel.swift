@@ -14,8 +14,8 @@ struct SaveTaskViewModel {
     var dateTime = Observable(TimeInterval())
     
     var validateFields = Observable(false)
-    var taskSaved = Observable(false)
-    var taskFailed = Observable("")
+    var taskUpdated = Observable(false)
+    var taskUpdateFailed = Observable("")
     
     //MARK: - Properties
     private let networkService: AddTaskNetworkServiceProtcol & UpdateTaskNetworkServiceProtcol
@@ -54,9 +54,9 @@ extension SaveTaskViewModel {
             let existingTask = TaskModel(taskId: taskModel!.taskId, taskDataModel: existingTaskDataModel)
             networkService.updateTask(existingTask) { result in
                 if case .failure( let error) = result {
-                    taskFailed.value = error.localizedDescription
+                    taskUpdateFailed.value = error.localizedDescription
                 } else {
-                    taskSaved.value = true
+                    taskUpdated.value = true
                 }
             }
         } else {
@@ -65,9 +65,9 @@ extension SaveTaskViewModel {
             
             networkService.saveTask(newTask) { result in
                 if case .failure( let error) = result {
-                    taskFailed.value = error.localizedDescription
+                    taskUpdateFailed.value = error.localizedDescription
                 } else {
-                    taskSaved.value = true
+                    taskUpdated.value = true
                 }
             }
         }

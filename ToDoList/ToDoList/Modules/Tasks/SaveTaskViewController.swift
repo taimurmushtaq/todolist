@@ -89,7 +89,10 @@ extension SaveTaskViewController {
         }
         
         saveButton.bind { [weak self] in
-            self?.viewModel.saveTask()
+            guard let strongSelf = self else { return }
+            
+            AppLoader.instance.show(inView: strongSelf.view)
+            strongSelf.viewModel.saveTask()
         }
         
         viewModel.title.bind { [weak self] value in
@@ -101,10 +104,12 @@ extension SaveTaskViewController {
         viewModel.validateFields.bind { [weak self] isValidated in
             self?.saveButton.isEnabled = isValidated
         }
-        viewModel.taskSaved.bind { [weak self] _ in
+        viewModel.taskUpdated.bind { [weak self] _ in
+            AppLoader.instance.hide()
             self?.router.goBack()
         }
-        viewModel.taskFailed.bind { errorMessage in
+        viewModel.taskUpdateFailed.bind { errorMessage in
+            AppLoader.instance.hide()
             ToastManager.showMessage(errorMessage)
         }
     }

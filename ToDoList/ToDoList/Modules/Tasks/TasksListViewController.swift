@@ -84,10 +84,12 @@ extension TasksListViewController {
             self?.tableView.reloadData()
         }
         
-        viewModel.taskSaved.bind { [weak self] _ in
+        viewModel.taskUpdated.bind { [weak self] _ in
+            AppLoader.instance.hide()
             self?.tableView.reloadData()
         }
-        viewModel.taskFailed.bind { errorMessage in
+        viewModel.taskUpdateFailed.bind { errorMessage in
+            AppLoader.instance.hide()
             ToastManager.showMessage(errorMessage)
         }
     }
@@ -126,9 +128,19 @@ extension TasksListViewController: UITableViewDataSource {
         cell.configureCell(withViewModel: taskViewModel)
         cell.checkButton.bind { [weak self] in
             if taskViewModel.isTaskComplete {
-                self?.showUndoTaskCompletionAlert { self?.viewModel.changeTaskStatus(indexPath: indexPath) }
+                self?.showUndoTaskCompletionAlert {
+                    guard let strongSelf = self else { return }
+                    
+                    AppLoader.instance.show(inView: strongSelf.view)
+                    strongSelf.viewModel.changeTaskStatus(indexPath: indexPath)
+                }
             } else {
-                self?.showConfirmTaskCompletionAlert { self?.viewModel.changeTaskStatus(indexPath: indexPath) }
+                self?.showConfirmTaskCompletionAlert {
+                    guard let strongSelf = self else { return }
+                    
+                    AppLoader.instance.show(inView: strongSelf.view)
+                    self?.viewModel.changeTaskStatus(indexPath: indexPath)
+                }
             }
         }
         return cell
@@ -140,7 +152,12 @@ extension TasksListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            showDeleteTaskAlert { [weak self] in self?.viewModel.deleteTask(indexPath: indexPath) }
+            showDeleteTaskAlert { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                AppLoader.instance.show(inView: strongSelf.view)
+                self?.viewModel.deleteTask(indexPath: indexPath)
+            }
         }
     }
 }
