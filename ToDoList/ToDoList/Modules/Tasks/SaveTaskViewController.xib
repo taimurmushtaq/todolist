@@ -118,7 +118,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="YjA-F9-rfp"/>
-            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ZSj-3B-hZD" firstAttribute="leading" secondItem="YjA-F9-rfp" secondAttribute="leading" id="5FC-W7-aLp"/>
                 <constraint firstItem="ZSj-3B-hZD" firstAttribute="top" secondItem="bVZ-Z5-ZRk" secondAttribute="top" id="5FS-Iq-MrI"/>
@@ -130,8 +130,8 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

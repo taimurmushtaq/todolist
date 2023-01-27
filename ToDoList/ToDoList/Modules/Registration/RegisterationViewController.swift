@@ -83,7 +83,10 @@ extension RegisterationViewController {
         }
         
         registerButton.bind { [weak self] in
-            self?.viewModel.performRegisteration()
+            guard let strongSelf = self else { return }
+            
+            AppLoader.instance.show(inView: strongSelf.view)
+            strongSelf.viewModel.performRegisteration()
         }
         
         viewModel.email.bind { [weak self] value in
@@ -99,8 +102,14 @@ extension RegisterationViewController {
             self?.registerButton.isEnabled = isValidated
         }
         
-        viewModel.successfullyRegistered.bind { [weak self] _ in
+        viewModel.registrationSuccessful.bind { [weak self] _ in
+            AppLoader.instance.hide()
             self?.router.routToTasks()
+        }
+        
+        viewModel.registrationFailed.bind { message in
+            AppLoader.instance.hide()
+            ToastManager.showMessage(message)
         }
     }
 }

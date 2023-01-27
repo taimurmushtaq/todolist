@@ -83,8 +83,10 @@ extension LoginViewController {
         }
         
         loginButton.bind { [weak self] in
-            AppLoader.instance.show()
-            self?.viewModel.performLogin()
+            guard let strongSelf = self else { return }
+            
+            AppLoader.instance.show(inView: strongSelf.view)
+            strongSelf.viewModel.performLogin()
         }
         
         registerButton.bind { [weak self] in

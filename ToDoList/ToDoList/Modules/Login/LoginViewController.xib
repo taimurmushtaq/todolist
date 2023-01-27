@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -169,7 +170,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="4JA-YS-85k"/>
-            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="trailing" secondItem="4JA-YS-85k" secondAttribute="trailing" id="AQF-yL-iNe"/>
                 <constraint firstItem="C4L-lC-Ll6" firstAttribute="leading" secondItem="4JA-YS-85k" secondAttribute="leading" id="YU4-mt-8S3"/>
@@ -185,8 +186,8 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

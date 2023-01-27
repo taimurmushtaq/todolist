@@ -15,7 +15,8 @@ struct RegisterationViewModel {
     var confirmPassword = Observable("")
     
     var validateFields = Observable(false)
-    var successfullyRegistered = Observable(false)
+    var registrationSuccessful = Observable(false)
+    var registrationFailed = Observable("")
     
     //MARK: - Properties
     private let validator = ValidationManager()
@@ -41,11 +42,10 @@ extension RegisterationViewModel {
         networkService.performRegisteration(withEmail: email.value, password: password.value, onCompletion: { result in
             switch result {
             case .success(_):
-                successfullyRegistered.value.toggle()
+                registrationSuccessful.value.toggle()
             case .failure(let error):
-                ToastManager.showMessage(error.localizedDescription)
+                registrationFailed.value = error.localizedDescription
             }
         })
-
     }
 }

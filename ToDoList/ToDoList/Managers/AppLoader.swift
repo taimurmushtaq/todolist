@@ -13,11 +13,10 @@ class AppLoader {
     
     private var hud: MBProgressHUD?
     
-    func show() {
-        guard let window = AppWindowManager.window else { return }
-        
-        self.hud = MBProgressHUD.showAdded(to: window, animated: true)
+    func show(inView view: UIView) {
+        self.hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud!.mode = .indeterminate
+        hud!.bezelView.blurEffectStyle = .regular
     }
     
     func hide() {
