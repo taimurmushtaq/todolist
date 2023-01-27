@@ -64,6 +64,7 @@
 		4A715B4029841C77006D08FC /* MockNetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B3F29841C77006D08FC /* MockNetWorkService.swift */; };
 		4A715B4229841CB0006D08FC /* MockAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4129841CB0006D08FC /* MockAppRouter.swift */; };
 		4A715B4A29842411006D08FC /* RegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4929842411006D08FC /* RegisterUITests.swift */; };
+		4A715B4C29843FBF006D08FC /* TaskListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4B29843FBF006D08FC /* TaskListUITests.swift */; };
 		4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F302980EEC500051703 /* AuthNetworkService.swift */; };
 		4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F322980F51500051703 /* RegisterationNetworkService.swift */; };
 		4A874F352980F56100051703 /* ResultErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F342980F56100051703 /* ResultErrors.swift */; };
@@ -157,6 +158,7 @@
 		4A715B3F29841C77006D08FC /* MockNetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetWorkService.swift; sourceTree = "<group>"; };
 		4A715B4129841CB0006D08FC /* MockAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppRouter.swift; sourceTree = "<group>"; };
 		4A715B4929842411006D08FC /* RegisterUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUITests.swift; sourceTree = "<group>"; };
+		4A715B4B29843FBF006D08FC /* TaskListUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListUITests.swift; sourceTree = "<group>"; };
 		4A874F302980EEC500051703 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
 		4A874F322980F51500051703 /* RegisterationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationNetworkService.swift; sourceTree = "<group>"; };
 		4A874F342980F56100051703 /* ResultErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultErrors.swift; sourceTree = "<group>"; };
@@ -268,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				4A874F342980F56100051703 /* ResultErrors.swift */,
-				4A715B38298418B3006D08FC /* NetworkSericeProtocol.swift */,
 				4A715B372984188E006D08FC /* Services */,
 			);
 			path = NetworkService;
@@ -314,6 +315,7 @@
 				4A65C81A29804E98005B28BF /* Managers */,
 				4A037DDF29805AA50021ADF6 /* Extensions */,
 				4A037DD62980581C0021ADF6 /* UIComponents */,
+				4A715B4D298445F4006D08FC /* Protocols */,
 				4A715B3E29841C47006D08FC /* Mock */,
 				4A65C82329804E99005B28BF /* Modules */,
 				4A037E0129809D520021ADF6 /* Models */,
@@ -336,6 +338,7 @@
 			children = (
 				4A715B262984177A006D08FC /* LoginUITests.swift */,
 				4A715B4929842411006D08FC /* RegisterUITests.swift */,
+				4A715B4B29843FBF006D08FC /* TaskListUITests.swift */,
 				4A715B272984177B006D08FC /* PageObject */,
 				4A715B2D2984177B006D08FC /* Utils */,
 			);
@@ -352,7 +355,6 @@
 				4A65C81D29804E98005B28BF /* AppWindowManager.swift */,
 				4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */,
 				4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */,
-				4A715B3A298418FF006D08FC /* ManagerProtocols.swift */,
 				4A65C81C29804E98005B28BF /* ThemeManager.swift */,
 				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A037DDD298058C80021ADF6 /* ValidationManager.swift */,
@@ -460,6 +462,15 @@
 				4A715B4129841CB0006D08FC /* MockAppRouter.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		4A715B4D298445F4006D08FC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4A715B3A298418FF006D08FC /* ManagerProtocols.swift */,
+				4A715B38298418B3006D08FC /* NetworkSericeProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		4A874F362980F7F100051703 /* Tasks */ = {
@@ -729,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A715B4C29843FBF006D08FC /* TaskListUITests.swift in Sources */,
 				4A715B322984177B006D08FC /* RegisterPageObject.swift in Sources */,
 				4A715B312984177B006D08FC /* SaveTaskPageObject.swift in Sources */,
 				4A715B302984177B006D08FC /* LoginUITests.swift in Sources */,

@@ -46,6 +46,7 @@ class TasksListViewController: BaseViewController {
 
 extension TasksListViewController {
     func configureTableView() {
+        tableView.accessibilityIdentifier = "taskListTableView"
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 128, right: 0)
         tableView.allowsSelectionDuringEditing = false
         tableView.register(UINib.init(nibName: TaskTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: TaskTableViewCell.identifier)
@@ -56,6 +57,7 @@ extension TasksListViewController {
                                            style: .plain,
                                            target: self,
                                            action: #selector(logoutUser))
+        logoutButton.accessibilityIdentifier = "logoutButton"
         
         logoutButton.tintColor = .white
         navigationItem.rightBarButtonItem = logoutButton
