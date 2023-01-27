@@ -65,6 +65,7 @@
 		4A715B4229841CB0006D08FC /* MockAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4129841CB0006D08FC /* MockAppRouter.swift */; };
 		4A715B4A29842411006D08FC /* RegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4929842411006D08FC /* RegisterUITests.swift */; };
 		4A715B4C29843FBF006D08FC /* TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4B29843FBF006D08FC /* TaskUITests.swift */; };
+		4A715B4F298479AD006D08FC /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4E298479AD006D08FC /* RegisterViewModelTests.swift */; };
 		4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F302980EEC500051703 /* AuthNetworkService.swift */; };
 		4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F322980F51500051703 /* RegisterationNetworkService.swift */; };
 		4A874F352980F56100051703 /* ResultErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F342980F56100051703 /* ResultErrors.swift */; };
@@ -159,6 +160,7 @@
 		4A715B4129841CB0006D08FC /* MockAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppRouter.swift; sourceTree = "<group>"; };
 		4A715B4929842411006D08FC /* RegisterUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUITests.swift; sourceTree = "<group>"; };
 		4A715B4B29843FBF006D08FC /* TaskUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUITests.swift; sourceTree = "<group>"; };
+		4A715B4E298479AD006D08FC /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
 		4A874F302980EEC500051703 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
 		4A874F322980F51500051703 /* RegisterationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationNetworkService.swift; sourceTree = "<group>"; };
 		4A874F342980F56100051703 /* ResultErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultErrors.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				4A65C80129804E69005B28BF /* LoginViewModelTests.swift */,
+				4A715B4E298479AD006D08FC /* RegisterViewModelTests.swift */,
 			);
 			path = ToDoListTests;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A65C80229804E69005B28BF /* LoginViewModelTests.swift in Sources */,
+				4A715B4F298479AD006D08FC /* RegisterViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
