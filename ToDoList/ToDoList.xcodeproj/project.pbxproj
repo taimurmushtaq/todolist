@@ -63,6 +63,7 @@
 		4A715B3D29841C39006D08FC /* MockAppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B3C29841C39006D08FC /* MockAppFactory.swift */; };
 		4A715B4029841C77006D08FC /* MockNetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B3F29841C77006D08FC /* MockNetWorkService.swift */; };
 		4A715B4229841CB0006D08FC /* MockAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4129841CB0006D08FC /* MockAppRouter.swift */; };
+		4A715B4A29842411006D08FC /* RegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4929842411006D08FC /* RegisterUITests.swift */; };
 		4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F302980EEC500051703 /* AuthNetworkService.swift */; };
 		4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F322980F51500051703 /* RegisterationNetworkService.swift */; };
 		4A874F352980F56100051703 /* ResultErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F342980F56100051703 /* ResultErrors.swift */; };
@@ -155,6 +156,7 @@
 		4A715B3C29841C39006D08FC /* MockAppFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAppFactory.swift; sourceTree = "<group>"; };
 		4A715B3F29841C77006D08FC /* MockNetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetWorkService.swift; sourceTree = "<group>"; };
 		4A715B4129841CB0006D08FC /* MockAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppRouter.swift; sourceTree = "<group>"; };
+		4A715B4929842411006D08FC /* RegisterUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUITests.swift; sourceTree = "<group>"; };
 		4A874F302980EEC500051703 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
 		4A874F322980F51500051703 /* RegisterationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationNetworkService.swift; sourceTree = "<group>"; };
 		4A874F342980F56100051703 /* ResultErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultErrors.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				4A715B262984177A006D08FC /* LoginUITests.swift */,
+				4A715B4929842411006D08FC /* RegisterUITests.swift */,
 				4A715B272984177B006D08FC /* PageObject */,
 				4A715B2D2984177B006D08FC /* Utils */,
 			);
@@ -421,10 +424,10 @@
 		4A715B272984177B006D08FC /* PageObject */ = {
 			isa = PBXGroup;
 			children = (
-				4A715B282984177B006D08FC /* SaveTaskPageObject.swift */,
-				4A715B292984177B006D08FC /* RegisterPageObject.swift */,
-				4A715B2A2984177B006D08FC /* SpringBoardPageObject.swift */,
 				4A715B2B2984177B006D08FC /* LoginPageObject.swift */,
+				4A715B292984177B006D08FC /* RegisterPageObject.swift */,
+				4A715B282984177B006D08FC /* SaveTaskPageObject.swift */,
+				4A715B2A2984177B006D08FC /* SpringBoardPageObject.swift */,
 				4A715B2C2984177B006D08FC /* TaskListPageObject.swift */,
 			);
 			path = PageObject;
@@ -732,6 +735,7 @@
 				4A715B332984177B006D08FC /* SpringBoardPageObject.swift in Sources */,
 				4A715B352984177B006D08FC /* TaskListPageObject.swift in Sources */,
 				4A715B342984177B006D08FC /* LoginPageObject.swift in Sources */,
+				4A715B4A29842411006D08FC /* RegisterUITests.swift in Sources */,
 				4A715B362984177B006D08FC /* SpringBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

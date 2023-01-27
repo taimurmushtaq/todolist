@@ -11,7 +11,7 @@ class MockNetworkService { }
 
 extension MockNetworkService: AuthNetworkServiceProtocol {
     static var currentUser: UserModel? {
-        return nil
+        return UserModel(uid: UUID().uuidString, email: "taimur.1989@gmail.com", displayName: "Taimur Mushtaq")
     }
     
     func handleAuthState(_ onCompletion: @escaping (Result<UserModel, ResultErrors>) -> Void) {
@@ -22,8 +22,7 @@ extension MockNetworkService: AuthNetworkServiceProtocol {
 extension MockNetworkService: LoginNetworkServiceProtocol {
     func performLogin(withEmail email: String, password: String, onCompletion: @escaping (Result<UserModel, Error>) -> Void) {
         if email == "taimur.1989@gmail.com" && password == "Password" {
-            let userModel = UserModel(uid: UUID().uuidString, email: "taimur.1989@gmail.com", displayName: "Taimur Mushtaq")
-            onCompletion(.success(userModel))
+            onCompletion(.success(MockNetworkService.currentUser!))
         } else {
             onCompletion(.failure(ResultErrors.invalidCredentials as Error))
         }
@@ -33,8 +32,7 @@ extension MockNetworkService: LoginNetworkServiceProtocol {
 extension MockNetworkService: RegisterationNetworkServiceProtocol {
     func performRegisteration(withEmail email: String, password: String, onCompletion: @escaping (Result<UserModel, Error>) -> Void) {
         if email == "taimur.1989@gmail.com" && password == "Password" {
-            let userModel = UserModel(uid: UUID().uuidString, email: "taimur.1989@gmail.com", displayName: "Taimur Mushtaq")
-            onCompletion(.success(userModel))
+            onCompletion(.success(MockNetworkService.currentUser!))
         } else {
             onCompletion(.failure(ResultErrors.invalidCredentials as Error))
         }

@@ -11,7 +11,7 @@ class MockAppFactory: AppFactoryProtocol {
     static func loginViewController() -> LoginViewController {
         let viewModel = LoginViewModel(MockNetworkService())
         let controller = LoginViewController(viewModel: viewModel)
-        controller.router = AppRouter(controller)
+        controller.router = MockAppRouter(controller)
         
         return controller
     }
@@ -27,7 +27,7 @@ class MockAppFactory: AppFactoryProtocol {
     static func tasksListViewController() -> TasksListViewController {
         let viewModel = TasksListViewModel(MockNetworkService(), MockNetworkService(), MockNetworkService())
         let controller = TasksListViewController(viewModel: viewModel)
-        controller.router = AppRouter(controller)
+        controller.router = MockAppRouter(controller)
 
         return controller
     }

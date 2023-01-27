@@ -78,5 +78,12 @@ extension LoginUITests {
         let navigationBarTitle = app.staticTexts["To-Do List"]
         XCTAssertTrue(navigationBarTitle.waitForExistence(timeout: 0.5))
     }
+    
+    func test_whenRegisterButtonIsPressed() {
+        loginPageObject.registerButton.tap()
+        
+        let navigationBarTitle = app.staticTexts["SIGN UP"]
+        XCTAssertTrue(navigationBarTitle.waitForExistence(timeout: 0.5))
+    }
 }
 
