@@ -69,7 +69,7 @@ extension TasksListViewModel {
                 self?.refreshTasks.value = ""
                 self?.configureLocalNotification()
             case .failure(let error):
-                ToastManager.showMessage(error.localizedDescription)
+                self?.refreshTasks.value = error.localizedDescription
             }
         }
     }

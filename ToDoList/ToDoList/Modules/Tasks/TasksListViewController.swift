@@ -80,7 +80,10 @@ extension TasksListViewController {
             self?.router.routToLogin()
         }
         
-        viewModel.refreshTasks.bind { [weak self] _ in
+        viewModel.refreshTasks.bind { [weak self] message in
+            if !message.isEmpty {
+                ToastManager.showMessage(message)
+            }
             self?.tableView.reloadData()
         }
         
