@@ -11,8 +11,7 @@ class TasksListViewModel {
     //MARK: - Observables
     var successfullySignOut = Observable(false)
     var refreshTasks = Observable("")
-    var taskUpdated = Observable(false)
-    var taskUpdateFailed = Observable("")
+    var taskUpdate = Observable("")
     
     //MARK: - Properties
     private let taskNetworkService: TasksNetworkServiceProtocol
@@ -78,11 +77,13 @@ extension TasksListViewModel {
         if let item = item(atIndex: indexPath) {
             taskNetworkService.deleteTask(item.taskId) { [weak self] result in
                 if case .failure( let error) = result {
-                    self?.taskUpdateFailed.value = error.localizedDescription
+                    self?.taskUpdate.value = error.localizedDescription
                 } else {
-                    self?.taskUpdated.value.toggle()
+                    self?.taskUpdate.value = ""
                 }
             }
+        } else {
+            taskUpdate.value = ResultErrors.dataDeletionError.description
         }
     }
     
@@ -96,13 +97,13 @@ extension TasksListViewModel {
             let existingTask = TaskModel(taskId: item.taskId, taskDataModel: existingTaskDataModel)
             updateTaskNetworkService.updateTask(existingTask) { [weak self] result in
                 if case .failure( let error) = result {
-                    self?.taskUpdateFailed.value = error.localizedDescription
+                    self?.taskUpdate.value = error.localizedDescription
                 } else {
-                    self?.taskUpdated.value.toggle()
+                    self?.taskUpdate.value = ""
                 }
             }
         } else {
-            taskUpdateFailed.value = ResultErrors.unknown.description
+            taskUpdate.value = ResultErrors.unknown.description
         }
     }
     
@@ -115,7 +116,7 @@ extension TasksListViewModel {
     func handleAuthState() {
         authNetworkService.handleAuthState { result in
             if case .failure(_) = result {
-                self.successfullySignOut.value.toggle()
+                self.successfullySignOut.value = true
             }
         }
     }

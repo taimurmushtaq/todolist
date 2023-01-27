@@ -13,6 +13,7 @@ class MockNetworkService {
     
     var taskArray = [TaskModel]()
     var taskObserver: (Result<[TaskModel], Error>) -> Void = { _ in }
+    var authStateObserver: (Result<UserModel, ResultErrors>) -> Void = { _ in }
     
     func addTask() {
         let timeInterval = "11:12 PM, 27 Jan 2023".convertToDate(withFormat: DateFormats.taskTimerFormat.rawValue)!.timeIntervalSince1970
@@ -29,7 +30,7 @@ extension MockNetworkService: AuthNetworkServiceProtocol {
     }
     
     func handleAuthState(_ onCompletion: @escaping (Result<UserModel, ResultErrors>) -> Void) {
-        onCompletion(.success(MockNetworkService.currentUser!))
+        authStateObserver = onCompletion
     }
 }
 
@@ -54,7 +55,9 @@ extension MockNetworkService: RegisterationNetworkServiceProtocol {
 }
 
 extension MockNetworkService: TasksNetworkServiceProtocol {
-    func performLogout() throws { }
+    func performLogout() throws {
+        authStateObserver(.failure(ResultErrors.unknown))
+    }
     
     func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void) {
         taskObserver = onCompletion

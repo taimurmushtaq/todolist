@@ -89,13 +89,14 @@ extension TasksListViewController {
             self?.tableView.reloadData()
         }
         
-        viewModel.taskUpdated.bind { [weak self] _ in
+        viewModel.taskUpdate.bind { [weak self] value in
             AppLoader.instance.hide()
-            self?.tableView.reloadData()
-        }
-        viewModel.taskUpdateFailed.bind { errorMessage in
-            AppLoader.instance.hide()
-            ToastManager.showMessage(errorMessage)
+            
+            if value.isEmpty {
+                self?.tableView.reloadData()
+            } else {
+                ToastManager.showMessage(value)
+            }
         }
     }
 }
