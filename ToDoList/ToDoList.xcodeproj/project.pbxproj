@@ -66,6 +66,7 @@
 		4AF6A1CE2983186200396853 /* Array+Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CC2983186200396853 /* Array+Codable+Extension.swift */; };
 		4AF6A1D029832E0A00396853 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */; };
 		4AF6A1D329834F7400396853 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1D229834F7400396853 /* UITableView+Extension.swift */; };
+		4AF6A1D5298352EB00396853 /* AppLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6A1D4298352EB00396853 /* AppLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		4AF6A1D12983371900396853 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoList.entitlements; sourceTree = "<group>"; };
 		4AF6A1D229834F7400396853 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		4AF6A1D4298352EB00396853 /* AppLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,13 +302,14 @@
 			children = (
 				4A65C83429804F1D005B28BF /* AppFactory.swift */,
 				4A65C81B29804E98005B28BF /* AppLibraryManager.swift */,
+				4AF6A1D4298352EB00396853 /* AppLoader.swift */,
 				4A65C83329804F1D005B28BF /* AppRouter.swift */,
 				4A65C81D29804E98005B28BF /* AppWindowManager.swift */,
+				4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */,
+				4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */,
 				4A65C81C29804E98005B28BF /* ThemeManager.swift */,
 				4A037DFA298092030021ADF6 /* ToastManager.swift */,
 				4A037DDD298058C80021ADF6 /* ValidationManager.swift */,
-				4AF6A1C7298306E800396853 /* FireBaseDataBaseManager.swift */,
-				4AF6A1CF29832E0A00396853 /* LocalNotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				4A874F3D2980F87B00051703 /* TasksListViewModel.swift in Sources */,
 				4A037DE129805AC10021ADF6 /* UIView+Extension.swift in Sources */,
 				4A874F5C2981239B00051703 /* String+Date+Extension.swift in Sources */,
+				4AF6A1D5298352EB00396853 /* AppLoader.swift in Sources */,
 				4A874F57298122AA00051703 /* TaskTableViewCell.swift in Sources */,
 				4A874F4629810BB700051703 /* BaseNavigationController.swift in Sources */,
 				4A874F42298106D600051703 /* TasksListViewController.swift in Sources */,

@@ -83,6 +83,7 @@ extension LoginViewController {
         }
         
         loginButton.bind { [weak self] in
+            AppLoader.instance.show()
             self?.viewModel.performLogin()
         }
         
@@ -100,8 +101,13 @@ extension LoginViewController {
             self?.loginButton.isEnabled = isValidated
         }
         
-        viewModel.successfullySignin.bind { [weak self] _ in
+        viewModel.signInSuccessFul.bind { [weak self] _ in
+            AppLoader.instance.hide()
             self?.router.routToTasks()
+        }
+        viewModel.signInFailed.bind { message in
+            AppLoader.instance.hide()
+            ToastManager.showMessage(message)
         }
     }
 }
