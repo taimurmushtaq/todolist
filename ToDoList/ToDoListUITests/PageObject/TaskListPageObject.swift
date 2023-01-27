@@ -23,8 +23,13 @@ class TaskListPageObject {
     var logoutButton: XCUIElement {
         app.navigationBars.buttons["logoutButton"]
     }
-    func cell(label: String) -> XCUIElement {
-        return taskList.cells[label]
+    
+    func cell(identifier: String) -> XCUIElement {
+        return taskList.cells[identifier]
+    }
+    
+    var cellDeleteButon: XCUIElement {
+        taskList.buttons["Delete"]
     }
 }
 
@@ -42,4 +47,5 @@ class AlertPageObject {
         app.buttons["No"].firstMatch
     }
 }
+
 

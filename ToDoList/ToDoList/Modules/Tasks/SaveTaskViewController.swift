@@ -24,6 +24,7 @@ class SaveTaskViewController: BaseViewController {
         picker.timeZone = TimeZone.current
         picker.locale = Locale.current
         picker.minimumDate = Date()
+        picker.accessibilityIdentifier = "datePickerView"
         if #available(iOS 13.4, *) {
             picker.preferredDatePickerStyle = .wheels
         }

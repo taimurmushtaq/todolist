@@ -20,6 +20,8 @@ class TaskTableViewCell: UITableViewCell {
 //MARK: - Helper Methods
 extension TaskTableViewCell {
     func configureCell(withViewModel viewModel: TaskViewModel) {
+        checkButton.accessibilityIdentifier = "radioButton"
+        
         checkButton.isSelected = viewModel.isTaskComplete
         titleLabel.text = viewModel.taskTitle
         dateTimeLabel.text = viewModel.taskDateTimeString

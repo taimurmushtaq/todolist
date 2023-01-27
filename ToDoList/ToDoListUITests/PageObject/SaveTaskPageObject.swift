@@ -23,4 +23,10 @@ class SaveTaskPageObject {
     var saveButton: XCUIElement {
         app.buttons["saveButton"]
     }
+    var datePickerView: XCUIElement {
+        app.datePickers["datePickerView"]
+    }
+    var doneButton: XCUIElement {
+        app.toolbars.buttons["Done"]
+    }
 }

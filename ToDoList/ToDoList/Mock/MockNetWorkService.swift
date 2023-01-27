@@ -7,7 +7,21 @@
 
 import UIKit
 
-class MockNetworkService { }
+class MockNetworkService {
+    static let instance = MockNetworkService()
+    private init() { }
+    
+    var taskArray = [TaskModel]()
+    var taskObserver: (Result<[TaskModel], Error>) -> Void = { _ in }
+    
+    func addTask() {
+        let timeInterval = "11:12 PM, 27 Jan 2023".convertToDate(withFormat: DateFormats.taskTimerFormat.rawValue)!.timeIntervalSince1970
+        let taskDataModel = TaskDataModel(title: "Innovation Factory Task", timeInterval: timeInterval, isComplete: false)
+        let taskModel = TaskModel(taskId: UUID().uuidString, taskDataModel: taskDataModel)
+        
+        taskArray.append(taskModel)
+    }
+}
 
 extension MockNetworkService: AuthNetworkServiceProtocol {
     static var currentUser: UserModel? {
@@ -40,27 +54,33 @@ extension MockNetworkService: RegisterationNetworkServiceProtocol {
 }
 
 extension MockNetworkService: TasksNetworkServiceProtocol {
+    func performLogout() throws { }
+    
     func observeTasks(_ onCompletion: @escaping (Result<[TaskModel], Error>) -> Void) {
-        
+        taskObserver = onCompletion
     }
     
     func deleteTask(_ taskId: String, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        taskArray.removeAll { model in return model.taskId == taskId }
         
-    }
-    
-    func performLogout() throws {
-        
+        onCompletion(.success(()))
+        taskObserver(.success(taskArray))
     }
 }
 
 extension MockNetworkService: AddTaskNetworkServiceProtcol {
     func saveTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void) {
-        
+        addTask()
+        onCompletion(.success(()))
+        taskObserver(.success(taskArray))
     }
 }
 
 extension MockNetworkService: UpdateTaskNetworkServiceProtcol {
     func updateTask(_ taskModel: TaskModel, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        taskModel.taskDataModel.changeTaskStatus()
         
+        onCompletion(.success(()))
+        taskObserver(.success(taskArray))
     }
 }

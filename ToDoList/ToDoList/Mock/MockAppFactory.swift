@@ -9,7 +9,7 @@ import UIKit
 
 class MockAppFactory: AppFactoryProtocol {
     static func loginViewController() -> LoginViewController {
-        let viewModel = LoginViewModel(MockNetworkService())
+        let viewModel = LoginViewModel(MockNetworkService.instance)
         let controller = LoginViewController(viewModel: viewModel)
         controller.router = MockAppRouter(controller)
         
@@ -17,7 +17,7 @@ class MockAppFactory: AppFactoryProtocol {
     }
     
     static func registerViewController(router: RouterProtocol) -> RegisterationViewController {
-        let viewModel = RegisterationViewModel(MockNetworkService())
+        let viewModel = RegisterationViewModel(MockNetworkService.instance)
         let controller = RegisterationViewController(viewModel: viewModel)
         controller.router = router
         
@@ -25,7 +25,7 @@ class MockAppFactory: AppFactoryProtocol {
     }
     
     static func tasksListViewController() -> TasksListViewController {
-        let viewModel = TasksListViewModel(MockNetworkService(), MockNetworkService(), MockNetworkService())
+        let viewModel = TasksListViewModel(MockNetworkService.instance, MockNetworkService.instance, MockNetworkService.instance)
         let controller = TasksListViewController(viewModel: viewModel)
         controller.router = MockAppRouter(controller)
 
@@ -33,7 +33,7 @@ class MockAppFactory: AppFactoryProtocol {
     }
     
     static func saveTaskViewController(router: RouterProtocol, taskViewModel: TaskViewModel?) -> SaveTaskViewController {
-        let viewModel = SaveTaskViewModel(MockNetworkService(), taskModel: taskViewModel?.taskModel)
+        let viewModel = SaveTaskViewModel(MockNetworkService.instance, taskModel: taskViewModel?.taskModel)
         let controller = SaveTaskViewController(viewModel: viewModel)
         controller.router = router
         

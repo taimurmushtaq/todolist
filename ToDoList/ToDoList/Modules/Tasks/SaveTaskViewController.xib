@@ -43,6 +43,7 @@
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1E-Vi-8hP" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="98" width="329.33333333333331" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="titleTextField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="U4J-qo-WzC"/>
                                                     </constraints>
@@ -71,6 +72,7 @@
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Eo-9z-A6X" customClass="BindingTextField" customModule="ToDoList" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="98" width="329.33333333333331" height="44"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="dateTextField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="7sx-7J-v6k"/>
                                                     </constraints>
@@ -91,6 +93,7 @@
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM1-BL-psv" customClass="BindingButton" customModule="ToDoList" customModuleProvider="target">
                                     <rect key="frame" x="32" y="360" width="75" height="44"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="saveButton"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="V5u-KH-jeo"/>
                                     </constraints>

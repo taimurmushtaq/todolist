@@ -7,17 +7,28 @@
 
 import Foundation
 
-struct TaskModel: Codable {
+class TaskModel: Codable {
     let taskId: String
     var taskDataModel: TaskDataModel
+    
+    init(taskId: String, taskDataModel: TaskDataModel) {
+        self.taskId = taskId
+        self.taskDataModel = taskDataModel
+    }
 }
 
-struct TaskDataModel: Codable {
+class TaskDataModel: Codable {
     let title: String
     let timeInterval: TimeInterval
     var isComplete:Bool
     
-    mutating func changeTaskStatus() {
+    init(title: String, timeInterval: TimeInterval, isComplete: Bool) {
+        self.title = title
+        self.timeInterval = timeInterval
+        self.isComplete = isComplete
+    }
+    
+    func changeTaskStatus() {
         isComplete.toggle()
     }
     

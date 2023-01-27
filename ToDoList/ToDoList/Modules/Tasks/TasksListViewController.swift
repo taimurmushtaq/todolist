@@ -130,6 +130,7 @@ extension TasksListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let taskViewModel = viewModel.item(atIndex: indexPath)!
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier) as! TaskTableViewCell
+        cell.accessibilityIdentifier = "\(TaskTableViewCell.identifier)_\(indexPath.section)_\(indexPath.row)"
         cell.configureCell(withViewModel: taskViewModel)
         cell.checkButton.bind { [weak self] in
             if taskViewModel.isTaskComplete {
