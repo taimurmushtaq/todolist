@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>176898076683-39uj6k76jcdcfhknbrhsbm1scvktev5h.apps.googleusercontent.com</string>
+	<string>176898076683-tc79eidfd51d7bffphup2fu7gv2qtffg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.176898076683-39uj6k76jcdcfhknbrhsbm1scvktev5h</string>
+	<string>com.googleusercontent.apps.176898076683-tc79eidfd51d7bffphup2fu7gv2qtffg</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAxzW4p8RN1lZ4Qp2zC3UC-SQWiaLOVosk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.innovationfactory.todolist</string>
+	<string>com.smart.todolist</string>
 	<key>PROJECT_ID</key>
 	<string>todolist-209c4</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:176898076683:ios:467131182afb34b1c0570e</string>
+	<string>1:176898076683:ios:9878f03d17f75db0c0570e</string>
+	<key>DATABASE_URL</key>
+	<string>https://todolist-209c4-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

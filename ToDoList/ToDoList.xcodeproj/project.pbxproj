@@ -67,6 +67,7 @@
 		4A715B4C29843FBF006D08FC /* TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4B29843FBF006D08FC /* TaskUITests.swift */; };
 		4A715B4F298479AD006D08FC /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B4E298479AD006D08FC /* RegisterViewModelTests.swift */; };
 		4A715B5129847D60006D08FC /* TasksListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B5029847D60006D08FC /* TasksListViewModelTests.swift */; };
+		4A715B5329848826006D08FC /* SaveTaskViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A715B5229848826006D08FC /* SaveTaskViewModelTests.swift */; };
 		4A874F312980EEC500051703 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F302980EEC500051703 /* AuthNetworkService.swift */; };
 		4A874F332980F51500051703 /* RegisterationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F322980F51500051703 /* RegisterationNetworkService.swift */; };
 		4A874F352980F56100051703 /* ResultErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A874F342980F56100051703 /* ResultErrors.swift */; };
@@ -163,6 +164,7 @@
 		4A715B4B29843FBF006D08FC /* TaskUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUITests.swift; sourceTree = "<group>"; };
 		4A715B4E298479AD006D08FC /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
 		4A715B5029847D60006D08FC /* TasksListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModelTests.swift; sourceTree = "<group>"; };
+		4A715B5229848826006D08FC /* SaveTaskViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTaskViewModelTests.swift; sourceTree = "<group>"; };
 		4A874F302980EEC500051703 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
 		4A874F322980F51500051703 /* RegisterationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationNetworkService.swift; sourceTree = "<group>"; };
 		4A874F342980F56100051703 /* ResultErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultErrors.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				4A65C80129804E69005B28BF /* LoginViewModelTests.swift */,
 				4A715B4E298479AD006D08FC /* RegisterViewModelTests.swift */,
 				4A715B5029847D60006D08FC /* TasksListViewModelTests.swift */,
+				4A715B5229848826006D08FC /* SaveTaskViewModelTests.swift */,
 			);
 			path = ToDoListTests;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A715B5329848826006D08FC /* SaveTaskViewModelTests.swift in Sources */,
 				4A715B5129847D60006D08FC /* TasksListViewModelTests.swift in Sources */,
 				4A65C80229804E69005B28BF /* LoginViewModelTests.swift in Sources */,
 				4A715B4F298479AD006D08FC /* RegisterViewModelTests.swift in Sources */,
