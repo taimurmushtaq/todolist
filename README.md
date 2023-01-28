@@ -1,22 +1,22 @@
-#To-Do List app
+## To-Do List app
 
 To-Do List is project written in Swift
 
 ## Features
 
 * Login and Registration
-* Add, Edit and Tasks
+* Add, Edit and Delete Tasks
 * Notification of Due Tasks
 
 ## Libraries
 
-### Firebase two features are used.
+MBProgressHUD is used for showing loader and toast (error messages received from API)
+
+IQKeyboardManager is used to handle view adjustment when keyboard is opened
+
+Firebase two features are used.
 * Authentication: For Login and Registration
-* Realtime Database: To manage tasks
-
-### MBProgressHUD is used for showing loader and toast (error messages received from API)
-
-### IQKeyboardManager is used to handle view adjustment when keyboard is opened 
+* Realtime Database: To manage tasks 
 
 ## Design Patterns
 
