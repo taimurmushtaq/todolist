@@ -20,3 +20,25 @@ extension Array {
         return self.toJSONString()?.toModel(ofType: T.self)
     }
 }
+
+extension Array where Element: Equatable & Hashable {
+    static func == (lhs: [Element], rhs: [Element]) -> Bool {
+        if lhs.count != rhs.count {
+            return false
+        }
+        
+        var lhsHash = [Element: Bool]()
+        
+        for item in lhs {
+            lhsHash[item] = false
+        }
+        
+        for item in rhs {
+            if lhsHash[item] == false {
+                return false
+            }
+        }
+        
+        return true
+    }
+}

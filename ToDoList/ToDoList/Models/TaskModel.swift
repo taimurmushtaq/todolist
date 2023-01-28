@@ -34,3 +34,17 @@ class TaskDataModel: Codable {
     
     var taskDate:Date { get { return Date(timeIntervalSince1970: timeInterval) } }
 }
+
+extension TaskDataModel: Hashable, Equatable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+        hasher.combine(timeInterval)
+        hasher.combine(isComplete)
+    }
+
+    static func == (lhs: TaskDataModel, rhs: TaskDataModel) -> Bool {
+        return lhs.timeInterval == rhs.timeInterval && lhs.title == rhs.title && lhs.isComplete == rhs.isComplete
+    }
+    
+    
+}
