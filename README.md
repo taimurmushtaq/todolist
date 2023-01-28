@@ -26,7 +26,7 @@ Firebase two features are used.
 ## UITests and UnitTests
 
 * PageObject pattern is used in UITests to resuse elements
-* DataSource of ViewModels is mocked to pass MOCKED Data 
+* DataSource of ViewModels is mocked to avoid actual API calls 
 
 ##  Version
 Current Version ```1.0```
